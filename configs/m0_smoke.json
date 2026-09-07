@@ -1,0 +1,15 @@
+{
+  "lineage": "s2-nvarc-seed",
+  "mode": "smoke",
+  "seed": 260618,
+  "pythonhashseed": "260618",
+  "aug_seed_offset": 260618,
+  "n_workers": 1,
+  "pool": "a100",
+  "cpu": 8,
+  "ram_gib": 64,
+  "per_worker_vram_target_gib": 22,
+  "max_seconds": 1800,
+  "bf16": true,
+  "search_caps_frozen": true
+}

@@ -1,0 +1,8 @@
+# Created after venv bootstrap. Torch is installed from the cu124 index in install_ml_env.sh.
+transformers
+datasets
+accelerate
+peft
+tqdm
+numpy
+unsloth

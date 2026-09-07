@@ -6,5 +6,7 @@ __pycache__/
 .env
 kaggle.json
 *.log
+!ops/runs/**/*.log
 .ipynb_checkpoints/
 kernels/*-out/
+ops/local_runs/m0-staging/

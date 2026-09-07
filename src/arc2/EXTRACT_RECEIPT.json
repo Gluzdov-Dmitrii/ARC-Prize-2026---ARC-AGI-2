@@ -1,0 +1,18 @@
+{
+  "s2_notebook": "C:/Users/Dmitry/Desktop/Kaggle/ARC Prize 2026 - ARC-AGI-2/kernels/arc2-s2-nvarc-seed-fork/arc-agi2-lb33-89-minimal-perfpatch.ipynb",
+  "s2_notebook_sha256": "3ac4406b4c6eeae088b2b51f194dcbbb9edc4479fb4bfceb3e4d1be4ad8fad95",
+  "champion_notebook": "C:/Users/Dmitry/Desktop/Kaggle/ARC Prize 2026 - ARC-AGI-2/kernels/arc2-mikelou-perfpatch-fork/arc-agi2-lb33-89-minimal-perfpatch.ipynb",
+  "champion_notebook_sha256": "ee49384a10a4296dc0bf0670ae67325521f798d5337ed57bee50c8a443a378f4",
+  "extracted_s2": {
+    "arc_loader.py": "2c62526daba3fdd9da317e3dcb689acca8e24018e56e4c7f2c33ed15381ed8c6",
+    "arc_decoder.py": "b38b6b1bdd5f47dbd587a9809ad2ec20cdf9ce5723736a7fb7470e9b1ce61f1d",
+    "arc_solver.py": "5145544f401df565ee57e5511754b53e6b7a8fce80d28ca2dbf5353fdb43f2f1",
+    "starter.py": "f56a1de0d4c17c2e5ec4ecf6874240fff2a8489dc075b5fbcf7d62bb00e4fd9e"
+  },
+  "extracted_champion": {
+    "arc_loader.py": "2c62526daba3fdd9da317e3dcb689acca8e24018e56e4c7f2c33ed15381ed8c6",
+    "arc_decoder.py": "b38b6b1bdd5f47dbd587a9809ad2ec20cdf9ce5723736a7fb7470e9b1ce61f1d",
+    "arc_solver.py": "236a6c7e7e76d2c2ff3396514392d209c618f1b683b98ebe2416243d6853f112",
+    "starter.py": "f56a1de0d4c17c2e5ec4ecf6874240fff2a8489dc075b5fbcf7d62bb00e4fd9e"
+  }
+}
