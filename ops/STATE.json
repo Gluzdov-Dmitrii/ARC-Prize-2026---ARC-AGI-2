@@ -1,0 +1,544 @@
+{
+  "schema_version": 2,
+  "week_id": "arc2-week-2026-09-05-v1",
+  "competition": "arc-prize-2026-arc-agi-2",
+  "plan_path": "ops/WEEK_PLAN.md",
+  "plan_sha256": "dbe8feb198063d80cd60d8f636a96dc8be47d89041ee35971b1427eb0dff5f23",
+  "week_started_at_utc": "2026-09-05T07:54:17Z",
+  "leaderboard_snapshot": {
+    "captured_at_utc": "2026-09-05T08:18:02Z",
+    "team_count": 1819,
+    "leader_score": 73.33,
+    "money_rank_8_score": 34.44,
+    "gold_last_rank": 13,
+    "gold_cutoff_score": 33.47,
+    "user_rank": 489
+  },
+  "champion": {
+    "submission_id": 56004028,
+    "public_score": 30.56,
+    "notebook_slug": "dmitriigluzdov/arc2-mikelou-perfpatch-fork",
+    "script_version_id": 347143390
+  },
+  "diverse_runner_up": null,
+  "daily_guards": [],
+  "attempt_schema": {
+    "required_fields": [
+      "attempt_id",
+      "stage_id",
+      "started_at_utc",
+      "finished_at_utc",
+      "attempt_status",
+      "hypothesis",
+      "only_changed_factor",
+      "base_notebook_sha256",
+      "git_head",
+      "kernel_slug",
+      "kernel_version",
+      "script_version_id",
+      "config_sha256",
+      "preflight_status",
+      "commit_runtime_seconds",
+      "hidden_runtime_seconds",
+      "submission_id",
+      "submission_status",
+      "public_score",
+      "public_rank",
+      "team_count",
+      "gold_cutoff_rank",
+      "gold_cutoff_score",
+      "artifacts_path",
+      "notes"
+    ],
+    "attempt_terminal_statuses": [
+      "COMPLETE",
+      "FAILED_PREFLIGHT",
+      "KERNEL_ERROR",
+      "TIMEOUT",
+      "INVALID_OUTPUT",
+      "SUBMISSION_ERROR",
+      "BLOCKED"
+    ],
+    "stage_rule": "A scored COMPLETE makes the stage COMPLETE. Technical failure -> RETRY_PENDING. V2 failed validation gate -> SKIPPED with a reason (SKIPPED_VALIDATION/NO_NEW_CANDIDATE), without consuming a submission. Never retry a competition submit in the same user command.",
+    "allowed_stage_statuses": [
+      "PENDING",
+      "PREPARING",
+      "KERNEL_RUNNING",
+      "READY_TO_SUBMIT",
+      "SUBMITTING",
+      "COMPLETE",
+      "RETRY_PENDING",
+      "SKIPPED",
+      "BLOCKED"
+    ],
+    "new_attempt_required_fields_since_revision2": [
+      "plan_revision",
+      "local_run_ids",
+      "validation_report_path",
+      "external_baseline_hash",
+      "local_gpu_hours",
+      "kaggle_quota_before_hours",
+      "kaggle_quota_after_hours",
+      "kaggle_quota_debit_estimated_hours",
+      "candidate_coverage",
+      "fallback_rate",
+      "gate_decision"
+    ]
+  },
+  "prior_submissions": [
+    {
+      "submission_id": 55942614,
+      "status": "ERROR",
+      "public_score": null,
+      "note": "Kaggle system error; the same script version later completed"
+    },
+    {
+      "submission_id": 55942986,
+      "status": "COMPLETE",
+      "public_score": 29.31,
+      "notebook_slug": "dmitriigluzdov/failed-in-aimo",
+      "script_version_id": 346523926
+    },
+    {
+      "submission_id": 55954328,
+      "status": "COMPLETE",
+      "public_score": 30.14,
+      "notebook_slug": "dmitriigluzdov/arc2-nvarc-plus-v1-fork",
+      "script_version_id": 346666643
+    },
+    {
+      "submission_id": 55973494,
+      "status": "COMPLETE",
+      "public_score": 16.39,
+      "notebook_slug": "dmitriigluzdov/arc2-learned-from-aimo-fork",
+      "script_version_id": 346895759
+    },
+    {
+      "submission_id": 56004028,
+      "status": "COMPLETE",
+      "public_score": 30.56,
+      "notebook_slug": "dmitriigluzdov/arc2-mikelou-perfpatch-fork",
+      "script_version_id": 347143390
+    },
+    {
+      "submission_id": 56034406,
+      "status": "COMPLETE",
+      "public_score": 27.36,
+      "notebook_slug": "dmitriigluzdov/arc2-s1-program077-fork",
+      "script_version_id": 347429199
+    },
+    {
+      "submission_id": 56045262,
+      "status": "COMPLETE",
+      "public_score": 30.28,
+      "notebook_slug": "dmitriigluzdov/arc2-s2-nvarc-seed-fork",
+      "script_version_id": null
+    }
+  ],
+  "experiments": [
+    {
+      "id": "S1",
+      "status": "COMPLETE",
+      "attempts": [
+        {
+          "attempt_id": "arc2-week-2026-09-05-v1-S1-20260905T081641Z",
+          "stage_id": "S1",
+          "started_at_utc": "2026-09-05T08:16:41Z",
+          "finished_at_utc": "2026-09-06T02:19:00Z",
+          "attempt_status": "COMPLETE",
+          "hypothesis": "Salvage of partial Primary outputs, emergency writer, and 9:30 cap will prevent hidden-rerun coverage loss.",
+          "only_changed_factor": "private kernel slug/metadata; Program077 solver unchanged",
+          "base_notebook_sha256": "ac0fe209de28b2123b9a1d51d3c2d2c82430d31743a57227572b66de9d96e499",
+          "git_head": "b75ea2d5271448cd5e7047f63b8707b526553d55",
+          "kernel_slug": "dmitriigluzdov/arc2-s1-program077-fork",
+          "kernel_version": 1,
+          "script_version_id": 347429199,
+          "config_sha256": "cc14f3eff9bef506698e01d6748ddf1a10040a8318220965703392585a59726b",
+          "preflight_status": "PASS",
+          "commit_runtime_seconds": 19303,
+          "hidden_runtime_seconds": null,
+          "submission_id": 56034406,
+          "submission_status": "COMPLETE",
+          "public_score": 27.36,
+          "public_rank": null,
+          "team_count": 1819,
+          "gold_cutoff_rank": 13,
+          "gold_cutoff_score": 33.47,
+          "artifacts_path": "ops/runs/arc2-week-2026-09-05-v1-S1-20260905T081641Z",
+          "notes": "Scored COMPLETE 27.36 vs champion 30.56; rejected as champion. Daily gate had BLOCKED on 91.86% primary coverage."
+        }
+      ]
+    },
+    {
+      "id": "S2",
+      "status": "COMPLETE",
+      "attempts": [
+        {
+          "attempt_id": "arc2-week-2026-09-05-v1-S2-20260906T022244Z",
+          "stage_id": "S2",
+          "started_at_utc": "2026-09-06T02:22:44Z",
+          "finished_at_utc": "2026-09-06T04:00:00Z",
+          "attempt_status": "COMPLETE",
+          "hypothesis": "Controlled seed will reduce NVARC variance and approach the public 33.89 baseline reproducibility.",
+          "only_changed_factor": "stable_seed_for_key + PYTHONHASHSEED/ARC_AUG_SEED_OFFSET from original-kg; perfpatch otherwise unchanged",
+          "base_notebook_sha256": "ee49384a10a4296dc0bf0670ae67325521f798d5337ed57bee50c8a443a378f4",
+          "git_head": "b75ea2d5271448cd5e7047f63b8707b526553d55",
+          "kernel_slug": "dmitriigluzdov/arc2-s2-nvarc-seed-fork",
+          "kernel_version": 1,
+          "script_version_id": null,
+          "config_sha256": "eeae668b0ff4b0a165c59674a8643d1c9b5dd234a507621a7da8347891c4c8de",
+          "preflight_status": "PASS",
+          "commit_runtime_seconds": 1534,
+          "hidden_runtime_seconds": null,
+          "submission_id": 56045262,
+          "submission_status": "COMPLETE",
+          "public_score": 30.28,
+          "public_rank": null,
+          "team_count": 1819,
+          "gold_cutoff_rank": 13,
+          "gold_cutoff_score": 33.47,
+          "artifacts_path": "ops/runs/arc2-week-2026-09-05-v1-S2-20260906T022244Z",
+          "notes": "Scored COMPLETE 30.28 vs champion 30.56; rejected as champion (below 0.42 quantum). Closer than S1 27.36; same NVARC family as champion so diverse_runner_up left null."
+        }
+      ]
+    },
+    {
+      "id": "S3",
+      "status": "SUBMITTING",
+      "attempts": [
+        {
+          "attempt_id": "arc2-week-2026-09-05-v1-S3-20260907T030959Z",
+          "stage_id": "S3",
+          "started_at_utc": "2026-09-07T03:14:18Z",
+          "finished_at_utc": null,
+          "attempt_status": "SUBMITTING",
+          "hypothesis": "Diversity-aware attempt_2 adds exact solves without changing kgmon attempt_1.",
+          "only_changed_factor": "attempt_2 selector score_kgmon_diversity_a2; generation/seeds/budgets frozen from S2",
+          "base_notebook_sha256": "3ac4406b4c6eeae088b2b51f194dcbbb9edc4479fb4bfceb3e4d1be4ad8fad95",
+          "git_head": "b75ea2d5271448cd5e7047f63b8707b526553d55",
+          "kernel_slug": "dmitriigluzdov/arc2-s3-selector-fork",
+          "kernel_version": 1,
+          "script_version_id": null,
+          "config_sha256": "0aa009ab35baa9209ca316df9898d4c1283b0386ca5b41bcafcfd3c5d9f3a134",
+          "preflight_status": "PASS",
+          "commit_runtime_seconds": 1602,
+          "hidden_runtime_seconds": null,
+          "submission_id": 56068142,
+          "submission_status": "PENDING",
+          "public_score": null,
+          "public_rank": null,
+          "team_count": 1819,
+          "gold_cutoff_rank": 13,
+          "gold_cutoff_score": 33.47,
+          "artifacts_path": "ops/runs/arc2-week-2026-09-05-v1-S3-20260907T030959Z",
+          "notes": "Commit-run COMPLETE ~1602s debug-4, reload 3.0/4, selectors tied 3.0/4. Submit 56068142 PENDING kernel v1 message [S3][20260907][895babb3] selector-a2. No retry."
+        }
+      ]
+    },
+    {
+      "id": "S4",
+      "status": "PENDING",
+      "attempts": []
+    },
+    {
+      "id": "S5",
+      "status": "PENDING",
+      "attempts": []
+    },
+    {
+      "id": "S6",
+      "status": "PENDING",
+      "attempts": []
+    },
+    {
+      "id": "S7",
+      "status": "PENDING",
+      "attempts": []
+    }
+  ],
+  "events": [
+    {
+      "at_utc": "2026-09-05T08:16:41Z",
+      "type": "stage_preparing",
+      "stage_id": "S1",
+      "attempt_id": "arc2-week-2026-09-05-v1-S1-20260905T081641Z",
+      "detail": "Created private Program077 fork and passed local preflight."
+    },
+    {
+      "at_utc": "2026-09-05T08:20:16Z",
+      "type": "kernel_running",
+      "stage_id": "S1",
+      "attempt_id": "arc2-week-2026-09-05-v1-S1-20260905T081641Z",
+      "detail": "kaggle kernels push created version 1; status RUNNING."
+    },
+    {
+      "at_utc": "2026-09-05T13:43:43Z",
+      "type": "kernel_complete",
+      "stage_id": "S1",
+      "attempt_id": "arc2-week-2026-09-05-v1-S1-20260905T081641Z",
+      "detail": "KernelWorkerStatus.COMPLETE; format OK; daily submission gate BLOCK due to 91.86% primary coverage."
+    },
+    {
+      "at_utc": "2026-09-05T14:00:55Z",
+      "type": "ready_to_submit",
+      "stage_id": "S1",
+      "attempt_id": "arc2-week-2026-09-05-v1-S1-20260905T081641Z",
+      "detail": "Stage marked READY_TO_SUBMIT pending explicit competition submit authorization. Daily gate BLOCK noted."
+    },
+    {
+      "at_utc": "2026-09-05T14:04:37Z",
+      "type": "submitted",
+      "stage_id": "S1",
+      "attempt_id": "arc2-week-2026-09-05-v1-S1-20260905T081641Z",
+      "detail": "submission_id=56034406 PENDING from kernel v1; no retry."
+    },
+    {
+      "at_utc": "2026-09-06T02:19:00Z",
+      "type": "stage_complete",
+      "stage_id": "S1",
+      "attempt_id": "arc2-week-2026-09-05-v1-S1-20260905T081641Z",
+      "detail": "submission 56034406 COMPLETE public 27.36; champion unchanged at 30.56."
+    },
+    {
+      "at_utc": "2026-09-06T02:22:44Z",
+      "type": "stage_preparing",
+      "stage_id": "S2",
+      "attempt_id": "arc2-week-2026-09-05-v1-S2-20260906T022244Z",
+      "detail": "Created private NVARC seed fork from Mikelou perfpatch; preflight PASS."
+    },
+    {
+      "at_utc": "2026-09-06T02:24:00Z",
+      "type": "kernel_running",
+      "stage_id": "S2",
+      "attempt_id": "arc2-week-2026-09-05-v1-S2-20260906T022244Z",
+      "detail": "kaggle kernels push created version 1; status RUNNING."
+    },
+    {
+      "at_utc": "2026-09-06T02:52:04Z",
+      "type": "submitted",
+      "stage_id": "S2",
+      "attempt_id": "arc2-week-2026-09-05-v1-S2-20260906T022244Z",
+      "detail": "submission_id=56045262 PENDING from kernel v1; no retry."
+    },
+    {
+      "at_utc": "2026-09-06T04:00:00Z",
+      "type": "stage_complete",
+      "stage_id": "S2",
+      "attempt_id": "arc2-week-2026-09-05-v1-S2-20260906T022244Z",
+      "detail": "submission 56045262 COMPLETE public 30.28; champion unchanged at 30.56."
+    },
+    {
+      "at_utc": "2026-09-07T03:14:18Z",
+      "type": "stage_preparing",
+      "stage_id": "S3",
+      "attempt_id": "arc2-week-2026-09-05-v1-S3-20260907T030959Z",
+      "detail": "Created private selector fork from S2 notebook; preflight PASS."
+    },
+    {
+      "at_utc": "2026-09-07T03:15:07Z",
+      "type": "kernel_running",
+      "stage_id": "S3",
+      "attempt_id": "arc2-week-2026-09-05-v1-S3-20260907T030959Z",
+      "detail": "kaggle kernels push created version 1; status RUNNING."
+    },
+    {
+      "at_utc": "2026-09-07T03:43:59Z",
+      "type": "ready_to_submit",
+      "stage_id": "S3",
+      "attempt_id": "arc2-week-2026-09-05-v1-S3-20260907T030959Z",
+      "detail": "KernelWorkerStatus.COMPLETE; format OK 120 tasks; reload 3.0/4; quota numAllowedNow=1."
+    },
+    {
+      "at_utc": "2026-09-07T03:44:00Z",
+      "type": "submitted",
+      "stage_id": "S3",
+      "attempt_id": "arc2-week-2026-09-05-v1-S3-20260907T030959Z",
+      "detail": "submission_id=56068142 PENDING from kernel v1; no retry."
+    },
+    {
+      "at_utc": "2026-09-07T12:18:11Z",
+      "type": "plan_revised",
+      "detail": "User-authorized revision 2: M0 external preparation, S4-S7 validation-gated, short Kaggle commits. S1-S3 historical attempts preserved.",
+      "evidence_path": "ops/EXTERNAL_COMPUTE.md"
+    },
+    {
+      "at_utc": "2026-09-07T12:18:11Z",
+      "type": "submission_status_reconciled",
+      "stage_id": "S3",
+      "submission_id": 56068142,
+      "detail": "Read-only Kaggle submissions check during revision still returned PENDING; no new commit/submit or cancellation."
+    },
+    {
+      "at_utc": "2026-09-07T12:18:11Z",
+      "type": "validation_protocol_correction",
+      "detail": "Official overview specifies test-output micro average; retain legacy task-macro as secondary. Remove fixed 0.42 promotion quantum; old raw scores and notes retained."
+    },
+    {
+      "at_utc": "2026-09-07T12:57:34Z",
+      "type": "migration_progress",
+      "stage_id": "M0",
+      "detail": "M0-CPU PASS: portable 1-GPU runner, CPU contract tests, eval data hashed on NSU. M0-ENV transferring Qwen 5.41GiB. No Kaggle submit."
+    },
+    {
+      "at_utc": "2026-09-07T15:47:00Z",
+      "type": "migration_progress",
+      "stage_id": "M0",
+      "detail": "Qwen tar.gz gzip-verified locally SHA cee6e64f3b4f759813f378bdd644d5780a55b540339a7a4e2bfd17faa4fe71ee. NSU-SSTP VPN down; scp/bootstrap blocked. No submit."
+    },
+    {
+      "at_utc": "2026-09-07T18:10:00Z",
+      "type": "migration_progress",
+      "stage_id": "M0",
+      "detail": "Qwen extracted on NFS; torch 2.6.0+cu124 and unsloth 2025.9.7 import OK. No GPU lease, no submit."
+    },
+    {
+      "at_utc": "2026-09-08T02:45:00Z",
+      "type": "plan_revised",
+      "detail": "Revision 3: leftover artifacts over gold-chasing. S4+ clone stages parked. M1 dataset then SFT of transferred Qwen. No ARC-2 GPU lease open. No submit.",
+      "evidence_path": "ops/WEEK_PLAN.md"
+    }
+  ],
+  "plan_revision": "arc2-week-2026-09-05-v3-sft-community",
+  "plan_history": [
+    {
+      "revision": "arc2-week-2026-09-05-v1",
+      "path": "ops/archive/WEEK_PLAN_v1.md",
+      "sha256": "e48776963a6c446818f9a6927cdb560c977b992c858630e2ec7ca8e45bea9466",
+      "superseded_at_utc": "2026-09-07T12:18:11Z",
+      "reason": "User requested moving preparatory GPU work to NSU to preserve shared Kaggle quota."
+    },
+    {
+      "revision": "arc2-week-2026-09-05-v2-external",
+      "path": "ops/archive/WEEK_PLAN_v2.md",
+      "sha256": "a37b40d45d958117a5955dd13dbc0c92a70a661180d52d917bca25e079642430",
+      "superseded_at_utc": "2026-09-08T02:45:00Z",
+      "reason": "User replaced gold-chasing clone-notebook submits with leftover verified artifacts: dataset, Qwen SFT, community writeup."
+    }
+  ],
+  "migration": {
+    "id": "M0",
+    "status": "IN_PROGRESS",
+    "runbook_path": "ops/EXTERNAL_COMPUTE.md",
+    "external_baseline": null,
+    "tasks": [
+      {
+        "id": "M0-CPU",
+        "status": "COMPLETE",
+        "deliverable": "Portable runner/scorer, dynamic device/path configuration and CPU contract checks",
+        "completed_at_utc": "2026-09-07T12:57:34Z"
+      },
+      {
+        "id": "M0-ENV",
+        "status": "IN_PROGRESS",
+        "deliverable": "Pinned Linux env + hash-verified Qwen; CPU FastLanguageModel import OK; freeze on NFS"
+      },
+      {
+        "id": "M0-PILOT",
+        "status": "PENDING",
+        "deliverable": "Optional reserved one-A100 load+one-train-step smoke <=30 min before SFT; not a gold-chasing eval cache"
+      },
+      {
+        "id": "M0-BASELINE",
+        "status": "SKIPPED",
+        "deliverable": "Full-120 public candidate bank parked; not leftover criterion of revision 3"
+      }
+    ],
+    "runs": [
+      "m0-20260907T124000Z"
+    ],
+    "next_action": "M1-DATA: copy official public-train to NFS with SHA, write sft dataset manifest and eval-ID contamination check. No GPU, no submit.",
+    "completed_at_utc": null
+  },
+  "research": {
+    "id": "M1",
+    "status": "PENDING",
+    "criterion": "leftover_verified_artifacts_even_if_score_flat",
+    "clone_notebooks_as_strategy": false,
+    "base_model": "sorokin/qwen3_4b_grids15_sft139/Transformers/bfloat16/1",
+    "base_model_nsu": "models/qwen3_4b_grids15_sft139-bf16-1",
+    "path": [
+      "public-train-dataset",
+      "sft-qwen",
+      "community-writeup-notebook"
+    ],
+    "next_action": "Stage hashed public-train on NFS; do not start long SFT or Kaggle submit."
+  },
+  "compute_policy": {
+    "preparation_backend": "nsu",
+    "primary_pool": "a100",
+    "contention_max_gpu_jobs_per_project": 1,
+    "default_gpu_count": 1,
+    "default_cpu_threads": 8,
+    "default_ram_gib": 64,
+    "per_worker_vram_target_gib": 22,
+    "chunk_minutes_max": 120,
+    "pilot_minutes_max": 30,
+    "local_stage_gpu_hours_initial": 4,
+    "local_stage_gpu_hours_max_with_positive_pilot": 8,
+    "baseline_cache_gpu_hours_planning_cap": 16,
+    "initial_disk_estimate_gib": [
+      40,
+      60
+    ],
+    "confirmed_personal_storage_budget_gib": null,
+    "coordination_alias": "nsu-quadro",
+    "coordination_script": "/home/scientists/gluz_d_s/kaggle/_control/resource_queue.py",
+    "coordination_config": "/home/scientists/gluz_d_s/kaggle/_control/COORDINATION_STATUS.json",
+    "coordination_last_observed": {
+      "config_updated_at_utc": "2026-09-07T12:07:18.987476+00:00",
+      "checked_on": "2026-09-07",
+      "initialized": true,
+      "mode": "DIRECT_USER_AUTHORIZED",
+      "gpu_launches": "ALLOWED_WITH_RESOURCE_RESERVATION",
+      "slurm_required": false,
+      "note": "Live config supersedes stale SETUP_STATUS; reread before each allocation."
+    },
+    "kaggle_commit_target_minutes": 30,
+    "kaggle_commit_hard_cap_minutes": 45,
+    "kaggle_l4_quota_multiplier_observed": 2,
+    "remaining_stage_commit_quota_budget_hours": 6,
+    "revision_commit_quota_estimated_used_hours": 0,
+    "kaggle_account_remaining_gpu_quota_hours": null,
+    "kaggle_other_project_reserved_quota_hours": null,
+    "hidden_rerun_weekly_quota_accounting": "UNVERIFIED_FOR_ARC2",
+    "hidden_compute_stop_seconds": 37800,
+    "hidden_finalize_by_seconds": 42600,
+    "last_access_check": "2026-09-08T02:45:00Z nsu-quadro DIRECT_USER_AUTHORIZED; no ARC-2 lease; foreign arc-prize-2026-arc-agi-3 A100 requests RELEASED. No GPU started this revision.",
+    "usage": []
+  },
+  "validation_protocol": {
+    "version": "V2",
+    "primary_metric": "micro_exact_pass_at_2_per_test_output",
+    "secondary_metric": "legacy_task_macro_for_comparison_only",
+    "ids_sha256": "b798899dc1452d681b6849c3c1b93237ab5df6bd5193be53b90a14ef2f379155",
+    "calibration_ids": [
+      "a32d8b75",
+      "9aaea919",
+      "3a25b0d8",
+      "a47bf94d",
+      "cb2d8a2c",
+      "1ae2feb7",
+      "8e5c0c38",
+      "cbebaa4b",
+      "2c181942",
+      "5dbc8537",
+      "4a21e3da",
+      "271d71e2"
+    ],
+    "holdout_ids": [
+      "13e47133",
+      "31f7f899",
+      "b9e38dc0",
+      "3e6067c3",
+      "4e34c42c",
+      "b5ca7ac4",
+      "67e490f4",
+      "2d0172a1"
+    ],
+    "source": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-2/",
+    "holdout_limitation": "Reused across stages; disclose adaptation. Full public evaluation is a benchmark, not an untouched holdout.",
+    "s3_validation_limit": "Debug-4 only recorded, all selectors tied; V1 Calibration-12 gain not demonstrated.",
+    "champion_rule": "Any strictly higher observed public score updates champion; small differences do not prove robustness; no fixed 0.42 quantum.",
+    "cache_manifest": null
+  }
+}
