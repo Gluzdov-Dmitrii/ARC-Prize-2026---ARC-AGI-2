@@ -99,12 +99,52 @@ def test_ids_file_hash() -> None:
     assert digest == "b798899dc1452d681b6849c3c1b93237ab5df6bd5193be53b90a14ef2f379155", digest
 
 
+def test_pack_sft_no_eval_leak() -> None:
+    import hashlib
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location(
+        "pack_sft_dataset", ROOT / "scripts" / "pack_sft_dataset.py"
+    )
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    train_ids = ["aaa11111", "bbb22222"]
+    eval_ids = {"a32d8b75", "9aaea919"}
+    leaked = sorted(set(train_ids) & eval_ids)
+    assert leaked == []
+    task = {
+        "train": [{"input": [[1, 0], [0, 1]], "output": [[0, 1], [1, 0]]}],
+        "test": [{"input": [[2, 2], [2, 2]]}],
+    }
+    rows = mod.pack_task("aaa11111", task, [[[9, 9], [9, 9]]], "train")
+    kinds = {row["kind"] for row in rows}
+    assert "train_pairs" in kinds
+    assert "supervised_test" in kinds
+    joined = "\n".join(row["text"] for row in rows)
+    assert "<|im_start|>user" in joined
+    assert "a32d8b75" not in joined
+    digest = hashlib.sha256(json.dumps(rows, sort_keys=True).encode()).hexdigest()
+    assert len(digest) == 64
+
+
+def test_adapter_path_helper_skips_missing(monkeypatch=None) -> None:
+    import os
+
+    os.environ.pop("ARC2_ADAPTER_PATH", None)
+    from pathlib import Path as P
+
+    missing = P("/kaggle/input/arc2-m1-sft-adapter-v1/adapter_model.safetensors")
+    assert not missing.exists()
+
+
 def main() -> None:
     test_schema_dynamic_counts()
     test_micro_not_macro()
     test_diversity_keeps_primary()
     test_solver_cache_has_no_solutions_field()
     test_ids_file_hash()
+    test_pack_sft_no_eval_leak()
+    test_adapter_path_helper_skips_missing()
     print("cpu_contract_tests: PASS")
 
 

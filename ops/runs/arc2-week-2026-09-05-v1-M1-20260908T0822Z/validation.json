@@ -1,0 +1,27 @@
+{
+  "kernel_slug": "dmitriigluzdov/arc2-m1-sft-adapter-fork",
+  "kernel_version": 1,
+  "status": "COMPLETE",
+  "preflight": {
+    "ok": true,
+    "n_tasks": 120,
+    "n_submission_keys": 120,
+    "n_errors": 0
+  },
+  "debug4_reload_score": 2.5,
+  "debug4_selectors": {
+    "score_full_probmul_3": 2.5,
+    "score_kgmon": 2.5,
+    "score_kgmon_diversity_a2": 2.5
+  },
+  "eval_micro_pass_at_2_from_placeholders": 0.01744186046511628,
+  "n_real_attempts": 9,
+  "n_placeholder_attempts": 335,
+  "adapter_dataset": "dmitriigluzdov/arc2-m1-sft-adapter-v1",
+  "adapter_sha256": "2ef3b65720eee8e1ff20c55934dfb3a63371350d2b1e9217c2a86912e3ee1d07",
+  "notebook_sha256": "205932295e58bad5e12d5b19c0bc21598386c377c75475f004bd35356df2cf80",
+  "internet": false,
+  "competition_submit": false,
+  "ready_to_submit": true,
+  "notes": "Commit-run is debug-4 plus format-complete 120-task file. Hidden test is scored only after an explicit competition submit. No submit in this revision."
+}

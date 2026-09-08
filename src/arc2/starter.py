@@ -78,6 +78,7 @@ def main() -> None:
     parser.add_argument("--seed", type=int, default=260618)
     parser.add_argument("--max-seconds", type=float, default=1800)
     parser.add_argument("--mode", choices=["smoke", "eval", "full"], default="smoke")
+    parser.add_argument("--adapter", default=None, help="Optional train-only LoRA directory")
     parser.add_argument("--end-time", type=float, default=0.0, help="Absolute unix deadline; overrides max-seconds if >0")
     args = parser.parse_args()
 
@@ -91,6 +92,10 @@ def main() -> None:
     os.environ["ARC2_MODEL_PATH"] = args.model
     os.environ["ARC2_INPUT_PATH"] = args.input
     os.environ["ARC2_OUTPUT_DIR"] = str(output_dir / "inference_outputs")
+    if args.adapter:
+        os.environ["ARC2_ADAPTER_PATH"] = args.adapter
+    elif "ARC2_ADAPTER_PATH" not in os.environ:
+        os.environ.pop("ARC2_ADAPTER_PATH", None)
     os.environ.setdefault("PYTHONHASHSEED", str(args.seed))
     os.environ.setdefault("ARC_AUG_SEED_OFFSET", str(args.seed))
     os.environ.setdefault("UNSLOTH_DISABLE_STATISTICS", "1")

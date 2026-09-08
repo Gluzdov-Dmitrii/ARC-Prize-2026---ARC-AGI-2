@@ -10,3 +10,7 @@ kaggle.json
 .ipynb_checkpoints/
 kernels/*-out/
 ops/local_runs/m0-staging/
+data/
+*.jsonl
+ops/runs/**/unsloth_compiled_cache/
+ops/runs/**/__pycache__/

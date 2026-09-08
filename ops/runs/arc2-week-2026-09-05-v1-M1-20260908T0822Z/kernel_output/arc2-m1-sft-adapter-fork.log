@@ -1,0 +1,196 @@
+[{"stream_name":"stderr","time":11.241634948,"data":"/usr/local/lib/python3.11/dist-packages/pydevd_plugins/__init__.py:2: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools\u003c81.\n"}
+,{"stream_name":"stderr","time":11.241695885,"data":"  __import__(\"pkg_resources\").declare_namespace(__name__)\n"}
+,{"stream_name":"stderr","time":12.044330699,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":12.044359044,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":12.044361896,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":12.044364099,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":12.991246083,"data":"/usr/local/lib/python3.11/dist-packages/pydevd_plugins/__init__.py:2: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools\u003c81.\n"}
+,{"stream_name":"stderr","time":12.991272772,"data":"  __import__(\"pkg_resources\").declare_namespace(__name__)\n"}
+,{"stream_name":"stderr","time":13.260928706,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":13.260951016,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":13.260953807,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":13.260956206,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":19.956697023,"data":"Found existing installation: tensorflow 2.18.0\r\n"}
+,{"stream_name":"stdout","time":21.921670984,"data":"Uninstalling tensorflow-2.18.0:\r\n"}
+,{"stream_name":"stdout","time":39.97423516,"data":"  Successfully uninstalled tensorflow-2.18.0\r\n"}
+,{"stream_name":"stdout","time":40.727069592,"data":"Writing arc_loader.py\n"}
+,{"stream_name":"stdout","time":40.739868117,"data":"Writing arc_decoder.py\n"}
+,{"stream_name":"stdout","time":40.759556488,"data":"Writing arc_solver.py\n"}
+,{"stream_name":"stdout","time":40.770614447,"data":"Writing starter.py\n"}
+,{"stream_name":"stdout","time":98.345461342,"data":"🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.\r\n"}
+,{"stream_name":"stdout","time":145.103898897,"data":"🦥 Unsloth Zoo will now patch everything to make training faster!\r\n"}
+,{"stream_name":"stdout","time":156.447199276,"data":"[Rank 0] start!\r\n"}
+,{"stream_name":"stdout","time":156.598831474,"data":"==((====))==  Unsloth 2025.9.7: Fast Qwen3 patching. Transformers: 4.55.4.\r\n"}
+,{"stream_name":"stdout","time":156.598857048,"data":"   \\\\   /|    NVIDIA L4. Num GPUs = 1. Max memory: 22.034 GB. Platform: Linux.\r\n"}
+,{"stream_name":"stdout","time":156.598860643,"data":"O^O/ \\_/ \\    Torch: 2.8.0+cu128. CUDA: 8.9. CUDA Toolkit: 12.8. Triton: 3.4.0\r\n"}
+,{"stream_name":"stdout","time":156.598863675,"data":"\\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.32.post2. FA2 = True]\r\n"}
+,{"stream_name":"stdout","time":156.598866582,"data":" \"-____-\"     Free license: http://github.com/unslothai/unsloth\r\n"}
+,{"stream_name":"stdout","time":156.59886925,"data":"Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!\r\n"}
+,{"stream_name":"stdout","time":176.641709409,"data":"\rLoading checkpoint shards:   0%|                          | 0/2 [00:00\u003c?, ?it/s]🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.\r\n"}
+,{"stream_name":"stdout","time":197.442201954,"data":"\rLoading checkpoint shards:  50%|█████████         | 1/2 [00:39\u003c00:39, 39.74s/it]🦥 Unsloth Zoo will now patch everything to make training faster!\r\n"}
+,{"stream_name":"stdout","time":204.409010626,"data":"[Rank 1] start!\r\n"}
+,{"stream_name":"stdout","time":204.560601486,"data":"==((====))==  Unsloth 2025.9.7: Fast Qwen3 patching. Transformers: 4.55.4.\r\n"}
+,{"stream_name":"stdout","time":204.560616543,"data":"   \\\\   /|    NVIDIA L4. Num GPUs = 1. Max memory: 22.034 GB. Platform: Linux.\r\n"}
+,{"stream_name":"stdout","time":204.560619994,"data":"O^O/ \\_/ \\    Torch: 2.8.0+cu128. CUDA: 8.9. CUDA Toolkit: 12.8. Triton: 3.4.0\r\n"}
+,{"stream_name":"stdout","time":204.560622948,"data":"\\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.32.post2. FA2 = True]\r\n"}
+,{"stream_name":"stdout","time":204.560625736,"data":" \"-____-\"     Free license: http://github.com/unslothai/unsloth\r\n"}
+,{"stream_name":"stdout","time":204.560628403,"data":"Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!\r\n"}
+,{"stream_name":"stdout","time":216.726344923,"data":"\rLoading checkpoint shards:   0%|                          | 0/2 [00:00\u003c?, ?it/s]\rLoading checkpoint shards:  50%|█████████         | 1/2 [00:01\u003c00:01,  1.48s/it]\rLoading checkpoint shards: 100%|██████████████████| 2/2 [00:11\u003c00:00,  6.77s/it]\rLoading checkpoint shards: 100%|██████████████████| 2/2 [00:11\u003c00:00,  5.98s/it]\r\n"}
+,{"stream_name":"stdout","time":216.726376458,"data":"\rLoading checkpoint shards: 100%|██████████████████| 2/2 [00:59\u003c00:00, 28.19s/it]\rLoading checkpoint shards: 100%|██████████████████| 2/2 [00:59\u003c00:00, 29.92s/it]\r\n"}
+,{"stream_name":"stdout","time":220.519018637,"data":"🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.\r\n"}
+,{"stream_name":"stdout","time":224.921957764,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\r\n"}
+,{"stream_name":"stdout","time":224.921990055,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\r\n"}
+,{"stream_name":"stdout","time":225.073983017,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\r\n"}
+,{"stream_name":"stdout","time":225.074008836,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\r\n"}
+,{"stream_name":"stdout","time":239.391643791,"data":"🦥 Unsloth Zoo will now patch everything to make training faster!\r\n"}
+,{"stream_name":"stdout","time":246.155223903,"data":"[Rank 2] start!\r\n"}
+,{"stream_name":"stdout","time":246.306435537,"data":"==((====))==  Unsloth 2025.9.7: Fast Qwen3 patching. Transformers: 4.55.4.\r\n"}
+,{"stream_name":"stdout","time":246.306459778,"data":"   \\\\   /|    NVIDIA L4. Num GPUs = 1. Max memory: 22.034 GB. Platform: Linux.\r\n"}
+,{"stream_name":"stdout","time":246.30646336,"data":"O^O/ \\_/ \\    Torch: 2.8.0+cu128. CUDA: 8.9. CUDA Toolkit: 12.8. Triton: 3.4.0\r\n"}
+,{"stream_name":"stdout","time":246.306466371,"data":"\\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.32.post2. FA2 = True]\r\n"}
+,{"stream_name":"stdout","time":246.306469111,"data":" \"-____-\"     Free license: http://github.com/unslothai/unsloth\r\n"}
+,{"stream_name":"stdout","time":246.306471884,"data":"Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!\r\n"}
+,{"stream_name":"stdout","time":248.578313126,"data":"\rLoading checkpoint shards:   0%|                          | 0/2 [00:00\u003c?, ?it/s]\rLoading checkpoint shards:  50%|█████████         | 1/2 [00:01\u003c00:01,  1.41s/it]\rLoading checkpoint shards: 100%|██████████████████| 2/2 [00:02\u003c00:00,  1.04it/s]\rLoading checkpoint shards: 100%|██████████████████| 2/2 [00:02\u003c00:00,  1.03s/it]\r\n"}
+,{"stream_name":"stdout","time":256.362803499,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\r\n"}
+,{"stream_name":"stdout","time":256.362831137,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\r\n"}
+,{"stream_name":"stdout","time":263.78320191,"data":"🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.\r\n"}
+,{"stream_name":"stdout","time":282.266614872,"data":"🦥 Unsloth Zoo will now patch everything to make training faster!\r\n"}
+,{"stream_name":"stdout","time":288.86596434,"data":"[Rank 3] start!\r\n"}
+,{"stream_name":"stdout","time":289.0173283,"data":"==((====))==  Unsloth 2025.9.7: Fast Qwen3 patching. Transformers: 4.55.4.\r\n"}
+,{"stream_name":"stdout","time":289.017353745,"data":"   \\\\   /|    NVIDIA L4. Num GPUs = 1. Max memory: 22.034 GB. Platform: Linux.\r\n"}
+,{"stream_name":"stdout","time":289.017357377,"data":"O^O/ \\_/ \\    Torch: 2.8.0+cu128. CUDA: 8.9. CUDA Toolkit: 12.8. Triton: 3.4.0\r\n"}
+,{"stream_name":"stdout","time":289.017360428,"data":"\\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.32.post2. FA2 = True]\r\n"}
+,{"stream_name":"stdout","time":289.017363377,"data":" \"-____-\"     Free license: http://github.com/unslothai/unsloth\r\n"}
+,{"stream_name":"stdout","time":289.017366085,"data":"Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!\r\n"}
+,{"stream_name":"stdout","time":291.238912254,"data":"\rLoading checkpoint shards:   0%|                          | 0/2 [00:00\u003c?, ?it/s]\rLoading checkpoint shards:  50%|█████████         | 1/2 [00:01\u003c00:01,  1.40s/it]\rLoading checkpoint shards: 100%|██████████████████| 2/2 [00:02\u003c00:00,  1.04it/s]\rLoading checkpoint shards: 100%|██████████████████| 2/2 [00:02\u003c00:00,  1.03s/it]\r\n"}
+,{"stream_name":"stdout","time":299.169743199,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\r\n"}
+,{"stream_name":"stdout","time":299.169782367,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\r\n"}
+,{"stream_name":"stdout","time":432.331516396,"data":"[Rank 1] allocated 13011MB for training\r\n"}
+,{"stream_name":"stdout","time":432.331546237,"data":"[Rank 1] training stats for puzzle 36a08778: TrainOutput(global_step=128, training_loss=0.005129494238644838, metrics={'train_runtime': 199.5653, 'train_samples_per_second': 0.641, 'train_steps_per_second': 0.641, 'total_flos': 6648666941030400.0, 'train_loss': 0.005129494238644838, 'epoch': 1.0})\r\n"}
+,{"stream_name":"stdout","time":432.478378553,"data":"[Rank 1] decoding ['36a08778_0.permute4150723698.ex031524', '36a08778_0.permute6720984531.ex021543', '36a08778_0.rot90.rot90.permute7931086254.ex405132', '36a08778_0.rot90.rot90.permute9302675184.ex105324']\r\n"}
+,{"stream_name":"stdout","time":485.541694073,"data":"[Rank 1] scoring 36a08778_0.permute4150723698.ex031524 #0\r\n"}
+,{"stream_name":"stdout","time":489.815904965,"data":"[Rank 1] scoring 36a08778_0.rot90.rot90.permute9302675184.ex105324 #1\r\n"}
+,{"stream_name":"stdout","time":494.101265269,"data":"[Rank 1] decoding ['36a08778_0.rot90.permute1258796043.ex532401', '36a08778_0.rot90.permute5386701942.ex542013', '36a08778_0.rot90.rot90.rot90.permute2908315674.ex251403', '36a08778_0.rot90.rot90.rot90.permute8579032416.ex304521']\r\n"}
+,{"stream_name":"stdout","time":521.84293676,"data":"[Rank 1] scoring 36a08778_0.rot90.rot90.rot90.permute2908315674.ex251403 #0\r\n"}
+,{"stream_name":"stdout","time":526.070741157,"data":"[Rank 1] decoding ['36a08778_1.permute1602397845.ex023451', '36a08778_1.permute6827490351.ex345120', '36a08778_1.rot90.rot90.permute9180254367.ex104352', '36a08778_1.rot90.rot90.permute9368452107.ex125430']\r\n"}
+,{"stream_name":"stdout","time":600.744889863,"data":"[Rank 3] allocated 13011MB for training\r\n"}
+,{"stream_name":"stdout","time":600.744919964,"data":"[Rank 3] training stats for puzzle aa4ec2a5: TrainOutput(global_step=128, training_loss=0.0058840191923081875, metrics={'train_runtime': 294.067, 'train_samples_per_second': 0.435, 'train_steps_per_second': 0.435, 'total_flos': 1.01967536259072e+16, 'train_loss': 0.0058840191923081875, 'epoch': 1.0})\r\n"}
+,{"stream_name":"stdout","time":600.840689076,"data":"[Rank 3] decoding ['aa4ec2a5_0.permute4150723698.ex012', 'aa4ec2a5_0.permute9302675184.ex012', 'aa4ec2a5_0.rot90.rot90.permute5386701942.ex021', 'aa4ec2a5_0.rot90.rot90.permute8579032416.ex120']\r\n"}
+,{"stream_name":"stdout","time":617.876829228,"data":"[Rank 1] scoring 36a08778_1.permute1602397845.ex023451 #0\r\n"}
+,{"stream_name":"stdout","time":624.472833399,"data":"[Rank 1] scoring 36a08778_1.rot90.rot90.permute9180254367.ex104352 #0\r\n"}
+,{"stream_name":"stdout","time":631.026005793,"data":"[Rank 1] decoding ['36a08778_1.rot90.permute5436201789.ex305412', '36a08778_1.rot90.permute8024967315.ex145203', '36a08778_1.rot90.rot90.rot90.permute0986123745.ex052341', '36a08778_1.rot90.rot90.rot90.permute7068392154.ex403215']\r\n"}
+,{"stream_name":"stdout","time":631.72706576,"data":"[Rank 0] allocated 13011MB for training\r\n"}
+,{"stream_name":"stdout","time":631.727092265,"data":"[Rank 0] training stats for puzzle 0934a4d8: TrainOutput(global_step=128, training_loss=0.0036790408194065094, metrics={'train_runtime': 398.5417, 'train_samples_per_second': 0.321, 'train_steps_per_second': 0.321, 'total_flos': 1.232880211132416e+16, 'train_loss': 0.0036790408194065094, 'epoch': 1.0})\r\n"}
+,{"stream_name":"stdout","time":631.878267622,"data":"[Rank 0] decoding ['0934a4d8_0.permute4150723698.ex0312', '0934a4d8_0.permute9302675184.ex1302', '0934a4d8_0.rot90.rot90.permute5386701942.ex0213', '0934a4d8_0.rot90.rot90.permute8579032416.ex3201']\r\n"}
+,{"stream_name":"stdout","time":640.238486223,"data":"[Rank 0] scoring 0934a4d8_0.permute4150723698.ex0312 #0\r\n"}
+,{"stream_name":"stdout","time":648.905256172,"data":"[Rank 0] scoring 0934a4d8_0.permute4150723698.ex0312 #1\r\n"}
+,{"stream_name":"stdout","time":657.570853935,"data":"[Rank 0] scoring 0934a4d8_0.permute9302675184.ex1302 #1\r\n"}
+,{"stream_name":"stdout","time":666.289667672,"data":"[Rank 0] scoring 0934a4d8_0.rot90.rot90.permute5386701942.ex0213 #0\r\n"}
+,{"stream_name":"stdout","time":674.089321415,"data":"[Rank 3] scoring aa4ec2a5_0.permute4150723698.ex012 #0\r\n"}
+,{"stream_name":"stdout","time":674.945980947,"data":"[Rank 0] scoring 0934a4d8_0.rot90.rot90.permute8579032416.ex3201 #0\r\n"}
+,{"stream_name":"stdout","time":681.945551471,"data":"[Rank 3] scoring aa4ec2a5_0.rot90.rot90.permute5386701942.ex021 #0\r\n"}
+,{"stream_name":"stdout","time":683.556924913,"data":"[Rank 0] decoding ['0934a4d8_0.rot90.permute4281673590.ex0213', '0934a4d8_0.rot90.permute4950812673.ex2013', '0934a4d8_0.rot90.rot90.rot90.permute1654278039.ex3120', '0934a4d8_0.rot90.rot90.rot90.permute4965803712.ex1023']\r\n"}
+,{"stream_name":"stdout","time":689.953781628,"data":"[Rank 3] decoding ['aa4ec2a5_0.rot90.permute4281673590.ex102', 'aa4ec2a5_0.rot90.permute4950812673.ex201', 'aa4ec2a5_0.rot90.rot90.rot90.permute1654278039.ex210', 'aa4ec2a5_0.rot90.rot90.rot90.permute4965803712.ex210']\r\n"}
+,{"stream_name":"stdout","time":690.659099782,"data":"[Rank 0] scoring 0934a4d8_0.rot90.rot90.rot90.permute1654278039.ex3120 #0\r\n"}
+,{"stream_name":"stdout","time":699.277725292,"data":"[Rank 0] decoding ['0934a4d8_0.transpose.permute1602397845.ex2013', '0934a4d8_0.transpose.permute9180254367.ex1230', '0934a4d8_0.transpose.rot90.rot90.permute0986123745.ex2103', '0934a4d8_0.transpose.rot90.rot90.permute5436201789.ex2301']\r\n"}
+,{"stream_name":"stdout","time":707.584553013,"data":"[Rank 0] scoring 0934a4d8_0.transpose.permute9180254367.ex1230 #0\r\n"}
+,{"stream_name":"stdout","time":716.105650901,"data":"[Rank 0] scoring 0934a4d8_0.transpose.permute9180254367.ex1230 #1\r\n"}
+,{"stream_name":"stdout","time":724.819830641,"data":"[Rank 0] scoring 0934a4d8_0.transpose.rot90.rot90.permute5436201789.ex2301 #0\r\n"}
+,{"stream_name":"stdout","time":733.490605093,"data":"[Rank 0] decoding ['0934a4d8_0.transpose.rot90.permute4907281356.ex3210', '0934a4d8_0.transpose.rot90.permute5980213764.ex1023', '0934a4d8_0.transpose.rot90.rot90.rot90.permute6142358709.ex3120', '0934a4d8_0.transpose.rot90.rot90.rot90.permute7690351428.ex0231']\r\n"}
+,{"stream_name":"stdout","time":743.412223247,"data":"[Rank 0] scoring 0934a4d8_0.transpose.rot90.permute4907281356.ex3210 #0\r\n"}
+,{"stream_name":"stdout","time":752.126539604,"data":"[Rank 0] scoring 0934a4d8_0.transpose.rot90.rot90.rot90.permute6142358709.ex3120 #0\r\n"}
+,{"stream_name":"stdout","time":760.794130987,"data":"[Rank 0] allocated 14719MB for inference\r\n"}
+,{"stream_name":"stdout","time":760.794188393,"data":"[Rank 0] finished 0934a4d8 in 534.6s\r\n"}
+,{"stream_name":"stdout","time":760.844532051,"data":"[Rank 0] done!\r\n"}
+,{"stream_name":"stdout","time":785.762315871,"data":"[Rank 3] scoring aa4ec2a5_0.rot90.rot90.rot90.permute1654278039.ex210 #1\r\n"}
+,{"stream_name":"stdout","time":793.622833047,"data":"[Rank 3] decoding ['aa4ec2a5_0.transpose.permute1602397845.ex201', 'aa4ec2a5_0.transpose.permute9180254367.ex021', 'aa4ec2a5_0.transpose.rot90.rot90.permute0986123745.ex021', 'aa4ec2a5_0.transpose.rot90.rot90.permute5436201789.ex021']\r\n"}
+,{"stream_name":"stdout","time":865.527197139,"data":"[Rank 1] scoring 36a08778_1.rot90.rot90.rot90.permute0986123745.ex052341 #0\r\n"}
+,{"stream_name":"stdout","time":867.888684069,"data":"[Rank 3] decoding ['aa4ec2a5_0.transpose.rot90.permute4907281356.ex102', 'aa4ec2a5_0.transpose.rot90.permute5980213764.ex102', 'aa4ec2a5_0.transpose.rot90.rot90.rot90.permute6142358709.ex021', 'aa4ec2a5_0.transpose.rot90.rot90.rot90.permute7690351428.ex210']\r\n"}
+,{"stream_name":"stdout","time":872.123622732,"data":"[Rank 1] scoring 36a08778_1.rot90.rot90.rot90.permute7068392154.ex403215 #0\r\n"}
+,{"stream_name":"stdout","time":878.825175925,"data":"[Rank 1] decoding ['36a08778_0.transpose.permute4950812673.ex132450', '36a08778_0.transpose.permute9316478025.ex301425', '36a08778_0.transpose.rot90.rot90.permute4281673590.ex401253', '36a08778_0.transpose.rot90.rot90.permute7284135096.ex214530']\r\n"}
+,{"stream_name":"stdout","time":913.309205732,"data":"[Rank 1] scoring 36a08778_0.transpose.rot90.rot90.permute4281673590.ex401253 #0\r\n"}
+,{"stream_name":"stdout","time":917.583335877,"data":"[Rank 1] scoring 36a08778_0.transpose.rot90.rot90.permute7284135096.ex214530 #1\r\n"}
+,{"stream_name":"stdout","time":921.918225253,"data":"[Rank 1] decoding ['36a08778_0.transpose.rot90.permute1654278039.ex204513', '36a08778_0.transpose.rot90.permute3170468295.ex120534', '36a08778_0.transpose.rot90.rot90.rot90.permute4965803712.ex420135', '36a08778_0.transpose.rot90.rot90.rot90.permute7568409321.ex152304']\r\n"}
+,{"stream_name":"stdout","time":941.476143601,"data":"[Rank 3] allocated 14102MB for inference\r\n"}
+,{"stream_name":"stdout","time":941.476201456,"data":"[Rank 3] finished aa4ec2a5 in 641.2s\r\n"}
+,{"stream_name":"stdout","time":941.476216243,"data":"[Rank 3] done!\r\n"}
+,{"stream_name":"stdout","time":966.279221461,"data":"[Rank 1] scoring 36a08778_0.transpose.rot90.permute3170468295.ex120534 #1\r\n"}
+,{"stream_name":"stdout","time":970.604574699,"data":"[Rank 1] decoding ['36a08778_1.transpose.permute5980213764.ex420135', '36a08778_1.transpose.permute6703249158.ex254310', '36a08778_1.transpose.rot90.rot90.permute4907281356.ex105324', '36a08778_1.transpose.rot90.rot90.permute7562830149.ex320145']\r\n"}
+,{"stream_name":"stdout","time":1099.18943561,"data":"[Rank 2] allocated 13150MB for training\r\n"}
+,{"stream_name":"stdout","time":1099.189478713,"data":"[Rank 2] training stats for puzzle 981571dc: TrainOutput(global_step=128, training_loss=7.444719085469842e-05, metrics={'train_runtime': 832.8532, 'train_samples_per_second': 0.154, 'train_steps_per_second': 0.154, 'total_flos': 2.385848559992832e+16, 'train_loss': 7.444719085469842e-05, 'epoch': 1.0})\r\n"}
+,{"stream_name":"stdout","time":1099.58617486,"data":"[Rank 2] decoding ['981571dc_0.permute4150723698.ex312', '981571dc_0.permute9302675184.ex302', '981571dc_0.rot90.rot90.permute5386701942.ex213', '981571dc_0.rot90.rot90.permute8579032416.ex201']\r\n"}
+,{"stream_name":"stdout","time":1136.370497255,"data":"[Rank 1] scoring 36a08778_1.transpose.permute5980213764.ex420135 #0\r\n"}
+,{"stream_name":"stdout","time":1143.06594015,"data":"[Rank 1] scoring 36a08778_1.transpose.rot90.rot90.permute4907281356.ex105324 #0\r\n"}
+,{"stream_name":"stdout","time":1149.715351501,"data":"[Rank 1] scoring 36a08778_1.transpose.rot90.rot90.permute4907281356.ex105324 #1\r\n"}
+,{"stream_name":"stdout","time":1156.366591085,"data":"[Rank 1] scoring 36a08778_1.transpose.rot90.rot90.permute7562830149.ex320145 #0\r\n"}
+,{"stream_name":"stdout","time":1163.019245065,"data":"[Rank 1] decoding ['36a08778_1.transpose.rot90.permute7613284905.ex503421', '36a08778_1.transpose.rot90.permute7690351428.ex502134', '36a08778_1.transpose.rot90.rot90.rot90.permute6142358709.ex051324', '36a08778_1.transpose.rot90.rot90.rot90.permute6150492378.ex450312']\r\n"}
+,{"stream_name":"stdout","time":1196.2876892,"data":"[Rank 2] scoring 981571dc_0.permute4150723698.ex312 #0\r\n"}
+,{"stream_name":"stdout","time":1210.493697927,"data":"[Rank 2] decoding ['981571dc_0.rot90.permute4281673590.ex213', '981571dc_0.rot90.permute4950812673.ex013', '981571dc_0.rot90.rot90.rot90.permute1654278039.ex120', '981571dc_0.rot90.rot90.rot90.permute4965803712.ex023']\r\n"}
+,{"stream_name":"stdout","time":1306.795130833,"data":"[Rank 2] decoding ['981571dc_0.transpose.permute1602397845.ex013', '981571dc_0.transpose.permute9180254367.ex230', '981571dc_0.transpose.rot90.rot90.permute0986123745.ex103', '981571dc_0.transpose.rot90.rot90.permute5436201789.ex301']\r\n"}
+,{"stream_name":"stdout","time":1320.24499741,"data":"[Rank 1] allocated 13053MB for inference\r\n"}
+,{"stream_name":"stdout","time":1320.245026871,"data":"[Rank 1] finished 36a08778 in 1094.0s\r\n"}
+,{"stream_name":"stdout","time":1320.245030705,"data":"[Rank 1] done!\r\n"}
+,{"stream_name":"stdout","time":1403.468696001,"data":"[Rank 2] decoding ['981571dc_0.transpose.rot90.permute4907281356.ex210', '981571dc_0.transpose.rot90.permute5980213764.ex023', '981571dc_0.transpose.rot90.rot90.rot90.permute6142358709.ex120', '981571dc_0.transpose.rot90.rot90.rot90.permute7690351428.ex231']\r\n"}
+,{"stream_name":"stdout","time":1499.209033774,"data":"[Rank 2] allocated 17109MB for inference\r\n"}
+,{"stream_name":"stdout","time":1499.209071906,"data":"[Rank 2] finished 981571dc in 1241.7s\r\n"}
+,{"stream_name":"stdout","time":1499.209076169,"data":"[Rank 2] done!\r\n"}
+,{"stream_name":"stdout","time":1526.172650177,"data":"*** Load solutions from '/kaggle/input/competitions/arc-prize-2026-arc-agi-2/arc-agi_evaluation_solutions.json'...\n"}
+,{"stream_name":"stdout","time":1526.172694627,"data":"*** Generating submission for 5 outputs...\n"}
+,{"stream_name":"stdout","time":1526.172697972,"data":"*** Benchmark selection algorithms...\n"}
+,{"stream_name":"stdout","time":1526.172700117,"data":"ALL_CORRECT: 0.00264 -  0.00054 30x30 [981571dc_0.rot90.rot90.permute8579032416.ex201.out0]\n"}
+,{"stream_name":"stdout","time":1526.172702051,"data":"ALL_CORRECT: 0.00056 -  0.00054 30x30 [981571dc_0.rot90.rot90.permute5386701942.ex213.out0]\n"}
+,{"stream_name":"stdout","time":1526.172703892,"data":"ALL_CORRECT: 0.00005 -  0.00054 30x30 [981571dc_0.transpose.rot90.permute4907281356.ex210.out0]\n"}
+,{"stream_name":"stdout","time":1526.17270581,"data":"ALL_CORRECT: 0.00025 -  0.00054 30x30 [981571dc_0.permute9302675184.ex302.out0]\n"}
+,{"stream_name":"stdout","time":1526.172707933,"data":"ALL_CORRECT: 0.00001 -  0.00054 30x30 [981571dc_0.rot90.permute4950812673.ex013.out0]\n"}
+,{"stream_name":"stdout","time":1526.172709957,"data":"ALL_CORRECT: 0.00045 -  0.00054 30x30 [981571dc_0.transpose.rot90.rot90.rot90.permute7690351428.ex231.out0]\n"}
+,{"stream_name":"stdout","time":1526.172711855,"data":"ALL_CORRECT: 0.00017 -  0.00054 30x30 [981571dc_0.transpose.permute1602397845.ex013.out0]\n"}
+,{"stream_name":"stdout","time":1526.172713809,"data":"ALL_CORRECT: 0.00027 -  0.00054 30x30 [981571dc_0.rot90.rot90.rot90.permute1654278039.ex120.out0]\n"}
+,{"stream_name":"stdout","time":1526.172715722,"data":"ALL_CORRECT: 0.00127 -  0.00054 30x30 [981571dc_0.transpose.rot90.rot90.permute5436201789.ex301.out0]\n"}
+,{"stream_name":"stdout","time":1526.172717635,"data":"ALL_CORRECT: 0.00005 -  0.00054 30x30 [981571dc_0.rot90.permute4281673590.ex213.out0]\n"}
+,{"stream_name":"stdout","time":1526.172719544,"data":"ALL_CORRECT: 0.00065 -  0.00054 30x30 [981571dc_0.transpose.permute9180254367.ex230.out0]\n"}
+,{"stream_name":"stdout","time":1526.172721504,"data":"ALL_CORRECT: 0.00027 -  0.00054 30x30 [981571dc_0.transpose.rot90.rot90.permute0986123745.ex103.out0]\n"}
+,{"stream_name":"stdout","time":1526.172723427,"data":"ALL_CORRECT: 0.00044 -  0.00054 30x30 [981571dc_0.rot90.rot90.rot90.permute4965803712.ex023.out0]\n"}
+,{"stream_name":"stdout","time":1526.172725264,"data":"ALL_CORRECT: 0.00021 -  0.00054 30x30 [981571dc_0.transpose.rot90.rot90.rot90.permute6142358709.ex120.out0]\n"}
+,{"stream_name":"stdout","time":1526.172727225,"data":"ALL_CORRECT: 0.00346 -  0.00054 30x30 [981571dc_0.permute4150723698.ex312.out0]\n"}
+,{"stream_name":"stdout","time":1526.172729058,"data":"ALL_CORRECT: 0.00003 -  0.00054 30x30 [981571dc_0.transpose.rot90.permute5980213764.ex023.out0]\n"}
+,{"stream_name":"stdout","time":1526.172731006,"data":"ALL_CORRECT: 0.00059 -  2.51804 26x27 [aa4ec2a5_0.rot90.permute4950812673.ex201.out0]\n"}
+,{"stream_name":"stdout","time":1526.172732882,"data":"ALL_CORRECT: 0.00323 -  2.51804 26x27 [aa4ec2a5_0.transpose.rot90.rot90.rot90.permute6142358709.ex021.out0]\n"}
+,{"stream_name":"stdout","time":1526.172734819,"data":"ALL_CORRECT: 0.00227 -  2.51804 26x27 [aa4ec2a5_0.rot90.permute4281673590.ex102.out0]\n"}
+,{"stream_name":"stdout","time":1526.172737628,"data":"ALL_CORRECT: 0.00224 -  2.51804 26x27 [aa4ec2a5_0.transpose.rot90.rot90.permute0986123745.ex021.out0]\n"}
+,{"stream_name":"stdout","time":1526.172739581,"data":"ALL_CORRECT: 0.03294 -  2.51804 26x27 [aa4ec2a5_0.permute9302675184.ex012.out0]\n"}
+,{"stream_name":"stdout","time":1526.172741455,"data":"ALL_CORRECT: 0.00231 -  2.51804 26x27 [aa4ec2a5_0.transpose.rot90.rot90.rot90.permute7690351428.ex210.out0]\n"}
+,{"stream_name":"stdout","time":1526.17274335,"data":"ALL_CORRECT: 0.00182 -  2.51804 26x27 [aa4ec2a5_0.transpose.rot90.rot90.permute5436201789.ex021.out0]\n"}
+,{"stream_name":"stdout","time":1526.172745242,"data":"ALL_CORRECT: 0.03268 -  2.51804 26x27 [aa4ec2a5_0.permute4150723698.ex012.out0]\n"}
+,{"stream_name":"stdout","time":1526.172750175,"data":"ALL_CORRECT: 0.00917 -  2.98563 16x16 [36a08778_0.transpose.permute9316478025.ex301425.out0]\n"}
+,{"stream_name":"stdout","time":1526.172752388,"data":"ALL_CORRECT: 0.00006 -  2.98563 16x16 [36a08778_0.transpose.rot90.rot90.rot90.permute4965803712.ex420135.out0]\n"}
+,{"stream_name":"stdout","time":1526.172754318,"data":"ALL_CORRECT: 0.35248 -  2.98563 16x16 [36a08778_0.transpose.rot90.permute3170468295.ex120534.out0]\n"}
+,{"stream_name":"stdout","time":1526.17275622,"data":"ALL_CORRECT: 0.00004 -  2.98563 16x16 [36a08778_0.transpose.rot90.rot90.rot90.permute7568409321.ex152304.out0]\n"}
+,{"stream_name":"stdout","time":1526.172758182,"data":"ALL_CORRECT: 0.05178 -  2.98563 16x16 [36a08778_0.rot90.permute1258796043.ex532401.out0]\n"}
+,{"stream_name":"stdout","time":1526.172760065,"data":"ALL_CORRECT: 0.00000 -  2.98563 16x16 [36a08778_0.permute6720984531.ex021543.out0]\n"}
+,{"stream_name":"stdout","time":1526.172761918,"data":"ALL_CORRECT: 0.31403 -  2.98563 16x16 [36a08778_0.rot90.rot90.permute9302675184.ex105324.out0]\n"}
+,{"stream_name":"stdout","time":1526.17276381,"data":"ALL_CORRECT: 0.16437 -  2.98563 16x16 [36a08778_0.transpose.rot90.permute1654278039.ex204513.out0]\n"}
+,{"stream_name":"stdout","time":1526.172765737,"data":"ALL_CORRECT: 0.09008 -  2.98563 16x16 [36a08778_0.rot90.rot90.permute7931086254.ex405132.out0]\n"}
+,{"stream_name":"stdout","time":1526.172767612,"data":"ALL_CORRECT: 0.00694 -  2.98563 16x16 [36a08778_0.rot90.permute5386701942.ex542013.out0]\n"}
+,{"stream_name":"stdout","time":1526.17276948,"data":"ALL_CORRECT: 0.00062 -  2.98563 16x16 [36a08778_0.transpose.permute4950812673.ex132450.out0]\n"}
+,{"stream_name":"stdout","time":1526.172771355,"data":"ALL_CORRECT: 0.00000 -  2.98563 16x16 [36a08778_0.permute4150723698.ex031524.out0]\n"}
+,{"stream_name":"stdout","time":1526.172773282,"data":" subkeys: 36/84\n"}
+,{"stream_name":"stdout","time":1526.172775058,"data":" avg correct beam score:  0.02996\n"}
+,{"stream_name":"stdout","time":1526.172776823,"data":" max correct beam score:  0.35248\n"}
+,{"stream_name":"stdout","time":1526.172778576,"data":"{'36a08778_0', '981571dc_0', 'aa4ec2a5_0'}\n"}
+,{"stream_name":"stdout","time":1526.172780418,"data":" acc:   2.5/  4 ('score_full_probmul_3')\n"}
+,{"stream_name":"stdout","time":1526.172782209,"data":"{'36a08778_0', '981571dc_0', 'aa4ec2a5_0'}\n"}
+,{"stream_name":"stdout","time":1526.172784029,"data":" acc:   2.5/  4 ('score_kgmon')\n"}
+,{"stream_name":"stdout","time":1526.172785898,"data":"{'36a08778_0', '981571dc_0', 'aa4ec2a5_0'}\n"}
+,{"stream_name":"stdout","time":1526.172787803,"data":" acc:   2.5/  4 ('score_kgmon_diversity_a2')\n"}
+,{"stream_name":"stdout","time":1526.172789763,"data":"*** Reload score: 2.5\n"}
+,{"stream_name":"stderr","time":1530.215936146,"data":"/usr/local/lib/python3.11/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":1530.215964941,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":1530.28166296,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":1530.591417064,"data":"[NbConvertApp] Writing 76554 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":1532.739794283,"data":"/usr/local/lib/python3.11/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":1532.739836265,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":1532.786764314,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1533.907328888,"data":"[NbConvertApp] Writing 509105 bytes to __results__.html\n"}
+,{"stream_name":"stderr","time":1536.774114248,"data":"/usr/local/lib/python3.11/dist-packages/nbdev/doclinks.py:20: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools\u003c81.\n"}
+,{"stream_name":"stderr","time":1536.774135722,"data":"  import pkg_resources,importlib\n"}
+]

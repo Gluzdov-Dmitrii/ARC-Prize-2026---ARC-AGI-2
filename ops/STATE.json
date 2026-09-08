@@ -409,6 +409,24 @@
       "at_utc": "2026-09-08T02:59:42Z",
       "type": "state_correction",
       "detail": "remaining_stage_commit_quota_budget_hours 6 -> 0 so STATE matches WEEK_PLAN revision 3 (no 6 quota-h allocated to parked S4-S7). Live queue recheck: no ARC-2 lease."
+    },
+    {
+      "at_utc": "2026-09-08T08:04:30Z",
+      "type": "migration_progress",
+      "stage_id": "M0",
+      "detail": "M0-SMOKE COMPLETE on reserved A100 GPU-61c0078d: 1 step, loss 0.026, peak 11.7 GiB, 39.5s. Lease RELEASED."
+    },
+    {
+      "at_utc": "2026-09-08T08:11:00Z",
+      "type": "research_progress",
+      "stage_id": "M1",
+      "detail": "M1-DATA packed sft-public-train-v1 (5308 examples, contamination []). M1-SFT 160 steps, train_loss 0.187, adapter sha256 2ef3b65720eee8e1ff20c55934dfb3a63371350d2b1e9217c2a86912e3ee1d07. Lease RELEASED. No competition submit."
+    },
+    {
+      "at_utc": "2026-09-08T08:58:54Z",
+      "type": "ready_to_submit",
+      "stage_id": "M1",
+      "detail": "Private kernel dmitriigluzdov/arc2-m1-sft-adapter-fork v1 COMPLETE; format OK 120 tasks; debug-4 reload 2.5/4; adapter dataset dmitriigluzdov/arc2-m1-sft-adapter-v1. Competition submit not authorized."
     }
   ],
   "plan_revision": "arc2-week-2026-09-05-v3-sft-community",
@@ -430,7 +448,7 @@
   ],
   "migration": {
     "id": "M0",
-    "status": "IN_PROGRESS",
+    "status": "COMPLETE",
     "runbook_path": "ops/EXTERNAL_COMPUTE.md",
     "external_baseline": null,
     "tasks": [
@@ -442,13 +460,15 @@
       },
       {
         "id": "M0-ENV",
-        "status": "IN_PROGRESS",
-        "deliverable": "Pinned Linux env + hash-verified Qwen; CPU FastLanguageModel import OK; freeze on NFS"
+        "status": "COMPLETE",
+        "deliverable": "Pinned Linux env + hash-verified Qwen; CPU FastLanguageModel import OK; freeze on NFS",
+        "completed_at_utc": "2026-09-08T08:04:00Z"
       },
       {
         "id": "M0-PILOT",
-        "status": "PENDING",
-        "deliverable": "Optional reserved one-A100 load+one-train-step smoke <=30 min before SFT; not a gold-chasing eval cache"
+        "status": "COMPLETE",
+        "deliverable": "Reserved one-A100 load+one-train-step smoke; recipe, lease, heartbeat",
+        "completed_at_utc": "2026-09-08T08:04:30Z"
       },
       {
         "id": "M0-BASELINE",
@@ -459,22 +479,28 @@
     "runs": [
       "m0-20260907T124000Z"
     ],
-    "next_action": "M1-DATA: copy official public-train to NFS with SHA, write sft dataset manifest and eval-ID contamination check. No GPU, no submit.",
-    "completed_at_utc": null
+    "next_action": "M0 closed: env+smoke receipts exist. Continue M1 notebook packaging; no competition submit.",
+    "completed_at_utc": "2026-09-08T08:11:00Z"
   },
   "research": {
     "id": "M1",
-    "status": "PENDING",
+    "status": "READY_TO_SUBMIT",
     "criterion": "leftover_verified_artifacts_even_if_score_flat",
     "clone_notebooks_as_strategy": false,
     "base_model": "sorokin/qwen3_4b_grids15_sft139/Transformers/bfloat16/1",
     "base_model_nsu": "models/qwen3_4b_grids15_sft139-bf16-1",
+    "dataset_id": "sft-public-train-v1",
+    "dataset_examples_sha256": "e9f43ed0e0db5f118d4e8e45a44aeddcaeeb9c302538e5a437217264d20c4bee",
+    "sft_run_id": "arc2-m1-sft-20260908T0805Z",
+    "adapter_sha256": "2ef3b65720eee8e1ff20c55934dfb3a63371350d2b1e9217c2a86912e3ee1d07",
+    "adapter_bytes": 1057197776,
+    "train_loss": 0.18705277591943742,
     "path": [
       "public-train-dataset",
       "sft-qwen",
       "community-writeup-notebook"
     ],
-    "next_action": "Stage hashed public-train on NFS; do not start long SFT or Kaggle submit."
+    "next_action": "Candidate READY_TO_SUBMIT: kernel dmitriigluzdov/arc2-m1-sft-adapter-fork v1, format OK 120 tasks, debug-4 reload 2.5/4. Wait for the user to name this exact competition submit. Do not send."
   },
   "competition_submit": {
     "authorized": false,
@@ -524,8 +550,26 @@
     "hidden_rerun_weekly_quota_accounting": "UNVERIFIED_FOR_ARC2",
     "hidden_compute_stop_seconds": 37800,
     "hidden_finalize_by_seconds": 42600,
-    "last_access_check": "2026-09-08T02:59:42Z nsu-quadro DIRECT_USER_AUTHORIZED; no ARC-2 request (WAITING/RESERVED/RUNNING). Foreign arc-prize-2026-arc-agi-3 A100 requests remain RELEASED; not cancelled. No GPU started this revision.",
-    "usage": []
+    "last_access_check": "2026-09-08T08:12:21Z nsu-quadro DIRECT_USER_AUTHORIZED; ARC-2 smoke+SFT RELEASED; foreign ARC-3 rows RELEASED.",
+    "usage": [
+      {
+        "run_id": "arc2-m0-smoke-20260908T0825Z",
+        "pool": "a100",
+        "gpu_uuid": "GPU-61c0078d-a4a6-37a2-3aba-0378e7794c46",
+        "elapsed_s": 39.51,
+        "peak_allocated_gib": 11.724,
+        "state": "RELEASED"
+      },
+      {
+        "run_id": "arc2-m1-sft-20260908T0805Z",
+        "pool": "a100",
+        "gpu_uuid": "GPU-61c0078d-a4a6-37a2-3aba-0378e7794c46",
+        "elapsed_s": 222.63,
+        "peak_allocated_gib": 11.732,
+        "max_steps": 160,
+        "state": "RELEASED"
+      }
+    ]
   },
   "validation_protocol": {
     "version": "V2",

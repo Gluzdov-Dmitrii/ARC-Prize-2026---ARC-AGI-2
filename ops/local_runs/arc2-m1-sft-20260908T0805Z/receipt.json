@@ -1,0 +1,63 @@
+{
+  "run_id": "arc2-m1-sft-20260908T0805Z",
+  "mode": "sft",
+  "recipe_id": "sft-public-train-v1-lora256",
+  "dataset_id": "sft-public-train-v1",
+  "dataset_examples_sha256": "e9f43ed0e0db5f118d4e8e45a44aeddcaeeb9c302538e5a437217264d20c4bee",
+  "n_examples_used": 5132,
+  "n_examples_skipped_short": 0,
+  "max_steps": 160,
+  "max_seq_length": 2048,
+  "metrics": {
+    "train_runtime": 194.3948,
+    "train_samples_per_second": 3.292,
+    "train_steps_per_second": 0.823,
+    "total_flos": 1.524173932588032e+16,
+    "train_loss": 0.18705277591943742,
+    "epoch": 0.12470771628994544
+  },
+  "gpu": {
+    "cuda_available": true,
+    "device": "NVIDIA A100 80GB PCIe",
+    "allocated_gib": 9.763,
+    "reserved_gib": 11.875,
+    "peak_allocated_gib": 11.732
+  },
+  "elapsed_s": 222.63,
+  "adapter_files": {
+    "README.md": {
+      "bytes": 5384,
+      "sha256": "bfe8cd3cc414fd9142496b0df516c8f4b214359b6d920ff644b81e70ea9653fe"
+    },
+    "adapter_config.json": {
+      "bytes": 1187,
+      "sha256": "3c0694eb6d009e526b8ad03f23e92bc3cdd32f88fcfc2c8c14eb2a62b1fd8891"
+    },
+    "adapter_model.safetensors": {
+      "bytes": 1057197776,
+      "sha256": "2ef3b65720eee8e1ff20c55934dfb3a63371350d2b1e9217c2a86912e3ee1d07"
+    },
+    "added_tokens.json": {
+      "bytes": 68,
+      "sha256": "cf1224e6a594b51a34b8b9ca6c6dce3026683777521f361e37526b8a33258bce"
+    },
+    "special_tokens_map.json": {
+      "bytes": 367,
+      "sha256": "f4f79e08d97f4d1c87f8d89264f525c8789da3b73b3bb55d1e12f692f41a7b1b"
+    },
+    "tokenizer.json": {
+      "bytes": 1830,
+      "sha256": "d3e238e62482407b3303047a6577a868bafba90c3ba7a61f9100d9b97fe6a9c5"
+    },
+    "tokenizer_config.json": {
+      "bytes": 1015,
+      "sha256": "3a1b6ffb47cea18fd423468703de7632a8ffcbd979088d6a36c89c6e5a423cd4"
+    },
+    "vocab.json": {
+      "bytes": 94,
+      "sha256": "8141a61e47eceec466524bc178bc9c6d5076b7d1b18b456fbd3fdf66cae57f82"
+    }
+  },
+  "visible_devices": "GPU-61c0078d-a4a6-37a2-3aba-0378e7794c46",
+  "notes": "Train-only adapter. Do not bake public evaluation solutions into a scored kernel."
+}

@@ -169,3 +169,21 @@ CORRECTION: S4–S7 в `STATE.json` переведены из PENDING в SKIPPED
 
 CORRECTION: 2026-09-08T02:59:42Z verification of revision 3. `remaining_stage_commit_quota_budget_hours` was still 6 (V2 S4–S7 Kaggle commit ceiling) while `WEEK_PLAN.md` allocates none; set to 0. Live `resource_queue.py status` via `nsu-quadro`: zero ARC-2 requests; five foreign ARC-3 A100 rows all RELEASED (not cancelled). Plan SHA still `dbe8feb198063d80cd60d8f636a96dc8be47d89041ee35971b1427eb0dff5f23`. No M1-DATA, GPU, or Kaggle submit.
 
+### M1-DATA + M0-SMOKE + M1-SFT — 2026-09-08T08:11:00Z — local artifacts, no submit
+- Hypothesis: train-only LoRA on already-downloaded Qwen leaves a hashed adapter even if LB is later flat.
+- Only changed factor: packed public-train SFT + LoRA r=256 matching TTT; per-task TTT kept.
+- Dataset: `sft-public-train-v1`, 1000 train tasks, 5308 examples, holdout 32 **training** IDs, `contamination_eval_ids_in_train=[]`. examples SHA-256 `e9f43ed0e0db5f118d4e8e45a44aeddcaeeb9c302538e5a437217264d20c4bee`.
+- Smoke `arc2-m0-smoke-20260908T0825Z`: 1 step, loss 0.026, peak 11.724 GiB, 39.51 s, A100 `GPU-61c0078d-a4a6-37a2-3aba-0378e7794c46`, lease RELEASED.
+- SFT `arc2-m1-sft-20260908T0805Z`: 160 steps, seq 2048, 5132 examples used, train_loss 0.187, 222.63 s, peak 11.732 GiB, same GPU, lease RELEASED.
+- Adapter `adapter_model.safetensors` 1057197776 B, SHA-256 `2ef3b65720eee8e1ff20c55934dfb3a63371350d2b1e9217c2a86912e3ee1d07`.
+- Notebook source assembled: `kernels/arc2-m1-sft-adapter-fork/` from S2 4×L4 starter + current `arc_solver.py` adapter hook. Internet OFF. Competition submit not authorized.
+- Artifact paths: `ops/local_runs/arc2-m0-smoke-20260908T0825Z/`, `ops/local_runs/arc2-m1-sft-20260908T0805Z/`, `configs/sft-public-train-v1.manifest.json`, `ops/WRITEUP.md`.
+
+### M1 — 2026-09-08T08:58:54Z — READY_TO_SUBMIT (no competition send)
+- Kernel: `dmitriigluzdov/arc2-m1-sft-adapter-fork` v1 COMPLETE, Internet OFF, 4×L4, adapter dataset `dmitriigluzdov/arc2-m1-sft-adapter-v1`.
+- Preflight: format OK, 120 tasks, 0 errors. Debug-4 reload **2.5/4** (all selectors tied). Commit runtime ~37 min.
+- Adapter SHA-256 `2ef3b65720eee8e1ff20c55934dfb3a63371350d2b1e9217c2a86912e3ee1d07`. Notebook SHA-256 `205932295e58bad5e12d5b19c0bc21598386c377c75475f004bd35356df2cf80`.
+- Evidence: `ops/runs/arc2-week-2026-09-05-v1-M1-20260908T0822Z/validation.json`.
+- Competition submit: **not sent**. S3 `56068142` not retried. Wait for an explicit named submit of this kernel v1.
+
+
