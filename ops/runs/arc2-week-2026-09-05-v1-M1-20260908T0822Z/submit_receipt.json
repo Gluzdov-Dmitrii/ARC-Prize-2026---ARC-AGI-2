@@ -1,0 +1,16 @@
+{
+  "competition": "arc-prize-2026-arc-agi-2",
+  "kernel_slug": "dmitriigluzdov/arc2-m1-sft-adapter-fork",
+  "kernel_version": 1,
+  "file": "submission.json",
+  "message": "[M1][20260908][e2f8b6d3] sft-adapter",
+  "submission_id": 56095203,
+  "submission_status": "PENDING",
+  "sent_at_utc": "2026-09-08T09:09:49Z",
+  "cli_response": "0 submissions remaining today.",
+  "quota_after": {
+    "numToday": 1,
+    "numTotal": 8
+  },
+  "retry": false
+}

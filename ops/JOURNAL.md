@@ -186,4 +186,12 @@ CORRECTION: 2026-09-08T02:59:42Z verification of revision 3. `remaining_stage_co
 - Evidence: `ops/runs/arc2-week-2026-09-05-v1-M1-20260908T0822Z/validation.json`.
 - Competition submit: **not sent**. S3 `56068142` not retried. Wait for an explicit named submit of this kernel v1.
 
+### M1 — 2026-09-08T09:09:49Z — one authorized competition submit
+- User authorized this exact attempt: kernel `dmitriigluzdov/arc2-m1-sft-adapter-fork` v1, file `submission.json`.
+- One CLI call: `kaggle competitions submit arc-prize-2026-arc-agi-2 -k dmitriigluzdov/arc2-m1-sft-adapter-fork -v 1 -f submission.json -m "[M1][20260908][e2f8b6d3] sft-adapter"`.
+- Result: `submission_id=56095203`, status PENDING (hidden rerun). CLI: `0 submissions remaining today.` Quota after: numToday=1, numTotal=8.
+- Git HEAD `e2f8b6d3bcda5cd210d9303470158ac41686242f`. No retry. No kernel re-push.
+- S3 `56068142` observed COMPLETE **27.22** on the same submissions list (below champion 30.56). Not retried.
+- Receipt: `ops/runs/arc2-week-2026-09-05-v1-M1-20260908T0822Z/submit_receipt.json`.
+
 

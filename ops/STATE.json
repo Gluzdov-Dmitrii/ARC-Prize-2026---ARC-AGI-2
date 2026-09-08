@@ -133,6 +133,20 @@
       "public_score": 30.28,
       "notebook_slug": "dmitriigluzdov/arc2-s2-nvarc-seed-fork",
       "script_version_id": null
+    },
+    {
+      "submission_id": 56068142,
+      "status": "COMPLETE",
+      "public_score": 27.22,
+      "notebook_slug": "dmitriigluzdov/arc2-s3-selector-fork",
+      "script_version_id": null
+    },
+    {
+      "submission_id": 56095203,
+      "status": "PENDING",
+      "public_score": null,
+      "notebook_slug": "dmitriigluzdov/arc2-m1-sft-adapter-fork",
+      "script_version_id": null
     }
   ],
   "experiments": [
@@ -204,14 +218,14 @@
     },
     {
       "id": "S3",
-      "status": "SUBMITTING",
+      "status": "COMPLETE",
       "attempts": [
         {
           "attempt_id": "arc2-week-2026-09-05-v1-S3-20260907T030959Z",
           "stage_id": "S3",
           "started_at_utc": "2026-09-07T03:14:18Z",
-          "finished_at_utc": null,
-          "attempt_status": "SUBMITTING",
+          "finished_at_utc": "2026-09-08T09:09:49Z",
+          "attempt_status": "COMPLETE",
           "hypothesis": "Diversity-aware attempt_2 adds exact solves without changing kgmon attempt_1.",
           "only_changed_factor": "attempt_2 selector score_kgmon_diversity_a2; generation/seeds/budgets frozen from S2",
           "base_notebook_sha256": "3ac4406b4c6eeae088b2b51f194dcbbb9edc4479fb4bfceb3e4d1be4ad8fad95",
@@ -224,14 +238,14 @@
           "commit_runtime_seconds": 1602,
           "hidden_runtime_seconds": null,
           "submission_id": 56068142,
-          "submission_status": "PENDING",
-          "public_score": null,
+          "submission_status": "COMPLETE",
+          "public_score": 27.22,
           "public_rank": null,
           "team_count": 1819,
           "gold_cutoff_rank": 13,
           "gold_cutoff_score": 33.47,
           "artifacts_path": "ops/runs/arc2-week-2026-09-05-v1-S3-20260907T030959Z",
-          "notes": "Commit-run COMPLETE ~1602s debug-4, reload 3.0/4, selectors tied 3.0/4. Submit 56068142 PENDING kernel v1 message [S3][20260907][895babb3] selector-a2. No retry."
+          "notes": "Scored COMPLETE 27.22 vs champion 30.56; rejected as champion. Observed during M1 submit reconciliation; no retry."
         }
       ]
     },
@@ -262,6 +276,53 @@
       "skip_reason": "NO_NEW_CANDIDATE",
       "notes": "Parked in revision 3: portfolio-from-clones would consume submits without a local dataset/SFT leftover.",
       "attempts": []
+    },
+    {
+      "id": "M1",
+      "status": "SUBMITTING",
+      "attempts": [
+        {
+          "attempt_id": "arc2-week-2026-09-05-v1-M1-20260908T0822Z",
+          "stage_id": "M1",
+          "started_at_utc": "2026-09-08T08:22:00Z",
+          "finished_at_utc": null,
+          "attempt_status": "SUBMITTING",
+          "hypothesis": "Train-only Qwen LoRA adapter plus per-task TTT can lift the NVARC starter without cloning another public notebook.",
+          "only_changed_factor": "optional PEFT adapter load from dmitriigluzdov/arc2-m1-sft-adapter-v1; TTT kept",
+          "base_notebook_sha256": "205932295e58bad5e12d5b19c0bc21598386c377c75475f004bd35356df2cf80",
+          "git_head": "e2f8b6d3bcda5cd210d9303470158ac41686242f",
+          "kernel_slug": "dmitriigluzdov/arc2-m1-sft-adapter-fork",
+          "kernel_version": 1,
+          "script_version_id": null,
+          "config_sha256": "f0f83d95068ff78750b19538837f7a4090966b5c1700c3c2040bb7832c72449f",
+          "preflight_status": "PASS",
+          "commit_runtime_seconds": 1537,
+          "hidden_runtime_seconds": null,
+          "submission_id": 56095203,
+          "submission_status": "PENDING",
+          "public_score": null,
+          "public_rank": null,
+          "team_count": 1819,
+          "gold_cutoff_rank": 13,
+          "gold_cutoff_score": 33.47,
+          "artifacts_path": "ops/runs/arc2-week-2026-09-05-v1-M1-20260908T0822Z",
+          "notes": "One authorized code-submit of kernel v1. Message [M1][20260908][e2f8b6d3] sft-adapter. Hidden rerun PENDING. Do not retry. S3 56068142 not retried.",
+          "plan_revision": "arc2-week-2026-09-05-v3-sft-community",
+          "local_run_ids": [
+            "arc2-m0-smoke-20260908T0825Z",
+            "arc2-m1-sft-20260908T0805Z"
+          ],
+          "validation_report_path": "ops/runs/arc2-week-2026-09-05-v1-M1-20260908T0822Z/validation.json",
+          "external_baseline_hash": "2ef3b65720eee8e1ff20c55934dfb3a63371350d2b1e9217c2a86912e3ee1d07",
+          "local_gpu_hours": 0.073,
+          "kaggle_quota_before_hours": null,
+          "kaggle_quota_after_hours": null,
+          "kaggle_quota_debit_estimated_hours": null,
+          "candidate_coverage": null,
+          "fallback_rate": null,
+          "gate_decision": "USER_AUTHORIZED_SUBMIT"
+        }
+      ]
     }
   ],
   "events": [
@@ -427,6 +488,20 @@
       "type": "ready_to_submit",
       "stage_id": "M1",
       "detail": "Private kernel dmitriigluzdov/arc2-m1-sft-adapter-fork v1 COMPLETE; format OK 120 tasks; debug-4 reload 2.5/4; adapter dataset dmitriigluzdov/arc2-m1-sft-adapter-v1. Competition submit not authorized."
+    },
+    {
+      "at_utc": "2026-09-08T09:09:49Z",
+      "type": "competition_submit",
+      "stage_id": "M1",
+      "attempt_id": "arc2-week-2026-09-05-v1-M1-20260908T0822Z",
+      "detail": "One-shot kaggle competitions submit kernel dmitriigluzdov/arc2-m1-sft-adapter-fork v1 file submission.json. submission_id=56095203 PENDING. Quota numToday=1. No retry."
+    },
+    {
+      "at_utc": "2026-09-08T09:09:49Z",
+      "type": "state_correction",
+      "stage_id": "S3",
+      "attempt_id": "arc2-week-2026-09-05-v1-S3-20260907T030959Z",
+      "detail": "S3 56068142 is COMPLETE 27.22 (was recorded PENDING). No retry."
     }
   ],
   "plan_revision": "arc2-week-2026-09-05-v3-sft-community",
@@ -484,7 +559,7 @@
   },
   "research": {
     "id": "M1",
-    "status": "READY_TO_SUBMIT",
+    "status": "SUBMITTING",
     "criterion": "leftover_verified_artifacts_even_if_score_flat",
     "clone_notebooks_as_strategy": false,
     "base_model": "sorokin/qwen3_4b_grids15_sft139/Transformers/bfloat16/1",
@@ -500,15 +575,26 @@
       "sft-qwen",
       "community-writeup-notebook"
     ],
-    "next_action": "Candidate READY_TO_SUBMIT: kernel dmitriigluzdov/arc2-m1-sft-adapter-fork v1, format OK 120 tasks, debug-4 reload 2.5/4. Wait for the user to name this exact competition submit. Do not send."
+    "next_action": "M1 submission_id=56095203 PENDING hidden rerun. Observe only. Do not retry. Do not kernel-push.",
+    "submission_id": 56095203,
+    "kernel_slug": "dmitriigluzdov/arc2-m1-sft-adapter-fork",
+    "kernel_version": 1
   },
   "competition_submit": {
-    "authorized": false,
+    "authorized": true,
+    "authorized_attempt": "arc2-week-2026-09-05-v1-M1-20260908T0822Z",
     "kernel_push_is_submit": false,
+    "sent_at_utc": "2026-09-08T09:09:49Z",
+    "submission_id": 56095203,
+    "submission_status": "PENDING",
+    "kernel_slug": "dmitriigluzdov/arc2-m1-sft-adapter-fork",
+    "kernel_version": 1,
+    "message": "[M1][20260908][e2f8b6d3] sft-adapter",
     "do_not_retry_submission_ids": [
-      56068142
+      56068142,
+      56095203
     ],
-    "reason": "Revision 3 leftover-artifacts path. No competition submit unless the user later names one exact attempt."
+    "reason": "User authorized one named send of M1 kernel v1. Observe hidden rerun only."
   },
   "compute_policy": {
     "preparation_backend": "nsu",
