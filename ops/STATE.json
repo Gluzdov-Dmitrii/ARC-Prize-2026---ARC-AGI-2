@@ -237,22 +237,30 @@
     },
     {
       "id": "S4",
-      "status": "PENDING",
+      "status": "SKIPPED",
+      "skip_reason": "NO_NEW_CANDIDATE",
+      "notes": "Parked in revision 3: clone/seed LB path is not the leftover-artifact criterion.",
       "attempts": []
     },
     {
       "id": "S5",
-      "status": "PENDING",
+      "status": "SKIPPED",
+      "skip_reason": "NO_NEW_CANDIDATE",
+      "notes": "Parked in revision 3: TRM clone-notebook is not the strategy.",
       "attempts": []
     },
     {
       "id": "S6",
-      "status": "PENDING",
+      "status": "SKIPPED",
+      "skip_reason": "NO_NEW_CANDIDATE",
+      "notes": "Parked in revision 3: VARC clone-notebook is not the strategy.",
       "attempts": []
     },
     {
       "id": "S7",
-      "status": "PENDING",
+      "status": "SKIPPED",
+      "skip_reason": "NO_NEW_CANDIDATE",
+      "notes": "Parked in revision 3: portfolio-from-clones would consume submits without a local dataset/SFT leftover.",
       "attempts": []
     }
   ],
@@ -462,6 +470,14 @@
       "community-writeup-notebook"
     ],
     "next_action": "Stage hashed public-train on NFS; do not start long SFT or Kaggle submit."
+  },
+  "competition_submit": {
+    "authorized": false,
+    "kernel_push_is_submit": false,
+    "do_not_retry_submission_ids": [
+      56068142
+    ],
+    "reason": "Revision 3 leftover-artifacts path. No competition submit unless the user later names one exact attempt."
   },
   "compute_policy": {
     "preparation_backend": "nsu",

@@ -165,3 +165,5 @@ CORRECTION: Git HEAD line above had a corrupted control character; canonical val
 - M0 факты сохранены: Qwen на NFS (tar SHA `cee6e64f…`), torch 2.6.0+cu124, unsloth 2025.9.7 import OK. Очередь 2026-09-08: нет ARC-2 lease (чужие ARC-3 smoke RELEASED). GPU не запускался.
 - Следующий локальный шаг: M1-DATA — official public-train на NFS с SHA + SFT manifest + проверка, что eval IDs не в train. Длинный SFT и Kaggle submit в этом ходе не стартовали.
 
+CORRECTION: S4–S7 в `STATE.json` переведены из PENDING в SKIPPED (`NO_NEW_CANDIDATE`). Очередь 2026-09-08 повторно: нет ARC-2 lease; чужие A100 smoke RELEASED. `competition_submit.authorized=false`. Коммит плана `28dc968` уже на `origin/main`.
+
