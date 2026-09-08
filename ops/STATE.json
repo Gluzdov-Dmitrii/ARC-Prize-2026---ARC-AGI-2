@@ -404,6 +404,11 @@
       "type": "plan_revised",
       "detail": "Revision 3: leftover artifacts over gold-chasing. S4+ clone stages parked. M1 dataset then SFT of transferred Qwen. No ARC-2 GPU lease open. No submit.",
       "evidence_path": "ops/WEEK_PLAN.md"
+    },
+    {
+      "at_utc": "2026-09-08T02:59:42Z",
+      "type": "state_correction",
+      "detail": "remaining_stage_commit_quota_budget_hours 6 -> 0 so STATE matches WEEK_PLAN revision 3 (no 6 quota-h allocated to parked S4-S7). Live queue recheck: no ARC-2 lease."
     }
   ],
   "plan_revision": "arc2-week-2026-09-05-v3-sft-community",
@@ -512,14 +517,14 @@
     "kaggle_commit_target_minutes": 30,
     "kaggle_commit_hard_cap_minutes": 45,
     "kaggle_l4_quota_multiplier_observed": 2,
-    "remaining_stage_commit_quota_budget_hours": 6,
+    "remaining_stage_commit_quota_budget_hours": 0,
     "revision_commit_quota_estimated_used_hours": 0,
     "kaggle_account_remaining_gpu_quota_hours": null,
     "kaggle_other_project_reserved_quota_hours": null,
     "hidden_rerun_weekly_quota_accounting": "UNVERIFIED_FOR_ARC2",
     "hidden_compute_stop_seconds": 37800,
     "hidden_finalize_by_seconds": 42600,
-    "last_access_check": "2026-09-08T02:45:00Z nsu-quadro DIRECT_USER_AUTHORIZED; no ARC-2 lease; foreign arc-prize-2026-arc-agi-3 A100 requests RELEASED. No GPU started this revision.",
+    "last_access_check": "2026-09-08T02:59:42Z nsu-quadro DIRECT_USER_AUTHORIZED; no ARC-2 request (WAITING/RESERVED/RUNNING). Foreign arc-prize-2026-arc-agi-3 A100 requests remain RELEASED; not cancelled. No GPU started this revision.",
     "usage": []
   },
   "validation_protocol": {

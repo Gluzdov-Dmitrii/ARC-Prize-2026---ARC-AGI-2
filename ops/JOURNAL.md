@@ -167,3 +167,5 @@ CORRECTION: Git HEAD line above had a corrupted control character; canonical val
 
 CORRECTION: S4–S7 в `STATE.json` переведены из PENDING в SKIPPED (`NO_NEW_CANDIDATE`). Очередь 2026-09-08 повторно: нет ARC-2 lease; чужие A100 smoke RELEASED. `competition_submit.authorized=false`. Коммит плана `28dc968` уже на `origin/main`.
 
+CORRECTION: 2026-09-08T02:59:42Z verification of revision 3. `remaining_stage_commit_quota_budget_hours` was still 6 (V2 S4–S7 Kaggle commit ceiling) while `WEEK_PLAN.md` allocates none; set to 0. Live `resource_queue.py status` via `nsu-quadro`: zero ARC-2 requests; five foreign ARC-3 A100 rows all RELEASED (not cancelled). Plan SHA still `dbe8feb198063d80cd60d8f636a96dc8be47d89041ee35971b1427eb0dff5f23`. No M1-DATA, GPU, or Kaggle submit.
+
