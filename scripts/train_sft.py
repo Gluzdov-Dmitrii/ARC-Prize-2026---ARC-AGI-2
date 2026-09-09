@@ -114,6 +114,7 @@ def main() -> None:
     parser.add_argument("--split", default="train")
     parser.add_argument("--max-examples", type=int, default=0)
     parser.add_argument("--max-steps", type=int, default=0)
+    parser.add_argument("--num-epochs", type=float, default=0)
     parser.add_argument("--max-seq-length", type=int, default=0)
     parser.add_argument("--mode", choices=["smoke", "sft"], default="sft")
     parser.add_argument("--run-id", required=True)
@@ -131,7 +132,7 @@ def main() -> None:
         max_steps = recipe["smoke"]["max_steps"]
         max_examples = recipe["smoke"]["max_examples"]
     else:
-        max_steps = args.max_steps or int(os.environ.get("ARC2_SFT_MAX_STEPS", "200"))
+        max_steps = args.max_steps or int(os.environ.get("ARC2_SFT_MAX_STEPS", "0"))
         max_examples = args.max_examples or None
         if max_examples == 0:
             max_examples = None
@@ -141,6 +142,9 @@ def main() -> None:
         max_examples = args.max_examples
     if args.max_steps:
         max_steps = args.max_steps
+    num_epochs = args.num_epochs or float(train_cfg.get("num_train_epochs") or 0)
+    if args.mode == "smoke":
+        num_epochs = 0
 
     dataset_dir = args.dataset_dir
     manifest = json.loads((dataset_dir / "manifest.json").read_text(encoding="utf-8"))
@@ -180,7 +184,7 @@ def main() -> None:
     adapter_dir = out / "adapter"
     adapter_dir.mkdir(parents=True, exist_ok=True)
 
-    train_args = UnslothTrainingArguments(
+    trainer_kwargs = dict(
         output_dir=str(out / "trainer_state"),
         per_device_train_batch_size=int(train_cfg["per_device_train_batch_size"]),
         gradient_accumulation_steps=int(train_cfg["gradient_accumulation_steps"]),
@@ -193,14 +197,20 @@ def main() -> None:
         bf16=bool(train_cfg["bf16"]),
         fp16=bool(train_cfg["fp16"]),
         seed=int(train_cfg["seed"]),
-        max_steps=int(max_steps),
-        logging_steps=1 if args.mode == "smoke" else 10,
+        logging_steps=1 if args.mode == "smoke" else 20,
         save_strategy="no",
         report_to="none",
         dataloader_num_workers=0,
         gradient_checkpointing=True,
         remove_unused_columns=False,
     )
+    if args.mode == "smoke" or max_steps:
+        trainer_kwargs["max_steps"] = int(max_steps)
+    elif num_epochs:
+        trainer_kwargs["num_train_epochs"] = float(num_epochs)
+    else:
+        trainer_kwargs["max_steps"] = 200
+    train_args = UnslothTrainingArguments(**trainer_kwargs)
     collator = QwenDataCollatorForCompletionOnlyLM(tokenizer=tokenizer, mlm=False)
     trainer = UnslothFixedTrainer(
         model=model,
@@ -211,6 +221,19 @@ def main() -> None:
     train_result = trainer.train()
     model.save_pretrained(str(adapter_dir))
     tokenizer.save_pretrained(str(adapter_dir))
+    from peft import get_peft_model_state_dict
+    from safetensors.torch import save_file
+
+    ttt_state = {
+        key: value.detach().contiguous().cpu()
+        for key, value in get_peft_model_state_dict(model, adapter_name="default").items()
+    }
+    ttt_path = adapter_dir / "adapter_ttt.safetensors"
+    save_file(ttt_state, str(ttt_path))
+    (adapter_dir / "adapter_ttt_keys.json").write_text(
+        json.dumps({"n_keys": len(ttt_state), "keys_head": list(ttt_state.keys())[:24]}, indent=2) + "\n",
+        encoding="utf-8",
+    )
 
     adapter_files = {}
     for path in sorted(adapter_dir.rglob("*")):
@@ -228,6 +251,8 @@ def main() -> None:
         "n_examples_used": len(tokenized),
         "n_examples_skipped_short": skipped,
         "max_steps": max_steps,
+        "num_train_epochs": num_epochs,
+        "n_ttt_keys": len(ttt_state),
         "max_seq_length": train_cfg["max_seq_length"],
         "metrics": dict(getattr(train_result, "metrics", {}) or {}),
         "gpu": gpu_mem_gib(),

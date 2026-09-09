@@ -194,4 +194,19 @@ CORRECTION: 2026-09-08T02:59:42Z verification of revision 3. `remaining_stage_co
 - S3 `56068142` observed COMPLETE **27.22** on the same submissions list (below champion 30.56). Not retried.
 - Receipt: `ops/runs/arc2-week-2026-09-05-v1-M1-20260908T0822Z/submit_receipt.json`.
 
+### M1 — 2026-09-09T00:00:00Z — COMPLETE
+- Submission `56095203` scored public **30.56** (COMPLETE). Tie with champion `56004028`. Delta vs S2 30.28: **+0.28**.
+- Kernel: `dmitriigluzdov/arc2-m1-sft-adapter-fork` v1. Message `[M1][20260908][e2f8b6d3] sft-adapter`.
+- Commit-run logs had **no** `[adapter] loaded`. M1 30.56 may be NVARC/seed variance, not proven SFT lift. M1 SFT was 160 steps / 0.12 epoch, train_loss 0.187.
+- Decision: champion unchanged on a tie. Do not retry `56095203`. S3 `56068142` 27.22 not retried.
+
+### M2-SFT — 2026-09-09T06:05:00Z — local 2-epoch adapter, no submit
+- Hypothesis: two epochs on the same train-only corpus plus a reliable adapter load can beat the M1 tie.
+- Only changed factor: 2-epoch LoRA (`configs/sft_recipe_v2.json`), TTT-shaped `adapter_ttt.safetensors`, solver path/receipt; per-task TTT kept.
+- Dataset: same `sft-public-train-v1`, 5132 examples used, examples SHA-256 `e9f43ed0e0db5f118d4e8e45a44aeddcaeeb9c302538e5a437217264d20c4bee`.
+- SFT `arc2-m2-sft-20260909T0605Z`: 2.0 epochs, train_loss **0.05831**, 3004 s, peak 11.732 GiB, A100 `GPU-61c0078d-a4a6-37a2-3aba-0378e7794c46`, lease RELEASED. RTX 3080 10 GB is below that peak.
+- `adapter_ttt.safetensors` 1057197744 B, SHA-256 `3225701eacd6aafeee257a54fc9c1b33676e0e1625d88d7ba5a7ee50e38fe9e1`.
+- Notebook: `kernels/arc2-m2-sft-adapter/` original English markdown, no CJK. Dataset `dmitriigluzdov/arc2-m2-sft-adapter-v1` READY.
+- Competition submit: **not sent**. Kernel push is not a submit.
+
 

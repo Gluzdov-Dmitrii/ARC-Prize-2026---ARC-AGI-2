@@ -31,4 +31,12 @@ Packed corpus `sft-public-train-v1`: 5308 examples, examples SHA-256 `e9f43ed0e0
 
 ## Notebook
 
-`scripts/build_kaggle_notebook.py` copies the S2 4×L4 starter and inlines current `arc_loader.py` / `arc_decoder.py` / `arc_solver.py`. Competition submit is a separate user command. Kernel push is not a submit.
+`scripts/build_kaggle_notebook.py` copies the S2 4×L4 starter, replaces the Chinese markdown with a short original English note, and inlines current `arc_loader.py` / `arc_decoder.py` / `arc_solver.py`. Competition submit is a separate user command. Kernel push is not a submit.
+
+## M2 (2-epoch adapter)
+
+- Same train-only corpus `sft-public-train-v1` (examples SHA-256 `e9f43ed0e0db5f118d4e8e45a44aeddcaeeb9c302538e5a437217264d20c4bee`).
+- Recipe `configs/sft_recipe_v2.json`: 2 epochs, seq 2048, LoRA `r=256`.
+- Run `arc2-m2-sft-20260909T0605Z` on one A100: 2566 steps, train_loss **0.0583**, 3004 s, peak 11.7 GiB. RTX 3080 10 GB is below that peak.
+- `adapter_ttt.safetensors` 1057197744 B, SHA-256 `3225701eacd6aafeee257a54fc9c1b33676e0e1625d88d7ba5a7ee50e38fe9e1`. Receipt: `ops/local_runs/arc2-m2-sft-20260909T0605Z/receipt.json`.
+- Kaggle dataset `dmitriigluzdov/arc2-m2-sft-adapter-v1`. Notebook `kernels/arc2-m2-sft-adapter/` (title `ARC-AGI-2 public-train LoRA`). The solver writes `adapter_load.json` so a missed load is visible in logs.

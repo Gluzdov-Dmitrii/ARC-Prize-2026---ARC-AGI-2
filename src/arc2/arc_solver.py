@@ -22,46 +22,150 @@ from pathlib import Path
 
 import bz2
 import pickle
+import sys
+import json
 
 logging.disable(logging.WARNING)
+
+ADAPTER_WEIGHT_NAMES = (
+    "adapter_ttt.safetensors",
+    "adapter_model.safetensors",
+    "adapter_model.bin",
+)
 
 
 def resolve_adapter_path():
     env = os.environ.get("ARC2_ADAPTER_PATH", "").strip()
-    candidates = [env] if env else []
-    candidates.extend(
+    roots = []
+    if env:
+        roots.append(Path(env))
+    roots.extend(
         [
-            "/kaggle/input/arc2-m1-sft-adapter-v1",
-            "/kaggle/input/arc2-m1-sft-adapter-v1/adapter",
+            Path("/kaggle/input/arc2-m2-sft-adapter-v1"),
+            Path("/kaggle/input/arc2-m2-sft-adapter-v1/adapter"),
+            Path("/kaggle/input/arc2-m1-sft-adapter-v1"),
+            Path("/kaggle/input/arc2-m1-sft-adapter-v1/adapter"),
         ]
     )
-    for candidate in candidates:
-        if not candidate:
+    kaggle_input = Path("/kaggle/input")
+    if kaggle_input.is_dir():
+        for name in ADAPTER_WEIGHT_NAMES:
+            for path in sorted(kaggle_input.rglob(name)):
+                roots.append(path.parent)
+    seen = set()
+    for root in roots:
+        key = str(root)
+        if not key or key in seen:
             continue
-        root = Path(candidate)
-        if (root / "adapter_model.safetensors").exists() or (root / "adapter_model.bin").exists():
+        seen.add(key)
+        if any((root / name).exists() for name in ADAPTER_WEIGHT_NAMES):
             return root
     return None
+
+
+def _candidate_key_names(key: str) -> list[str]:
+    names = [key]
+    for prefix in ("base_model.model.", "base_model.", "model."):
+        if key.startswith(prefix):
+            names.append(key[len(prefix) :])
+        else:
+            names.append(prefix + key)
+    return names
+
+
+def align_adapter_state(loaded: dict, target_keys) -> dict:
+    target = set(target_keys)
+    aligned = {}
+    used = set()
+    for key, value in loaded.items():
+        if key in target and key not in used:
+            aligned[key] = value
+            used.add(key)
+            continue
+        for candidate in _candidate_key_names(key):
+            if candidate in target and candidate not in used:
+                aligned[candidate] = value
+                used.add(candidate)
+                break
+    return aligned
+
+
+def _write_adapter_receipt(payload: dict) -> None:
+    text = json.dumps(payload, indent=2) + "\n"
+    destinations = [Path("adapter_load.json")]
+    working = Path("/kaggle/working")
+    if working.is_dir():
+        destinations.append(working / "adapter_load.json")
+    output_dir = os.environ.get("ARC2_OUTPUT_DIR")
+    if output_dir:
+        destinations.append(Path(output_dir).parent / "adapter_load.json")
+    for path in destinations:
+        try:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(text, encoding="utf-8")
+        except OSError:
+            continue
 
 
 def load_optional_sft_adapter(model, default_weights):
     """Replace random LoRA with a train-only adapter when a path is present."""
     root = resolve_adapter_path()
+    payload = {
+        "found": root is not None,
+        "root": str(root) if root is not None else None,
+        "kaggle_input": sorted(str(p) for p in Path("/kaggle/input").iterdir()) if Path("/kaggle/input").is_dir() else [],
+    }
     if root is None:
+        message = "[adapter] not found; using random LoRA init"
+        print(message, flush=True)
+        print(message, file=sys.stderr, flush=True)
+        _write_adapter_receipt(payload)
         return default_weights
-    safetensors_path = root / "adapter_model.safetensors"
-    bin_path = root / "adapter_model.bin"
-    if safetensors_path.exists():
+    weight_path = None
+    for name in ADAPTER_WEIGHT_NAMES:
+        candidate = root / name
+        if candidate.exists():
+            weight_path = candidate
+            break
+    if weight_path is None:
+        payload["error"] = "no weight file"
+        _write_adapter_receipt(payload)
+        return default_weights
+    if weight_path.suffix == ".safetensors":
         from safetensors.torch import load_file
 
-        loaded = load_file(str(safetensors_path), device="cpu")
-    elif bin_path.exists():
-        loaded = torch.load(str(bin_path), map_location="cpu")
+        loaded = load_file(str(weight_path), device="cpu")
     else:
-        raise FileNotFoundError(f"ARC2_ADAPTER_PATH has no adapter_model: {root}")
-    set_peft_model_state_dict(model, loaded, adapter_name="default")
+        loaded = torch.load(str(weight_path), map_location="cpu")
+    target_keys = list(default_weights.keys())
+    aligned = align_adapter_state(loaded, target_keys)
+    payload.update(
+        {
+            "weight_file": str(weight_path),
+            "n_loaded": len(loaded),
+            "n_target": len(target_keys),
+            "n_aligned": len(aligned),
+            "loaded_head": list(loaded.keys())[:8],
+            "target_head": target_keys[:8],
+        }
+    )
+    if not aligned:
+        payload["error"] = "zero overlapping keys"
+        message = f"[adapter] key mismatch file={weight_path} loaded={len(loaded)} target={len(target_keys)}"
+        print(message, flush=True)
+        print(message, file=sys.stderr, flush=True)
+        _write_adapter_receipt(payload)
+        return default_weights
+    set_peft_model_state_dict(model, aligned, adapter_name="default")
     refreshed = get_peft_model_state_dict(model, adapter_name="default")
-    print(f"[adapter] loaded {root} keys={len(refreshed)}", flush=True)
+    payload["n_refreshed"] = len(refreshed)
+    message = (
+        f"[adapter] loaded {weight_path} aligned={len(aligned)}/{len(target_keys)} "
+        f"refreshed={len(refreshed)}"
+    )
+    print(message, flush=True)
+    print(message, file=sys.stderr, flush=True)
+    _write_adapter_receipt(payload)
     return {k: v.clone().detach() for k, v in refreshed.items()}
 
 
@@ -111,9 +215,8 @@ class UnslothFixedTrainer(UnslothTrainer):
                 loss = self.label_smoother(outputs, labels)
         else:
             loss = outputs["loss"] if isinstance(outputs, dict) else outputs[0]
-        # 🔧 KEY FIX: Clone the loss tensor before in-place operations
         if hasattr(loss, "clone"):
-            loss = loss.clone()  # Converts view tensor to independent tensor
+            loss = loss.clone()
         # Now safe for DDP gradient scaling
         if self.accelerator.num_processes > 1:
             loss = loss * self.accelerator.num_processes
