@@ -214,4 +214,13 @@ CORRECTION: 2026-09-08T02:59:42Z verification of revision 3. `remaining_stage_co
 - Git HEAD `5baa629d3f3a63753272a617cf6df87fcd5973b6`. Internet OFF, 4×L4, adapter dataset `dmitriigluzdov/arc2-m2-sft-adapter-v1`.
 - Competition submit: **not sent**. Wait COMPLETE then preflight. Do not retry M1 `56095203` or S3 `56068142`.
 
+### M2 — 2026-09-09T10:07:26Z — one authorized competition submit
+- Kernel `dmitriigluzdov/arc-agi-2-public-train-lora` v1 COMPLETE (~32 min). Internet OFF, 4×L4.
+- Adapter **loaded** on all 4 ranks: `adapter_ttt.safetensors` aligned 506/506. Receipt `kernel_output/adapter_load.json`.
+- Preflight: format OK, 120 tasks, 0 errors. Debug-4 hits same as M1: `36a08778_0`, `981571dc_0`, `aa4ec2a5_0` (placeholders elsewhere). Commit runtime ~1562 s last rank.
+- One CLI call: `kaggle competitions submit ... -k dmitriigluzdov/arc-agi-2-public-train-lora -v 1 -f submission.json -m "[M2][20260909][5baa629d] sft-e2"`.
+- Result: `submission_id=56119847` PENDING. CLI: `0 submissions remaining today.` No retry.
+- Do not retry `56095203` (M1 30.56) or `56068142` (S3 27.22).
+- Receipt: `ops/runs/arc2-week-2026-09-05-v1-M2-20260909T0923Z/submit_receipt.json`.
+
 

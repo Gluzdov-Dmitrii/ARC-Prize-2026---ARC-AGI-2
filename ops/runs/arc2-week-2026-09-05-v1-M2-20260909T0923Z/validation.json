@@ -1,0 +1,28 @@
+{
+  "kernel_slug": "dmitriigluzdov/arc-agi-2-public-train-lora",
+  "kernel_version": 1,
+  "status": "COMPLETE",
+  "preflight": {
+    "ok": true,
+    "n_tasks": 120,
+    "n_submission_keys": 120,
+    "n_errors": 0
+  },
+  "debug4_hits": [
+    "36a08778_0",
+    "981571dc_0",
+    "aa4ec2a5_0"
+  ],
+  "eval_micro_pass_at_2_from_placeholders": 0.01744186046511628,
+  "n_real_attempts": 9,
+  "n_placeholder_attempts": 335,
+  "adapter_dataset": "dmitriigluzdov/arc2-m2-sft-adapter-v1",
+  "adapter_sha256": "3225701eacd6aafeee257a54fc9c1b33676e0e1625d88d7ba5a7ee50e38fe9e1",
+  "adapter_loaded": true,
+  "adapter_aligned": "506/506",
+  "notebook_sha256": "acd5412ca9cb1cfe2bb95ab26570ece483988ba71152a28daedcd2f3159c7dce",
+  "internet": false,
+  "competition_submit": false,
+  "ready_to_submit": true,
+  "notes": "Commit-run debug-4 plus format-complete 120-task file. Adapter loaded on all 4 ranks. Hidden test scored only after explicit competition submit."
+}

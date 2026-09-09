@@ -1,0 +1,23 @@
+{
+  "competition": "arc-prize-2026-arc-agi-2",
+  "kernel_slug": "dmitriigluzdov/arc-agi-2-public-train-lora",
+  "kernel_version": 1,
+  "file": "submission.json",
+  "message": "[M2][20260909][5baa629d] sft-e2",
+  "submission_id": 56119847,
+  "submission_status": "PENDING",
+  "sent_at_utc": "2026-09-09T10:07:26Z",
+  "cli_response": "0 submissions remaining today.",
+  "quota_after": {
+    "numToday": 1,
+    "numTotal": 8
+  },
+  "retry": false,
+  "adapter_loaded": true,
+  "adapter_aligned": "506/506",
+  "do_not_retry_submission_ids": [
+    56068142,
+    56095203,
+    56119847
+  ]
+}
