@@ -101,7 +101,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--title", default="ARC-AGI-2 public-train LoRA")
-    parser.add_argument("--slug", default="dmitriigluzdov/arc2-m2-sft-adapter")
+    parser.add_argument("--slug", default="dmitriigluzdov/arc-agi-2-public-train-lora")
     parser.add_argument("--adapter-dataset", default="dmitriigluzdov/arc2-m2-sft-adapter-v1")
     parser.add_argument("--private", action="store_true", default=True)
     parser.add_argument("--public", action="store_true")

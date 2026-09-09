@@ -326,20 +326,20 @@
     },
     {
       "id": "M2",
-      "status": "PREPARING",
+      "status": "KERNEL_RUNNING",
       "attempts": [
         {
           "attempt_id": "arc2-week-2026-09-05-v1-M2-20260909T0923Z",
           "stage_id": "M2",
           "started_at_utc": "2026-09-09T09:23:00Z",
           "finished_at_utc": null,
-          "attempt_status": "PREPARING",
+          "attempt_status": "KERNEL_RUNNING",
           "hypothesis": "Two-epoch train-only LoRA plus a reliable adapter load can lift the NVARC starter beyond the M1 tie.",
           "only_changed_factor": "2-epoch adapter adapter_ttt.safetensors + adapter path/receipt; original English markdown; TTT kept",
           "base_notebook_sha256": "acd5412ca9cb1cfe2bb95ab26570ece483988ba71152a28daedcd2f3159c7dce",
-          "git_head": null,
-          "kernel_slug": "dmitriigluzdov/arc2-m2-sft-adapter",
-          "kernel_version": null,
+          "git_head": "5baa629d3f3a63753272a617cf6df87fcd5973b6",
+          "kernel_slug": "dmitriigluzdov/arc-agi-2-public-train-lora",
+          "kernel_version": 1,
           "script_version_id": null,
           "config_sha256": "3225701eacd6aafeee257a54fc9c1b33676e0e1625d88d7ba5a7ee50e38fe9e1",
           "preflight_status": null,
@@ -353,7 +353,7 @@
           "gold_cutoff_rank": 13,
           "gold_cutoff_score": 33.47,
           "artifacts_path": "ops/runs/arc2-week-2026-09-05-v1-M2-20260909T0923Z",
-          "notes": "Dataset dmitriigluzdov/arc2-m2-sft-adapter-v1 READY. Kernel push is not a submit. User authorized one later named send of this kernel after COMPLETE+preflight.",
+          "notes": "Kaggle slugified the title to arc-agi-2-public-train-lora (metadata id arc2-m2-sft-adapter was ignored). v1 RUNNING. Dataset dmitriigluzdov/arc2-m2-sft-adapter-v1. Kernel push is not a submit.",
           "plan_revision": "arc2-week-2026-09-05-v3-sft-community",
           "local_run_ids": [
             "arc2-m2-sft-20260909T0605Z"
@@ -568,6 +568,13 @@
       "stage_id": "M2",
       "attempt_id": "arc2-week-2026-09-05-v1-M2-20260909T0923Z",
       "detail": "Private dataset dmitriigluzdov/arc2-m2-sft-adapter-v1 READY (adapter_ttt.safetensors 1057197744 B). Publishable notebook kernels/arc2-m2-sft-adapter. Kernel push pending. No competition submit yet."
+    },
+    {
+      "at_utc": "2026-09-09T09:32:20Z",
+      "type": "kernel_running",
+      "stage_id": "M2",
+      "attempt_id": "arc2-week-2026-09-05-v1-M2-20260909T0923Z",
+      "detail": "kaggle kernels push created dmitriigluzdov/arc-agi-2-public-train-lora v1; status RUNNING. Push is not a submit."
     }
   ],
   "plan_revision": "arc2-week-2026-09-05-v3-sft-community",
@@ -625,7 +632,7 @@
   },
   "research": {
     "id": "M2",
-    "status": "PREPARING",
+    "status": "KERNEL_RUNNING",
     "criterion": "leftover_verified_artifacts_even_if_score_flat",
     "clone_notebooks_as_strategy": false,
     "base_model": "sorokin/qwen3_4b_grids15_sft139/Transformers/bfloat16/1",
@@ -641,10 +648,10 @@
       "sft-qwen-2epoch",
       "community-writeup-notebook"
     ],
-    "next_action": "Push private kernel dmitriigluzdov/arc2-m2-sft-adapter; wait COMPLETE; preflight; one authorized submit. Do not retry 56095203 or 56068142.",
+    "next_action": "Wait kernel COMPLETE; preflight; one authorized submit of dmitriigluzdov/arc-agi-2-public-train-lora v1. Do not retry 56095203 or 56068142.",
     "submission_id": null,
-    "kernel_slug": "dmitriigluzdov/arc2-m2-sft-adapter",
-    "kernel_version": null,
+    "kernel_slug": "dmitriigluzdov/arc-agi-2-public-train-lora",
+    "kernel_version": 1,
     "kaggle_dataset": "dmitriigluzdov/arc2-m2-sft-adapter-v1"
   },
   "competition_submit": {

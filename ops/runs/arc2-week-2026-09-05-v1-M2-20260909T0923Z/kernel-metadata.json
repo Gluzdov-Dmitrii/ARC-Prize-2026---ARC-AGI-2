@@ -1,5 +1,5 @@
 {
-  "id": "dmitriigluzdov/arc2-m2-sft-adapter",
+  "id": "dmitriigluzdov/arc-agi-2-public-train-lora",
   "title": "ARC-AGI-2 public-train LoRA",
   "code_file": "arc2-sft-adapter.ipynb",
   "language": "python",

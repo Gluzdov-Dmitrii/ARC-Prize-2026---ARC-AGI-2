@@ -209,4 +209,9 @@ CORRECTION: 2026-09-08T02:59:42Z verification of revision 3. `remaining_stage_co
 - Notebook: `kernels/arc2-m2-sft-adapter/` original English markdown, no CJK. Dataset `dmitriigluzdov/arc2-m2-sft-adapter-v1` READY.
 - Competition submit: **not sent**. Kernel push is not a submit.
 
+### M2 — 2026-09-09T09:32:20Z — KERNEL_RUNNING
+- Kernel push created `dmitriigluzdov/arc-agi-2-public-train-lora` v1 (Kaggle slugified the publishable title; requested id `arc2-m2-sft-adapter` was not used).
+- Git HEAD `5baa629d3f3a63753272a617cf6df87fcd5973b6`. Internet OFF, 4×L4, adapter dataset `dmitriigluzdov/arc2-m2-sft-adapter-v1`.
+- Competition submit: **not sent**. Wait COMPLETE then preflight. Do not retry M1 `56095203` or S3 `56068142`.
+
 
