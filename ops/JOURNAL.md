@@ -223,4 +223,20 @@ CORRECTION: 2026-09-08T02:59:42Z verification of revision 3. `remaining_stage_co
 - Do not retry `56095203` (M1 30.56) or `56068142` (S3 27.22).
 - Receipt: `ops/runs/arc2-week-2026-09-05-v1-M2-20260909T0923Z/submit_receipt.json`.
 
+### M2 — 2026-09-10T03:21:00Z — COMPLETE
+- Submission `56119847` scored public **30.14** (COMPLETE). Delta vs champion 30.56: **-0.42**. Delta vs M1 30.56: **-0.42**. Same as earlier NVARC+ `55954328`.
+- Kernel: `dmitriigluzdov/arc-agi-2-public-train-lora` v1. Adapter **did load** 506/506. 2-epoch unaugmented SFT (train_loss 0.058) hurt hidden test vs random-LoRA TTT.
+- Decision: rejected as champion. Do not retry `56119847`. Notebook stays private; public 30.14 will not attract attention. Honest leftover: hashed 2-epoch adapter + publishable markdown.
+- Next local step: M3 TTT-matched augment pack, 1 epoch, LR 2e-5, from base Qwen. No competition submit.
+
+### M3-SFT — 2026-09-10T04:32:00Z — local TTT-aug adapter, no submit
+- Hypothesis: unaugmented 2-epoch SFT overfit canonical views and hurt TTT; a 1-epoch adapter on TTT-matched augmentations from the base Qwen should be a milder init.
+- Only changed factor: pack `sft-public-train-v2` (geo+color views, last_is_challenge, no supervised_test); LR 2e-5; 1 epoch; skip seq>2048. TTT kept.
+- Dataset: 16000 examples (15488 train), examples SHA-256 `161a5e720b083ab815b2498e5f1bb64969a0fd3fe943a6c3f2923f975ce39493`, contamination [].
+- First GPU attempt `arc2-m3-sft-20260910T0330Z` crashed on collator `assert start < end` after left-truncation. Lease RELEASED. Trainer now skips overlong/unpaired sequences.
+- SFT `arc2-m3-sft-20260910T0338Z`: 13552 used, 1936 skipped, 1.0 epoch, train_loss **0.15855**, 3526 s, peak 11.732 GiB, A100 `GPU-04efb7bd-1f45-38cd-4a13-c79b6aeaa002`, lease RELEASED.
+- `adapter_ttt.safetensors` 1057197744 B, SHA-256 `c5972c8fffab19261b561197909bbd989a017dbf5fd76d219f183995c171a287`.
+- Competition submit: **not sent**. Notebook stays private. Do not retry `56119847`.
+
+
 

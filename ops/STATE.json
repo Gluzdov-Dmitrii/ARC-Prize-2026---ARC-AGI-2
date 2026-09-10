@@ -150,8 +150,8 @@
     },
     {
       "submission_id": 56119847,
-      "status": "PENDING",
-      "public_score": null,
+      "status": "COMPLETE",
+      "public_score": 30.14,
       "notebook_slug": "dmitriigluzdov/arc-agi-2-public-train-lora",
       "script_version_id": null
     }
@@ -333,14 +333,14 @@
     },
     {
       "id": "M2",
-      "status": "SUBMITTING",
+      "status": "COMPLETE",
       "attempts": [
         {
           "attempt_id": "arc2-week-2026-09-05-v1-M2-20260909T0923Z",
           "stage_id": "M2",
           "started_at_utc": "2026-09-09T09:23:00Z",
-          "finished_at_utc": null,
-          "attempt_status": "SUBMITTING",
+          "finished_at_utc": "2026-09-10T03:21:00Z",
+          "attempt_status": "COMPLETE",
           "hypothesis": "Two-epoch train-only LoRA plus a reliable adapter load can lift the NVARC starter beyond the M1 tie.",
           "only_changed_factor": "2-epoch adapter adapter_ttt.safetensors + adapter path/receipt; original English markdown; TTT kept",
           "base_notebook_sha256": "acd5412ca9cb1cfe2bb95ab26570ece483988ba71152a28daedcd2f3159c7dce",
@@ -353,14 +353,14 @@
           "commit_runtime_seconds": 1562,
           "hidden_runtime_seconds": null,
           "submission_id": 56119847,
-          "submission_status": "PENDING",
-          "public_score": null,
+          "submission_status": "COMPLETE",
+          "public_score": 30.14,
           "public_rank": null,
           "team_count": 1819,
           "gold_cutoff_rank": 13,
           "gold_cutoff_score": 33.47,
           "artifacts_path": "ops/runs/arc2-week-2026-09-05-v1-M2-20260909T0923Z",
-          "notes": "One authorized code-submit of kernel v1. Adapter loaded 506/506. Message [M2][20260909][5baa629d] sft-e2. Hidden rerun PENDING. Do not retry.",
+          "notes": "Scored COMPLETE 30.14 vs champion 30.56. Adapter loaded 506/506. 2-epoch unaugmented SFT hurt hidden test. Rejected as champion. Do not retry 56119847. Notebook stays private.",
           "plan_revision": "arc2-week-2026-09-05-v3-sft-community",
           "local_run_ids": [
             "arc2-m2-sft-20260909T0605Z"
@@ -374,6 +374,53 @@
           "candidate_coverage": null,
           "fallback_rate": null,
           "gate_decision": "USER_AUTHORIZED_SUBMIT"
+        }
+      ]
+    },
+    {
+      "id": "M3",
+      "status": "COMPLETE",
+      "attempts": [
+        {
+          "attempt_id": "arc2-m3-sft-20260910T0338Z",
+          "stage_id": "M3",
+          "started_at_utc": "2026-09-10T03:38:00Z",
+          "finished_at_utc": "2026-09-10T04:32:00Z",
+          "attempt_status": "COMPLETE",
+          "hypothesis": "One-epoch TTT-matched augmented LoRA from the base Qwen is a better TTT init than the overfit 2-epoch unaugmented adapter.",
+          "only_changed_factor": "sft-public-train-v2 TTT views + 1 epoch LR 2e-5 from base; skip seq>2048",
+          "base_notebook_sha256": null,
+          "git_head": null,
+          "kernel_slug": null,
+          "kernel_version": null,
+          "script_version_id": null,
+          "config_sha256": "c5972c8fffab19261b561197909bbd989a017dbf5fd76d219f183995c171a287",
+          "preflight_status": null,
+          "commit_runtime_seconds": null,
+          "hidden_runtime_seconds": null,
+          "submission_id": null,
+          "submission_status": null,
+          "public_score": null,
+          "public_rank": null,
+          "team_count": 1819,
+          "gold_cutoff_rank": 13,
+          "gold_cutoff_score": 33.47,
+          "artifacts_path": "ops/local_runs/arc2-m3-sft-20260910T0338Z",
+          "notes": "Local SFT only. train_loss 0.1585. No kernel push, no competition submit. Failed first attempt 0330Z collator crash, released.",
+          "plan_revision": "arc2-week-2026-09-05-v3-sft-community",
+          "local_run_ids": [
+            "arc2-m3-sft-20260910T0330Z",
+            "arc2-m3-sft-20260910T0338Z"
+          ],
+          "validation_report_path": null,
+          "external_baseline_hash": "c5972c8fffab19261b561197909bbd989a017dbf5fd76d219f183995c171a287",
+          "local_gpu_hours": 0.979,
+          "kaggle_quota_before_hours": null,
+          "kaggle_quota_after_hours": null,
+          "kaggle_quota_debit_estimated_hours": null,
+          "candidate_coverage": null,
+          "fallback_rate": null,
+          "gate_decision": "NO_SUBMIT"
         }
       ]
     }
@@ -596,6 +643,19 @@
       "stage_id": "M2",
       "attempt_id": "arc2-week-2026-09-05-v1-M2-20260909T0923Z",
       "detail": "One-shot kaggle competitions submit kernel dmitriigluzdov/arc-agi-2-public-train-lora v1 file submission.json. submission_id=56119847 PENDING. Quota numToday=1. No retry."
+    },
+    {
+      "at_utc": "2026-09-10T03:21:00Z",
+      "type": "stage_complete",
+      "stage_id": "M2",
+      "attempt_id": "arc2-week-2026-09-05-v1-M2-20260909T0923Z",
+      "detail": "submission 56119847 COMPLETE public 30.14; champion unchanged at 30.56. Adapter had loaded. No retry. Notebook stays private."
+    },
+    {
+      "at_utc": "2026-09-10T04:32:00Z",
+      "type": "research_progress",
+      "stage_id": "M3",
+      "detail": "M3-SFT 1 epoch TTT-aug, 13552 examples, train_loss 0.1585, adapter_ttt sha256 c5972c8fffab19261b561197909bbd989a017dbf5fd76d219f183995c171a287. Lease RELEASED. No competition submit."
     }
   ],
   "plan_revision": "arc2-week-2026-09-05-v3-sft-community",
@@ -652,28 +712,28 @@
     "completed_at_utc": "2026-09-08T08:11:00Z"
   },
   "research": {
-    "id": "M2",
-    "status": "SUBMITTING",
+    "id": "M3",
+    "status": "COMPLETE",
     "criterion": "leftover_verified_artifacts_even_if_score_flat",
     "clone_notebooks_as_strategy": false,
     "base_model": "sorokin/qwen3_4b_grids15_sft139/Transformers/bfloat16/1",
     "base_model_nsu": "models/qwen3_4b_grids15_sft139-bf16-1",
-    "dataset_id": "sft-public-train-v1",
-    "dataset_examples_sha256": "e9f43ed0e0db5f118d4e8e45a44aeddcaeeb9c302538e5a437217264d20c4bee",
-    "sft_run_id": "arc2-m2-sft-20260909T0605Z",
-    "adapter_sha256": "3225701eacd6aafeee257a54fc9c1b33676e0e1625d88d7ba5a7ee50e38fe9e1",
+    "dataset_id": "sft-public-train-v2",
+    "dataset_examples_sha256": "161a5e720b083ab815b2498e5f1bb64969a0fd3fe943a6c3f2923f975ce39493",
+    "sft_run_id": "arc2-m3-sft-20260910T0338Z",
+    "adapter_sha256": "c5972c8fffab19261b561197909bbd989a017dbf5fd76d219f183995c171a287",
     "adapter_bytes": 1057197744,
-    "train_loss": 0.058310749453499,
+    "train_loss": 0.1585491112968857,
     "path": [
       "public-train-dataset",
-      "sft-qwen-2epoch",
+      "sft-qwen-ttt-aug-e1",
       "community-writeup-notebook"
     ],
-    "next_action": "M2 submission_id=56119847 PENDING hidden rerun. Observe only. Do not retry. Do not kernel-push.",
-    "submission_id": 56119847,
-    "kernel_slug": "dmitriigluzdov/arc-agi-2-public-train-lora",
-    "kernel_version": 1,
-    "kaggle_dataset": "dmitriigluzdov/arc2-m2-sft-adapter-v1"
+    "next_action": "Local M3 adapter hashed. No kernel push and no competition submit unless the user names this adapter. Do not retry 56119847. Keep notebook private.",
+    "submission_id": null,
+    "kernel_slug": null,
+    "kernel_version": null,
+    "kaggle_dataset": null
   },
   "competition_submit": {
     "authorized": true,
@@ -681,7 +741,7 @@
     "kernel_push_is_submit": false,
     "sent_at_utc": "2026-09-09T10:07:26Z",
     "submission_id": 56119847,
-    "submission_status": "PENDING",
+    "submission_status": "COMPLETE",
     "kernel_slug": "dmitriigluzdov/arc-agi-2-public-train-lora",
     "kernel_version": 1,
     "message": "[M2][20260909][5baa629d] sft-e2",
@@ -690,7 +750,7 @@
       56095203,
       56119847
     ],
-    "reason": "User authorized one named send of the formatted M2 kernel v1 after COMPLETE+preflight. Observe hidden rerun only."
+    "reason": "M2 56119847 COMPLETE 30.14. Do not retry. User asked for the next local model iteration, not a new LB send. Notebook stays private."
   },
   "compute_policy": {
     "preparation_backend": "nsu",
@@ -732,7 +792,7 @@
     "hidden_rerun_weekly_quota_accounting": "UNVERIFIED_FOR_ARC2",
     "hidden_compute_stop_seconds": 37800,
     "hidden_finalize_by_seconds": 42600,
-    "last_access_check": "2026-09-09T09:31:50Z nsu-quadro; M2 SFT RELEASED; no new GPU lease for kernel-submit path.",
+    "last_access_check": "2026-09-10T04:33:00Z nsu-quadro; M3 SFT RELEASED; no new GPU lease.",
     "usage": [
       {
         "run_id": "arc2-m0-smoke-20260908T0825Z",
@@ -758,6 +818,15 @@
         "elapsed_s": 3004.13,
         "peak_allocated_gib": 11.732,
         "num_train_epochs": 2.0,
+        "state": "RELEASED"
+      },
+      {
+        "run_id": "arc2-m3-sft-20260910T0338Z",
+        "pool": "a100",
+        "gpu_uuid": "GPU-04efb7bd-1f45-38cd-4a13-c79b6aeaa002",
+        "elapsed_s": 3526.16,
+        "peak_allocated_gib": 11.732,
+        "num_train_epochs": 1.0,
         "state": "RELEASED"
       }
     ]

@@ -1,0 +1,73 @@
+{
+  "run_id": "arc2-m3-sft-20260910T0338Z",
+  "mode": "sft",
+  "recipe_id": "sft-public-train-v2-lora256-e1-aug",
+  "dataset_id": "sft-public-train-v2",
+  "dataset_examples_sha256": "161a5e720b083ab815b2498e5f1bb64969a0fd3fe943a6c3f2923f975ce39493",
+  "n_examples_used": 13552,
+  "n_examples_skipped_short": 1936,
+  "max_steps": 0,
+  "num_train_epochs": 1.0,
+  "n_ttt_keys": 506,
+  "max_seq_length": 2048,
+  "metrics": {
+    "train_runtime": 3473.932,
+    "train_samples_per_second": 3.901,
+    "train_steps_per_second": 0.975,
+    "total_flos": 2.6648228689809408e+17,
+    "train_loss": 0.1585491112968857,
+    "epoch": 1.0
+  },
+  "gpu": {
+    "cuda_available": true,
+    "device": "NVIDIA A100 80GB PCIe",
+    "allocated_gib": 9.763,
+    "reserved_gib": 11.875,
+    "peak_allocated_gib": 11.732
+  },
+  "elapsed_s": 3526.16,
+  "adapter_files": {
+    "README.md": {
+      "bytes": 5384,
+      "sha256": "bfe8cd3cc414fd9142496b0df516c8f4b214359b6d920ff644b81e70ea9653fe"
+    },
+    "adapter_config.json": {
+      "bytes": 1187,
+      "sha256": "784884cdf20a40cac094df409abcbaf20635faa24ae648cd3b9a5cc144979084"
+    },
+    "adapter_model.safetensors": {
+      "bytes": 1057197776,
+      "sha256": "96dd460fe46321980fd3c9d84e7c8dfd76fadf872884186c43beda4c71ec098f"
+    },
+    "adapter_ttt.safetensors": {
+      "bytes": 1057197744,
+      "sha256": "c5972c8fffab19261b561197909bbd989a017dbf5fd76d219f183995c171a287"
+    },
+    "adapter_ttt_keys.json": {
+      "bytes": 1693,
+      "sha256": "37165355ba15eb60fe2ba51fb53bff1153b6b43d6d29d9a509ba6fe69f452abf"
+    },
+    "added_tokens.json": {
+      "bytes": 68,
+      "sha256": "cf1224e6a594b51a34b8b9ca6c6dce3026683777521f361e37526b8a33258bce"
+    },
+    "special_tokens_map.json": {
+      "bytes": 367,
+      "sha256": "f4f79e08d97f4d1c87f8d89264f525c8789da3b73b3bb55d1e12f692f41a7b1b"
+    },
+    "tokenizer.json": {
+      "bytes": 1731,
+      "sha256": "af6b9e855f9db3192bd9152607708ebd7700b40f9fc5f792a26af70150a96cd5"
+    },
+    "tokenizer_config.json": {
+      "bytes": 1015,
+      "sha256": "3a1b6ffb47cea18fd423468703de7632a8ffcbd979088d6a36c89c6e5a423cd4"
+    },
+    "vocab.json": {
+      "bytes": 94,
+      "sha256": "8141a61e47eceec466524bc178bc9c6d5076b7d1b18b456fbd3fdf66cae57f82"
+    }
+  },
+  "visible_devices": "GPU-04efb7bd-1f45-38cd-4a13-c79b6aeaa002",
+  "notes": "Train-only adapter. Do not bake public evaluation solutions into a scored kernel."
+}

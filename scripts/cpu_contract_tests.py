@@ -127,6 +127,31 @@ def test_pack_sft_no_eval_leak() -> None:
     assert len(digest) == 64
 
 
+def test_ttt_pack_matches_last_challenge_and_skips_eval() -> None:
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location("pack_sft_ttt", ROOT / "scripts" / "pack_sft_ttt.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    challenges = {
+        "aaa11111": {
+            "train": [
+                {"input": [[1, 0], [0, 1]], "output": [[0, 1], [1, 0]]},
+                {"input": [[2, 2], [2, 2]], "output": [[3, 3], [3, 3]]},
+            ],
+            "test": [{"input": [[9, 9], [9, 9]]}],
+        }
+    }
+    rows = mod.pack_augmented_tasks(challenges, ["aaa11111"], holdout_set=set())
+    assert len(rows) > 1
+    assert all(row["kind"] == "ttt_aug" for row in rows)
+    assert all(row["task_id"] == "aaa11111" for row in rows)
+    assert all(row["text"].startswith("<|im_start|>user") for row in rows)
+    joined = "\n".join(row["text"] for row in rows)
+    assert "<|im_start|>assistant" in joined
+    assert "a32d8b75" not in joined
+
+
 def test_adapter_path_helper_skips_missing(monkeypatch=None) -> None:
     import os
 
@@ -144,6 +169,7 @@ def main() -> None:
     test_solver_cache_has_no_solutions_field()
     test_ids_file_hash()
     test_pack_sft_no_eval_leak()
+    test_ttt_pack_matches_last_challenge_and_skips_eval()
     test_adapter_path_helper_skips_missing()
     print("cpu_contract_tests: PASS")
 

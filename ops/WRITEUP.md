@@ -40,3 +40,12 @@ Packed corpus `sft-public-train-v1`: 5308 examples, examples SHA-256 `e9f43ed0e0
 - Run `arc2-m2-sft-20260909T0605Z` on one A100: 2566 steps, train_loss **0.0583**, 3004 s, peak 11.7 GiB. RTX 3080 10 GB is below that peak.
 - `adapter_ttt.safetensors` 1057197744 B, SHA-256 `3225701eacd6aafeee257a54fc9c1b33676e0e1625d88d7ba5a7ee50e38fe9e1`. Receipt: `ops/local_runs/arc2-m2-sft-20260909T0605Z/receipt.json`.
 - Kaggle dataset `dmitriigluzdov/arc2-m2-sft-adapter-v1`. Notebook `kernels/arc2-m2-sft-adapter/` (title `ARC-AGI-2 public-train LoRA`). The solver writes `adapter_load.json` so a missed load is visible in logs.
+- Scored public **30.14** (`56119847`). Below champion 30.56. Keep the notebook private.
+
+## M3 (TTT-matched 1-epoch adapter)
+
+- New pack `sft-public-train-v2` (`scripts/pack_sft_ttt.py`): same 8 geometries + 2 color perms as TTT, `last_is_challenge` on train pairs only. 16000 views, 15488 train / 512 holdout. examples SHA-256 `161a5e720b083ab815b2498e5f1bb64969a0fd3fe943a6c3f2923f975ce39493`. No eval IDs. No training-task test solutions.
+- Recipe `configs/sft_recipe_v3.json`: 1 epoch from the **base** Qwen (not the M2 adapter), LR `2e-5`, seq 2048. Skip examples longer than 2048 so the completion collator stays valid.
+- Run `arc2-m3-sft-20260910T0338Z` on one A100: 13552 examples used, 1936 skipped, train_loss **0.1585**, 3526 s, peak 11.7 GiB. Lease RELEASED.
+- `adapter_ttt.safetensors` 1057197744 B, SHA-256 `c5972c8fffab19261b561197909bbd989a017dbf5fd76d219f183995c171a287`. Receipt: `ops/local_runs/arc2-m3-sft-20260910T0338Z/receipt.json`.
+- No kernel push and no competition submit in this iteration.

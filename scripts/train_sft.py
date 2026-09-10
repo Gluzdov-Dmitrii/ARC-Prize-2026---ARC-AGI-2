@@ -71,15 +71,21 @@ def load_examples(jsonl_path: Path, split: str, max_examples: int | None) -> lis
 def tokenize_rows(rows: list[dict], tokenizer, max_seq_length: int) -> list[dict]:
     out = []
     skipped = 0
+    user_id = 11
+    assistant_id = 12
+    eos_id = 15
     for row in rows:
         encoded = tokenizer(
             row["text"],
-            truncation=True,
-            max_length=max_seq_length,
             add_special_tokens=False,
         )
         ids = encoded["input_ids"]
-        if len(ids) < 8:
+        if len(ids) > max_seq_length or len(ids) < 8:
+            skipped += 1
+            continue
+        starts = sorted(i for i, tok in enumerate(ids) if tok in (user_id, assistant_id))
+        ends = [i for i, tok in enumerate(ids) if tok == eos_id]
+        if len(starts) != len(ends) or any(start >= end for start, end in zip(starts, ends)):
             skipped += 1
             continue
         out.append({"input_ids": ids, "example_id": row["example_id"], "kind": row["kind"]})
