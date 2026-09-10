@@ -244,5 +244,14 @@ CORRECTION: 2026-09-08T02:59:42Z verification of revision 3. `remaining_stage_co
 - Notebook: `kernels/arc2-m3-sft-adapter/` original English markdown, no CJK.
 - Competition submit: **not sent**. Wait COMPLETE then preflight. Do not retry M2 `56119847`, M1 `56095203`, or S3 `56068142`.
 
+### M3 — 2026-09-10T06:14:25Z — one authorized competition submit
+- Kernel `dmitriigluzdov/arc2-m3-ttt-lora` v1 COMPLETE (~27 min). Internet OFF, 4×L4, private.
+- Adapter **loaded** on all 4 ranks: `adapter_ttt.safetensors` aligned 506/506. Receipt `kernel_output/adapter_load.json`.
+- Preflight: format OK, 120 tasks, 0 errors. Debug-4 hits same as M1/M2: `36a08778_0`, `981571dc_0`, `aa4ec2a5_0`. Last rank finish ~1485 s.
+- One CLI call: `kaggle competitions submit ... -k dmitriigluzdov/arc2-m3-ttt-lora -v 1 -f submission.json -m "[M3][20260910][db92d1a1] ttt-aug-e1"`.
+- Result: `submission_id=56138632` PENDING. CLI: `0 submissions remaining today.` No retry.
+- Do not retry `56138632`, `56119847` (M2 30.14), `56095203` (M1 30.56), or `56068142` (S3 27.22).
+- Receipt: `ops/runs/arc2-week-2026-09-05-v1-M3-20260910T0540Z/submit_receipt.json`.
+
 
 

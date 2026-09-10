@@ -1,0 +1,29 @@
+{
+  "kernel_slug": "dmitriigluzdov/arc2-m3-ttt-lora",
+  "kernel_version": 1,
+  "status": "COMPLETE",
+  "preflight": {
+    "ok": true,
+    "n_tasks": 120,
+    "n_submission_keys": 120,
+    "n_errors": 0
+  },
+  "debug4_hits": [
+    "36a08778_0",
+    "981571dc_0",
+    "aa4ec2a5_0"
+  ],
+  "eval_micro_pass_at_2_from_placeholders": 0.01744186046511628,
+  "n_real_attempts": 9,
+  "n_placeholder_attempts": 335,
+  "adapter_dataset": "dmitriigluzdov/arc2-m3-sft-adapter-v1",
+  "adapter_sha256": "c5972c8fffab19261b561197909bbd989a017dbf5fd76d219f183995c171a287",
+  "adapter_loaded": true,
+  "adapter_aligned": "506/506",
+  "notebook_sha256": "81e3b927773041340e72c181ab3e005f2f049f84a376e6e94534cc505d58e94b",
+  "internet": false,
+  "is_private": true,
+  "competition_submit": false,
+  "ready_to_submit": true,
+  "notes": "Commit-run debug-4 plus format-complete 120-task file. Adapter loaded on all 4 ranks. Hidden test scored only after explicit competition submit."
+}

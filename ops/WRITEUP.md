@@ -48,4 +48,5 @@ Packed corpus `sft-public-train-v1`: 5308 examples, examples SHA-256 `e9f43ed0e0
 - Recipe `configs/sft_recipe_v3.json`: 1 epoch from the **base** Qwen (not the M2 adapter), LR `2e-5`, seq 2048. Skip examples longer than 2048 so the completion collator stays valid.
 - Run `arc2-m3-sft-20260910T0338Z` on one A100: 13552 examples used, 1936 skipped, train_loss **0.1585**, 3526 s, peak 11.7 GiB. Lease RELEASED.
 - `adapter_ttt.safetensors` 1057197744 B, SHA-256 `c5972c8fffab19261b561197909bbd989a017dbf5fd76d219f183995c171a287`. Receipt: `ops/local_runs/arc2-m3-sft-20260910T0338Z/receipt.json`.
-- Kaggle dataset `dmitriigluzdov/arc2-m3-sft-adapter-v1`. Notebook `kernels/arc2-m3-sft-adapter/` (title/slug `arc2-m3-ttt-lora`), private, Internet off. Kernel push is not a competition submit.
+- Kaggle dataset `dmitriigluzdov/arc2-m3-sft-adapter-v1`. Notebook `kernels/arc2-m3-sft-adapter/` (title/slug `arc2-m3-ttt-lora`), private, Internet off.
+- Commit-run COMPLETE; adapter loaded 506/506. One competition submit `56138632` (`[M3][20260910][db92d1a1] ttt-aug-e1`) is PENDING on hidden rerun. Do not retry.

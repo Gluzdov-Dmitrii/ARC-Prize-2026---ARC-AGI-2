@@ -1,0 +1,24 @@
+{
+  "competition": "arc-prize-2026-arc-agi-2",
+  "kernel_slug": "dmitriigluzdov/arc2-m3-ttt-lora",
+  "kernel_version": 1,
+  "file": "submission.json",
+  "message": "[M3][20260910][db92d1a1] ttt-aug-e1",
+  "submission_id": 56138632,
+  "submission_status": "PENDING",
+  "sent_at_utc": "2026-09-10T06:14:25Z",
+  "cli_response": "0 submissions remaining today.",
+  "quota_after": {
+    "numToday": 1,
+    "numTotal": 10
+  },
+  "retry": false,
+  "adapter_loaded": true,
+  "adapter_aligned": "506/506",
+  "do_not_retry_submission_ids": [
+    56068142,
+    56095203,
+    56119847,
+    56138632
+  ]
+}
