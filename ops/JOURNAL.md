@@ -238,5 +238,11 @@ CORRECTION: 2026-09-08T02:59:42Z verification of revision 3. `remaining_stage_co
 - `adapter_ttt.safetensors` 1057197744 B, SHA-256 `c5972c8fffab19261b561197909bbd989a017dbf5fd76d219f183995c171a287`.
 - Competition submit: **not sent**. Notebook stays private. Do not retry `56119847`.
 
+### M3 — 2026-09-10T05:43:00Z — KERNEL_RUNNING
+- Private dataset `dmitriigluzdov/arc2-m3-sft-adapter-v1` READY (`adapter_ttt.safetensors` 1057197744 B, SHA-256 `c5972c8fffab19261b561197909bbd989a017dbf5fd76d219f183995c171a287`).
+- Kernel push created `dmitriigluzdov/arc2-m3-ttt-lora` v1 (requested slug kept). Internet OFF, 4×L4, private.
+- Notebook: `kernels/arc2-m3-sft-adapter/` original English markdown, no CJK.
+- Competition submit: **not sent**. Wait COMPLETE then preflight. Do not retry M2 `56119847`, M1 `56095203`, or S3 `56068142`.
+
 
 

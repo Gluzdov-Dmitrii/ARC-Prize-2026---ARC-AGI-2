@@ -379,7 +379,7 @@
     },
     {
       "id": "M3",
-      "status": "COMPLETE",
+      "status": "KERNEL_RUNNING",
       "attempts": [
         {
           "attempt_id": "arc2-m3-sft-20260910T0338Z",
@@ -390,7 +390,7 @@
           "hypothesis": "One-epoch TTT-matched augmented LoRA from the base Qwen is a better TTT init than the overfit 2-epoch unaugmented adapter.",
           "only_changed_factor": "sft-public-train-v2 TTT views + 1 epoch LR 2e-5 from base; skip seq>2048",
           "base_notebook_sha256": null,
-          "git_head": null,
+          "git_head": "03490c3",
           "kernel_slug": null,
           "kernel_version": null,
           "script_version_id": null,
@@ -406,7 +406,7 @@
           "gold_cutoff_rank": 13,
           "gold_cutoff_score": 33.47,
           "artifacts_path": "ops/local_runs/arc2-m3-sft-20260910T0338Z",
-          "notes": "Local SFT only. train_loss 0.1585. No kernel push, no competition submit. Failed first attempt 0330Z collator crash, released.",
+          "notes": "Local SFT only. train_loss 0.1585. Failed first attempt 0330Z collator crash, released.",
           "plan_revision": "arc2-week-2026-09-05-v3-sft-community",
           "local_run_ids": [
             "arc2-m3-sft-20260910T0330Z",
@@ -421,6 +421,46 @@
           "candidate_coverage": null,
           "fallback_rate": null,
           "gate_decision": "NO_SUBMIT"
+        },
+        {
+          "attempt_id": "arc2-week-2026-09-05-v1-M3-20260910T0540Z",
+          "stage_id": "M3",
+          "started_at_utc": "2026-09-10T05:40:00Z",
+          "finished_at_utc": null,
+          "attempt_status": "KERNEL_RUNNING",
+          "hypothesis": "TTT-matched 1-epoch adapter plus a reliable load can recover from M2 overfit without changing TTT.",
+          "only_changed_factor": "adapter_ttt from sft-public-train-v2 1-epoch LoRA; new private kernel slug",
+          "base_notebook_sha256": "81e3b927773041340e72c181ab3e005f2f049f84a376e6e94534cc505d58e94b",
+          "git_head": "03490c3",
+          "kernel_slug": "dmitriigluzdov/arc2-m3-ttt-lora",
+          "kernel_version": 1,
+          "script_version_id": null,
+          "config_sha256": "c5972c8fffab19261b561197909bbd989a017dbf5fd76d219f183995c171a287",
+          "preflight_status": null,
+          "commit_runtime_seconds": null,
+          "hidden_runtime_seconds": null,
+          "submission_id": null,
+          "submission_status": null,
+          "public_score": null,
+          "public_rank": null,
+          "team_count": 1819,
+          "gold_cutoff_rank": 13,
+          "gold_cutoff_score": 33.47,
+          "artifacts_path": "ops/runs/arc2-week-2026-09-05-v1-M3-20260910T0540Z",
+          "notes": "Private kernel v1 RUNNING. Dataset READY. Push is not a submit. Do not retry 56068142, 56095203, 56119847.",
+          "plan_revision": "arc2-week-2026-09-05-v3-sft-community",
+          "local_run_ids": [
+            "arc2-m3-sft-20260910T0338Z"
+          ],
+          "validation_report_path": null,
+          "external_baseline_hash": "c5972c8fffab19261b561197909bbd989a017dbf5fd76d219f183995c171a287",
+          "local_gpu_hours": 0.979,
+          "kaggle_quota_before_hours": null,
+          "kaggle_quota_after_hours": null,
+          "kaggle_quota_debit_estimated_hours": null,
+          "candidate_coverage": null,
+          "fallback_rate": null,
+          "gate_decision": "USER_AUTHORIZED_SUBMIT_AFTER_PREFLIGHT"
         }
       ]
     }
@@ -656,6 +696,20 @@
       "type": "research_progress",
       "stage_id": "M3",
       "detail": "M3-SFT 1 epoch TTT-aug, 13552 examples, train_loss 0.1585, adapter_ttt sha256 c5972c8fffab19261b561197909bbd989a017dbf5fd76d219f183995c171a287. Lease RELEASED. No competition submit."
+    },
+    {
+      "at_utc": "2026-09-10T05:41:40Z",
+      "type": "stage_preparing",
+      "stage_id": "M3",
+      "attempt_id": "arc2-week-2026-09-05-v1-M3-20260910T0540Z",
+      "detail": "Private dataset dmitriigluzdov/arc2-m3-sft-adapter-v1 READY (adapter_ttt.safetensors 1057197744 B). Notebook kernels/arc2-m3-sft-adapter."
+    },
+    {
+      "at_utc": "2026-09-10T05:43:00Z",
+      "type": "kernel_running",
+      "stage_id": "M3",
+      "attempt_id": "arc2-week-2026-09-05-v1-M3-20260910T0540Z",
+      "detail": "kaggle kernels push created dmitriigluzdov/arc2-m3-ttt-lora v1; status RUNNING. Push is not a submit."
     }
   ],
   "plan_revision": "arc2-week-2026-09-05-v3-sft-community",
@@ -713,7 +767,7 @@
   },
   "research": {
     "id": "M3",
-    "status": "COMPLETE",
+    "status": "KERNEL_RUNNING",
     "criterion": "leftover_verified_artifacts_even_if_score_flat",
     "clone_notebooks_as_strategy": false,
     "base_model": "sorokin/qwen3_4b_grids15_sft139/Transformers/bfloat16/1",
@@ -729,28 +783,28 @@
       "sft-qwen-ttt-aug-e1",
       "community-writeup-notebook"
     ],
-    "next_action": "Local M3 adapter hashed. No kernel push and no competition submit unless the user names this adapter. Do not retry 56119847. Keep notebook private.",
+    "next_action": "Wait dmitriigluzdov/arc2-m3-ttt-lora v1 COMPLETE, preflight, then one named competition submit. Do not retry 56068142, 56095203, 56119847. Keep notebook private.",
     "submission_id": null,
-    "kernel_slug": null,
-    "kernel_version": null,
-    "kaggle_dataset": null
+    "kernel_slug": "dmitriigluzdov/arc2-m3-ttt-lora",
+    "kernel_version": 1,
+    "kaggle_dataset": "dmitriigluzdov/arc2-m3-sft-adapter-v1"
   },
   "competition_submit": {
     "authorized": true,
-    "authorized_attempt": "arc2-week-2026-09-05-v1-M2-20260909T0923Z",
+    "authorized_attempt": "arc2-week-2026-09-05-v1-M3-20260910T0540Z",
     "kernel_push_is_submit": false,
-    "sent_at_utc": "2026-09-09T10:07:26Z",
-    "submission_id": 56119847,
-    "submission_status": "COMPLETE",
-    "kernel_slug": "dmitriigluzdov/arc-agi-2-public-train-lora",
+    "sent_at_utc": null,
+    "submission_id": null,
+    "submission_status": null,
+    "kernel_slug": "dmitriigluzdov/arc2-m3-ttt-lora",
     "kernel_version": 1,
-    "message": "[M2][20260909][5baa629d] sft-e2",
+    "message": null,
     "do_not_retry_submission_ids": [
       56068142,
       56095203,
       56119847
     ],
-    "reason": "M2 56119847 COMPLETE 30.14. Do not retry. User asked for the next local model iteration, not a new LB send. Notebook stays private."
+    "reason": "User authorized one submit of the new M3 formatted kernel after COMPLETE + preflight. Kernel push is not a submit. Do not retry M1 56095203, S3 56068142, or M2 56119847. Notebook stays private."
   },
   "compute_policy": {
     "preparation_backend": "nsu",

@@ -16,20 +16,20 @@ WRITEFILES = {
     "arc_solver.py": SRC / "arc_solver.py",
 }
 
-MARKDOWN = """# ARC-AGI-2 public-train LoRA
+MARKDOWN = """# ARC-AGI-2 TTT-view LoRA
 
-Internet off, 4×L4. This notebook is written to be publishable: short original notes, no copied commentary.
+Internet off, 4×L4. Short original notes, no copied commentary.
 
 **Method**
 - Base model: `sorokin/qwen3_4b_grids15_sft139` (Qwen3-4B, already trained on ARC-style grids).
-- Extra LoRA trained only on official **public-train** tasks. Evaluation and hidden solutions are not used.
+- Extra LoRA trained only on official **public-train** tasks, using the same geometric and color views as the per-task update. Evaluation and hidden solutions are not used.
 - At test time the same per-task LoRA update and grid decoder still run.
 
 **Outputs**
 - `submission.json` with two attempts per test grid.
 
 **Attached adapter**
-- Dataset `arc2-m2-sft-adapter-v1` (`adapter_ttt.safetensors` preferred). Hashes are in that dataset README.
+- Dataset `arc2-m3-sft-adapter-v1` (`adapter_ttt.safetensors` preferred). Hashes are in that dataset README.
 """
 
 
@@ -87,7 +87,7 @@ def rewrite_short_cell(text: str, adapter_dataset: str) -> str | None:
             "!pip uninstall -y tensorflow"
         )
     if stripped.startswith("!PYTHONHASHSEED"):
-        adapter_slug = adapter_dataset.split("/")[-1] if adapter_dataset else "arc2-m2-sft-adapter-v1"
+        adapter_slug = adapter_dataset.split("/")[-1] if adapter_dataset else "arc2-m3-sft-adapter-v1"
         return (
             "!PYTHONHASHSEED=260618 ARC_AUG_SEED_OFFSET=260618 "
             "UNSLOTH_DISABLE_STATISTICS=1 TRITON_PTXAS_PATH=/usr/local/cuda/bin/ptxas "
@@ -100,9 +100,9 @@ def rewrite_short_cell(text: str, adapter_dataset: str) -> str | None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output-dir", type=Path, required=True)
-    parser.add_argument("--title", default="ARC-AGI-2 public-train LoRA")
-    parser.add_argument("--slug", default="dmitriigluzdov/arc-agi-2-public-train-lora")
-    parser.add_argument("--adapter-dataset", default="dmitriigluzdov/arc2-m2-sft-adapter-v1")
+    parser.add_argument("--title", default="arc2-m3-ttt-lora")
+    parser.add_argument("--slug", default="dmitriigluzdov/arc2-m3-ttt-lora")
+    parser.add_argument("--adapter-dataset", default="dmitriigluzdov/arc2-m3-sft-adapter-v1")
     parser.add_argument("--private", action="store_true", default=True)
     parser.add_argument("--public", action="store_true")
     args = parser.parse_args()

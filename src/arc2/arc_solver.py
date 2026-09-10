@@ -41,6 +41,8 @@ def resolve_adapter_path():
         roots.append(Path(env))
     roots.extend(
         [
+            Path("/kaggle/input/arc2-m3-sft-adapter-v1"),
+            Path("/kaggle/input/arc2-m3-sft-adapter-v1/adapter"),
             Path("/kaggle/input/arc2-m2-sft-adapter-v1"),
             Path("/kaggle/input/arc2-m2-sft-adapter-v1/adapter"),
             Path("/kaggle/input/arc2-m1-sft-adapter-v1"),
