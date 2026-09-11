@@ -49,4 +49,10 @@ Packed corpus `sft-public-train-v1`: 5308 examples, examples SHA-256 `e9f43ed0e0
 - Run `arc2-m3-sft-20260910T0338Z` on one A100: 13552 examples used, 1936 skipped, train_loss **0.1585**, 3526 s, peak 11.7 GiB. Lease RELEASED.
 - `adapter_ttt.safetensors` 1057197744 B, SHA-256 `c5972c8fffab19261b561197909bbd989a017dbf5fd76d219f183995c171a287`. Receipt: `ops/local_runs/arc2-m3-sft-20260910T0338Z/receipt.json`.
 - Kaggle dataset `dmitriigluzdov/arc2-m3-sft-adapter-v1`. Notebook `kernels/arc2-m3-sft-adapter/` (title/slug `arc2-m3-ttt-lora`), private, Internet off.
-- Commit-run COMPLETE; adapter loaded 506/506. One competition submit `56138632` (`[M3][20260910][db92d1a1] ttt-aug-e1`) is PENDING on hidden rerun. Do not retry.
+- Commit-run COMPLETE; adapter loaded 506/506. Competition submit `56138632` scored public **30.14**. Same as M2. Keep the notebook private.
+
+## M4 (scaled M3 LoRA)
+
+- Same frozen adapter `dmitriigluzdov/arc2-m3-sft-adapter-v1` (SHA-256 `c5972c8fffab19261b561197909bbd989a017dbf5fd76d219f183995c171a287`).
+- Inference-only change: `ARC2_ADAPTER_SCALE=0.25` on LoRA A/B tensors; embed and lm_head stay at the trained values. Per-task TTT unchanged.
+- Notebook `kernels/arc2-m4-lora-scale/` (title/slug `arc2-m4-lora-scale`), private, Internet off. Kernel push is not a competition submit.

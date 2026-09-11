@@ -75,6 +75,22 @@ def _candidate_key_names(key: str) -> list[str]:
     return names
 
 
+def scale_lora_tensors(state: dict, scale: float) -> tuple[dict, int]:
+    """Scale LoRA A/B only. Leave modules_to_save (embed/lm_head) untouched."""
+    if abs(scale - 1.0) < 1e-12:
+        n_lora = sum(1 for key in state if "lora_A" in key or "lora_B" in key)
+        return state, n_lora
+    scaled = {}
+    n_lora = 0
+    for key, value in state.items():
+        if "lora_A" in key or "lora_B" in key:
+            scaled[key] = value * scale
+            n_lora += 1
+        else:
+            scaled[key] = value
+    return scaled, n_lora
+
+
 def align_adapter_state(loaded: dict, target_keys) -> dict:
     target = set(target_keys)
     aligned = {}
@@ -141,12 +157,17 @@ def load_optional_sft_adapter(model, default_weights):
         loaded = torch.load(str(weight_path), map_location="cpu")
     target_keys = list(default_weights.keys())
     aligned = align_adapter_state(loaded, target_keys)
+    try:
+        scale = float(os.environ.get("ARC2_ADAPTER_SCALE", "1").strip() or "1")
+    except ValueError:
+        scale = 1.0
     payload.update(
         {
             "weight_file": str(weight_path),
             "n_loaded": len(loaded),
             "n_target": len(target_keys),
             "n_aligned": len(aligned),
+            "adapter_scale": scale,
             "loaded_head": list(loaded.keys())[:8],
             "target_head": target_keys[:8],
         }
@@ -158,12 +179,14 @@ def load_optional_sft_adapter(model, default_weights):
         print(message, file=sys.stderr, flush=True)
         _write_adapter_receipt(payload)
         return default_weights
+    aligned, n_lora_scaled = scale_lora_tensors(aligned, scale)
+    payload["n_lora_scaled"] = n_lora_scaled
     set_peft_model_state_dict(model, aligned, adapter_name="default")
     refreshed = get_peft_model_state_dict(model, adapter_name="default")
     payload["n_refreshed"] = len(refreshed)
     message = (
         f"[adapter] loaded {weight_path} aligned={len(aligned)}/{len(target_keys)} "
-        f"refreshed={len(refreshed)}"
+        f"refreshed={len(refreshed)} scale={scale:g} lora={n_lora_scaled}"
     )
     print(message, flush=True)
     print(message, file=sys.stderr, flush=True)

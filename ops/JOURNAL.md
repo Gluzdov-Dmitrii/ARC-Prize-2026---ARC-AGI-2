@@ -253,5 +253,16 @@ CORRECTION: 2026-09-08T02:59:42Z verification of revision 3. `remaining_stage_co
 - Do not retry `56138632`, `56119847` (M2 30.14), `56095203` (M1 30.56), or `56068142` (S3 27.22).
 - Receipt: `ops/runs/arc2-week-2026-09-05-v1-M3-20260910T0540Z/submit_receipt.json`.
 
+### M3 — 2026-09-11T04:50:00Z — COMPLETE
+- Submission `56138632` scored public **30.14** (COMPLETE). Delta vs champion 30.56: **-0.42**. Same as M2 `56119847`.
+- Kernel: `dmitriigluzdov/arc2-m3-ttt-lora` v1. Adapter **did load** 506/506. TTT-matched 1-epoch SFT did not recover from the M2 overfit.
+- Decision: rejected as champion. Do not retry `56138632`. Notebook stays private.
+
+### M4 — 2026-09-11T04:58:00Z — KERNEL_RUNNING
+- Hypothesis: scale the frozen M3 LoRA A/B tensors to **0.25** (embed/lm_head unchanged) to interpolate toward the 30.56 no-adapter init.
+- Only changed factor: `ARC2_ADAPTER_SCALE=0.25` on dataset `dmitriigluzdov/arc2-m3-sft-adapter-v1`. No new SFT.
+- Kernel push created `dmitriigluzdov/arc2-m4-lora-scale` v1. Internet OFF, 4×L4, private.
+- Competition submit: **not sent**. Wait COMPLETE then preflight. Do not retry M3 `56138632`.
+
 
 

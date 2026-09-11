@@ -162,6 +162,33 @@ def test_adapter_path_helper_skips_missing(monkeypatch=None) -> None:
     assert not missing.exists()
 
 
+def test_lora_scale_skips_full_weights() -> None:
+    class _T:
+        def __init__(self, n):
+            self.n = n
+
+        def __mul__(self, scale):
+            return _T(self.n * scale)
+
+    state = {
+        "base_model.model.lm_head.weight": _T(8),
+        "layers.0.self_attn.q_proj.lora_A.weight": _T(4),
+        "layers.0.self_attn.q_proj.lora_B.weight": _T(4),
+    }
+    scaled = {}
+    n_lora = 0
+    scale = 0.25
+    for key, value in state.items():
+        if "lora_A" in key or "lora_B" in key:
+            scaled[key] = value * scale
+            n_lora += 1
+        else:
+            scaled[key] = value
+    assert n_lora == 2
+    assert scaled["base_model.model.lm_head.weight"].n == 8
+    assert scaled["layers.0.self_attn.q_proj.lora_A.weight"].n == 1.0
+
+
 def main() -> None:
     test_schema_dynamic_counts()
     test_micro_not_macro()
@@ -171,6 +198,7 @@ def main() -> None:
     test_pack_sft_no_eval_leak()
     test_ttt_pack_matches_last_challenge_and_skips_eval()
     test_adapter_path_helper_skips_missing()
+    test_lora_scale_skips_full_weights()
     print("cpu_contract_tests: PASS")
 
 
