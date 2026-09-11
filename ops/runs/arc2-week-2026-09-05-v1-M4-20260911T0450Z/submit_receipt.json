@@ -1,0 +1,27 @@
+{
+  "competition": "arc-prize-2026-arc-agi-2",
+  "kernel_slug": "dmitriigluzdov/arc2-m4-lora-scale",
+  "kernel_version": 1,
+  "file": "submission.json",
+  "message": "[M4][20260911][9e3da777] lora-scale-0.25",
+  "submission_id": 56159237,
+  "submission_status": "PENDING",
+  "sent_at_utc": "2026-09-11T05:29:49Z",
+  "cli_response": "0 submissions remaining today.",
+  "quota_after": {
+    "numToday": 1,
+    "numTotal": 10
+  },
+  "retry": false,
+  "adapter_loaded": true,
+  "adapter_aligned": "506/506",
+  "adapter_scale": 0.25,
+  "n_lora_scaled": 504,
+  "do_not_retry_submission_ids": [
+    56068142,
+    56095203,
+    56119847,
+    56138632,
+    56159237
+  ]
+}

@@ -264,5 +264,14 @@ CORRECTION: 2026-09-08T02:59:42Z verification of revision 3. `remaining_stage_co
 - Kernel push created `dmitriigluzdov/arc2-m4-lora-scale` v1. Internet OFF, 4×L4, private.
 - Competition submit: **not sent**. Wait COMPLETE then preflight. Do not retry M3 `56138632`.
 
+### M4 — 2026-09-11T05:29:49Z — one authorized competition submit
+- Kernel `dmitriigluzdov/arc2-m4-lora-scale` v1 COMPLETE (~30 min). Internet OFF, 4×L4, private.
+- Adapter **loaded** on all 4 ranks: `adapter_ttt.safetensors` aligned 506/506, `scale=0.25`, `lora=504` (embed/lm_head unscaled). Receipt `kernel_output/adapter_load.json`.
+- Preflight: format OK, 120 tasks, 0 errors. Debug-4 hits same as M1–M3: `36a08778_0`, `981571dc_0`, `aa4ec2a5_0`.
+- Quota before send: `numAllowedNow=1`. One CLI call: `kaggle competitions submit ... -k dmitriigluzdov/arc2-m4-lora-scale -v 1 -f submission.json -m "[M4][20260911][9e3da777] lora-scale-0.25"`.
+- Result: `submission_id=56159237` PENDING. CLI: `0 submissions remaining today.` No retry.
+- Do not retry `56159237`, `56138632` (M3 30.14), `56119847` (M2 30.14), `56095203` (M1 30.56), or `56068142` (S3 27.22).
+- Receipt: `ops/runs/arc2-week-2026-09-05-v1-M4-20260911T0450Z/submit_receipt.json`.
+
 
 

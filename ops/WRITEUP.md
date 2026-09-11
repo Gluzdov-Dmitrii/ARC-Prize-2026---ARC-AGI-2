@@ -55,4 +55,5 @@ Packed corpus `sft-public-train-v1`: 5308 examples, examples SHA-256 `e9f43ed0e0
 
 - Same frozen adapter `dmitriigluzdov/arc2-m3-sft-adapter-v1` (SHA-256 `c5972c8fffab19261b561197909bbd989a017dbf5fd76d219f183995c171a287`).
 - Inference-only change: `ARC2_ADAPTER_SCALE=0.25` on LoRA A/B tensors; embed and lm_head stay at the trained values. Per-task TTT unchanged.
-- Notebook `kernels/arc2-m4-lora-scale/` (title/slug `arc2-m4-lora-scale`), private, Internet off. Kernel push is not a competition submit.
+- Notebook `kernels/arc2-m4-lora-scale/` (title/slug `arc2-m4-lora-scale`), private, Internet off.
+- Commit-run COMPLETE; adapter loaded 506/506, scale=0.25, lora=504. Competition submit `56159237` PENDING. Keep the notebook private.
