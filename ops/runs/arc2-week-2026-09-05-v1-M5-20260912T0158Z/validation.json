@@ -1,0 +1,31 @@
+{
+  "kernel_slug": "dmitriigluzdov/arc2-m5-lora-scale",
+  "kernel_version": 1,
+  "status": "COMPLETE",
+  "preflight": {
+    "ok": true,
+    "n_tasks": 120,
+    "n_submission_keys": 120,
+    "n_errors": 0
+  },
+  "debug4_hits": [
+    "36a08778_0",
+    "981571dc_0",
+    "aa4ec2a5_0"
+  ],
+  "eval_micro_pass_at_2_from_placeholders": 0.01744186046511628,
+  "adapter_dataset": "dmitriigluzdov/arc2-m3-sft-adapter-v1",
+  "adapter_sha256": "c5972c8fffab19261b561197909bbd989a017dbf5fd76d219f183995c171a287",
+  "adapter_loaded": true,
+  "adapter_aligned": "506/506",
+  "adapter_scale": 0.5,
+  "n_lora_scaled": 504,
+  "notebook_sha256": "5e3d7a8114ca16c72b60b288bd345db756f034ded62823e41fe971c6e592d2cc",
+  "internet": false,
+  "is_private": true,
+  "competition_submit": true,
+  "submission_id": 56176686,
+  "submission_status": "PENDING",
+  "ready_to_submit": false,
+  "notes": "Commit-run debug-4 plus format-complete 120-task file. Adapter loaded scale=0.5 on all 4 ranks. One authorized submit sent; do not retry 56176686."
+}

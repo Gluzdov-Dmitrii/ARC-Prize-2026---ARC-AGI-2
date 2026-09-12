@@ -1,0 +1,13 @@
+{
+  "kernel_slug": "dmitriigluzdov/arc2-m5-lora-scale",
+  "kernel_version": 1,
+  "status": "COMPLETE",
+  "pushed_at_utc": "2026-09-12T02:04:00Z",
+  "adapter_dataset": "dmitriigluzdov/arc2-m3-sft-adapter-v1",
+  "adapter_sha256": "c5972c8fffab19261b561197909bbd989a017dbf5fd76d219f183995c171a287",
+  "adapter_scale": 0.5,
+  "internet": false,
+  "is_private": true,
+  "competition_submit": false,
+  "notes": "Kernel push is not a competition submit. Scale LoRA A/B to 0.5. Wait COMPLETE, then preflight, then one authorized submit."
+}
