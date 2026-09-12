@@ -16,7 +16,8 @@ WRITEFILES = {
     "arc_solver.py": SRC / "arc_solver.py",
 }
 
-MARKDOWN = """# ARC-AGI-2 scaled TTT-view LoRA
+def make_markdown(adapter_scale: str) -> str:
+    return f"""# ARC-AGI-2 scaled TTT-view LoRA
 
 Internet off, 4×L4. Short original notes, no copied commentary.
 
@@ -29,7 +30,7 @@ Internet off, 4×L4. Short original notes, no copied commentary.
 - `submission.json` with two attempts per test grid.
 
 **Attached adapter**
-- Dataset `arc2-m3-sft-adapter-v1` (`adapter_ttt.safetensors` preferred), LoRA scale `0.25`. Hashes are in that dataset README.
+- Dataset `arc2-m3-sft-adapter-v1` (`adapter_ttt.safetensors` preferred), LoRA scale `{adapter_scale}`. Hashes are in that dataset README.
 """
 
 
@@ -101,10 +102,10 @@ def rewrite_short_cell(text: str, adapter_dataset: str, adapter_scale: str) -> s
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output-dir", type=Path, required=True)
-    parser.add_argument("--title", default="arc2-m4-lora-scale")
-    parser.add_argument("--slug", default="dmitriigluzdov/arc2-m4-lora-scale")
+    parser.add_argument("--title", default="arc2-m5-lora-scale")
+    parser.add_argument("--slug", default="dmitriigluzdov/arc2-m5-lora-scale")
     parser.add_argument("--adapter-dataset", default="dmitriigluzdov/arc2-m3-sft-adapter-v1")
-    parser.add_argument("--adapter-scale", default="0.25")
+    parser.add_argument("--adapter-scale", default="0.5")
     parser.add_argument("--private", action="store_true", default=True)
     parser.add_argument("--public", action="store_true")
     args = parser.parse_args()
@@ -118,7 +119,7 @@ def main() -> None:
         if cell.get("cell_type") == "markdown":
             if markdown_done:
                 continue
-            new_cells.append(make_markdown_cell(MARKDOWN.strip() + "\n"))
+            new_cells.append(make_markdown_cell(make_markdown(args.adapter_scale).strip() + "\n"))
             markdown_done = True
             continue
         matched = None
@@ -137,7 +138,7 @@ def main() -> None:
             continue
         new_cells.append(cell)
     if not markdown_done:
-        new_cells.insert(0, make_markdown_cell(MARKDOWN.strip() + "\n"))
+        new_cells.insert(0, make_markdown_cell(make_markdown(args.adapter_scale).strip() + "\n"))
     missing = set(WRITEFILES) - replaced
     if missing:
         raise SystemExit(f"S2 notebook missing writefile cells: {sorted(missing)}")

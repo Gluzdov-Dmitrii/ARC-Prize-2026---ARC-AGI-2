@@ -273,5 +273,14 @@ CORRECTION: 2026-09-08T02:59:42Z verification of revision 3. `remaining_stage_co
 - Do not retry `56159237`, `56138632` (M3 30.14), `56119847` (M2 30.14), `56095203` (M1 30.56), or `56068142` (S3 27.22).
 - Receipt: `ops/runs/arc2-week-2026-09-05-v1-M4-20260911T0450Z/submit_receipt.json`.
 
+### M4 — 2026-09-12T01:57:09Z — COMPLETE
+- Submission `56159237` scored public **27.22** (COMPLETE). Delta vs champion 30.56: **-3.34**. Same floor as S3 `56068142`.
+- Kernel: `dmitriigluzdov/arc2-m4-lora-scale` v1. Adapter **did load** 506/506, `scale=0.25`, `lora=504`. Scaling both A and B by 0.25 (product ~0.0625) plus full embed/lm_head collapsed TTT.
+- Decision: rejected as champion. Do not retry `56159237`. Notebook stays private.
+
+### M5 — 2026-09-12T01:58:00Z — PREPARING
+- Hypothesis: milder `ARC2_ADAPTER_SCALE=0.5` (product 0.25) interpolates toward the 30.56 init without the M4 collapse.
+- Only changed factor: `ARC2_ADAPTER_SCALE=0.5` on the same frozen M3 adapter. No new SFT. Embed/lm_head unscaled. TTT kept.
+
 
 
