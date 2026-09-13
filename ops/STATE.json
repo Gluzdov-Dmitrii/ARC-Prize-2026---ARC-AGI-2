@@ -15,12 +15,17 @@
     "user_rank": 489
   },
   "champion": {
+    "submission_id": 56176686,
+    "public_score": 31.39,
+    "notebook_slug": "dmitriigluzdov/arc2-m5-lora-scale",
+    "script_version_id": null
+  },
+  "diverse_runner_up": {
     "submission_id": 56004028,
     "public_score": 30.56,
     "notebook_slug": "dmitriigluzdov/arc2-mikelou-perfpatch-fork",
     "script_version_id": 347143390
   },
-  "diverse_runner_up": null,
   "daily_guards": [],
   "attempt_schema": {
     "required_fields": [
@@ -171,8 +176,8 @@
     },
     {
       "submission_id": 56176686,
-      "status": "PENDING",
-      "public_score": null,
+      "status": "COMPLETE",
+      "public_score": 31.39,
       "notebook_slug": "dmitriigluzdov/arc2-m5-lora-scale",
       "script_version_id": null
     }
@@ -533,14 +538,14 @@
     },
     {
       "id": "M5",
-      "status": "SUBMITTING",
+      "status": "COMPLETE",
       "attempts": [
         {
           "attempt_id": "arc2-week-2026-09-05-v1-M5-20260912T0158Z",
           "stage_id": "M5",
           "started_at_utc": "2026-09-12T01:58:00Z",
-          "finished_at_utc": null,
-          "attempt_status": "SUBMITTING",
+          "finished_at_utc": "2026-09-13T09:32:00Z",
+          "attempt_status": "COMPLETE",
           "hypothesis": "Milder LoRA scale 0.5 (product 0.25) interpolates toward the 30.56 init without the M4 0.25 collapse.",
           "only_changed_factor": "ARC2_ADAPTER_SCALE=0.5 on the same M3 adapter_ttt; embed/lm_head unscaled; TTT kept",
           "base_notebook_sha256": "5e3d7a8114ca16c72b60b288bd345db756f034ded62823e41fe971c6e592d2cc",
@@ -553,14 +558,14 @@
           "commit_runtime_seconds": 1560,
           "hidden_runtime_seconds": null,
           "submission_id": 56176686,
-          "submission_status": "PENDING",
-          "public_score": null,
+          "submission_status": "COMPLETE",
+          "public_score": 31.39,
           "public_rank": null,
           "team_count": 1819,
           "gold_cutoff_rank": 13,
           "gold_cutoff_score": 33.47,
           "artifacts_path": "ops/runs/arc2-week-2026-09-05-v1-M5-20260912T0158Z",
-          "notes": "Kernel COMPLETE; adapter loaded 506/506 scale=0.5 lora=504. One authorized submit 56176686 PENDING. Do not retry. Notebook stays private.",
+          "notes": "Scored COMPLETE 31.39 vs previous champion 30.56 (+0.83). Adapter loaded 506/506 scale=0.5. New champion. Do not retry 56176686. Notebook stays private.",
           "plan_revision": "arc2-week-2026-09-05-v3-sft-community",
           "local_run_ids": [
             "arc2-m3-sft-20260910T0338Z"
@@ -574,6 +579,52 @@
           "candidate_coverage": null,
           "fallback_rate": null,
           "gate_decision": "USER_AUTHORIZED_SUBMIT"
+        }
+      ]
+    },
+    {
+      "id": "M6",
+      "status": "PREPARING",
+      "attempts": [
+        {
+          "attempt_id": "arc2-week-2026-09-05-v1-M6-20260913T0932Z",
+          "stage_id": "M6",
+          "started_at_utc": "2026-09-13T09:32:00Z",
+          "finished_at_utc": null,
+          "attempt_status": "PREPARING",
+          "hypothesis": "Slightly stronger LoRA scale 0.6 (product 0.36) stays near the 31.39 peak or beats it.",
+          "only_changed_factor": "ARC2_ADAPTER_SCALE=0.6 on the same M3 adapter_ttt; embed/lm_head unscaled; TTT kept",
+          "base_notebook_sha256": "94dad86d7b6db378310225694597078feb7edf914911a9ba31219571a32cefcd",
+          "git_head": "5228196783ed983c3a9c1d2ce34d0bd6d63a7353",
+          "kernel_slug": "dmitriigluzdov/arc2-m6-lora-scale",
+          "kernel_version": null,
+          "script_version_id": null,
+          "config_sha256": "c5972c8fffab19261b561197909bbd989a017dbf5fd76d219f183995c171a287",
+          "preflight_status": null,
+          "commit_runtime_seconds": null,
+          "hidden_runtime_seconds": null,
+          "submission_id": null,
+          "submission_status": null,
+          "public_score": null,
+          "public_rank": null,
+          "team_count": 1819,
+          "gold_cutoff_rank": 13,
+          "gold_cutoff_score": 33.47,
+          "artifacts_path": "ops/runs/arc2-week-2026-09-05-v1-M6-20260913T0932Z",
+          "notes": "M5 31.39 is the new champion. Building private scale-0.6 notebook. Push is not a submit. Do not retry 56176686.",
+          "plan_revision": "arc2-week-2026-09-05-v3-sft-community",
+          "local_run_ids": [
+            "arc2-m3-sft-20260910T0338Z"
+          ],
+          "validation_report_path": null,
+          "external_baseline_hash": "c5972c8fffab19261b561197909bbd989a017dbf5fd76d219f183995c171a287",
+          "local_gpu_hours": 0.0,
+          "kaggle_quota_before_hours": null,
+          "kaggle_quota_after_hours": null,
+          "kaggle_quota_debit_estimated_hours": null,
+          "candidate_coverage": null,
+          "fallback_rate": null,
+          "gate_decision": "USER_AUTHORIZED_SUBMIT_AFTER_PREFLIGHT"
         }
       ]
     }
@@ -900,6 +951,20 @@
       "stage_id": "M5",
       "attempt_id": "arc2-week-2026-09-05-v1-M5-20260912T0158Z",
       "detail": "One-shot kaggle competitions submit kernel dmitriigluzdov/arc2-m5-lora-scale v1 file submission.json. submission_id=56176686 PENDING. Quota numToday=1. No retry."
+    },
+    {
+      "at_utc": "2026-09-13T09:32:00Z",
+      "type": "stage_complete",
+      "stage_id": "M5",
+      "attempt_id": "arc2-week-2026-09-05-v1-M5-20260912T0158Z",
+      "detail": "submission 56176686 COMPLETE public 31.39; new champion (was 30.56). Adapter had loaded scale=0.5. No retry. Notebook stays private."
+    },
+    {
+      "at_utc": "2026-09-13T09:32:00Z",
+      "type": "stage_preparing",
+      "stage_id": "M6",
+      "attempt_id": "arc2-week-2026-09-05-v1-M6-20260913T0932Z",
+      "detail": "Private M6 kernel scale=0.6 on frozen M3 adapter. Push is not a submit. Do not retry 56176686."
     }
   ],
   "plan_revision": "arc2-week-2026-09-05-v3-sft-community",
@@ -956,8 +1021,8 @@
     "completed_at_utc": "2026-09-08T08:11:00Z"
   },
   "research": {
-    "id": "M5",
-    "status": "SUBMITTING",
+    "id": "M6",
+    "status": "PREPARING",
     "criterion": "leftover_verified_artifacts_even_if_score_flat",
     "clone_notebooks_as_strategy": false,
     "base_model": "sorokin/qwen3_4b_grids15_sft139/Transformers/bfloat16/1",
@@ -973,22 +1038,22 @@
       "sft-qwen-ttt-aug-e1",
       "community-writeup-notebook"
     ],
-    "next_action": "Wait submission 56176686 COMPLETE. Do not retry. Keep notebook private.",
-    "submission_id": 56176686,
-    "kernel_slug": "dmitriigluzdov/arc2-m5-lora-scale",
-    "kernel_version": 1,
+    "next_action": "Push dmitriigluzdov/arc2-m6-lora-scale, wait COMPLETE, preflight, then one named competition submit. Do not retry 56176686. Keep notebook private.",
+    "submission_id": null,
+    "kernel_slug": "dmitriigluzdov/arc2-m6-lora-scale",
+    "kernel_version": null,
     "kaggle_dataset": "dmitriigluzdov/arc2-m3-sft-adapter-v1"
   },
   "competition_submit": {
     "authorized": true,
-    "authorized_attempt": "arc2-week-2026-09-05-v1-M5-20260912T0158Z",
+    "authorized_attempt": "arc2-week-2026-09-05-v1-M6-20260913T0932Z",
     "kernel_push_is_submit": false,
-    "sent_at_utc": "2026-09-12T02:32:11Z",
-    "submission_id": 56176686,
-    "submission_status": "PENDING",
-    "kernel_slug": "dmitriigluzdov/arc2-m5-lora-scale",
-    "kernel_version": 1,
-    "message": "[M5][20260912][b8108e5] lora-scale-0.5",
+    "sent_at_utc": null,
+    "submission_id": null,
+    "submission_status": null,
+    "kernel_slug": "dmitriigluzdov/arc2-m6-lora-scale",
+    "kernel_version": null,
+    "message": null,
     "do_not_retry_submission_ids": [
       56068142,
       56095203,
@@ -997,7 +1062,7 @@
       56159237,
       56176686
     ],
-    "reason": "User authorized one submit of the next solution after M4 27.22. M5 is LoRA scale 0.5 on the frozen M3 adapter. Kernel push is not a submit. Do not retry M4 56159237. Notebook stays private."
+    "reason": "User authorized one submit of the next solution after M5 31.39 champion. M6 is LoRA scale 0.6 on the frozen M3 adapter. Kernel push is not a submit. Do not retry M5 56176686. Notebook stays private."
   },
   "compute_policy": {
     "preparation_backend": "nsu",

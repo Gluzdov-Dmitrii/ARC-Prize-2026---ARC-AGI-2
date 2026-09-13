@@ -102,10 +102,10 @@ def rewrite_short_cell(text: str, adapter_dataset: str, adapter_scale: str) -> s
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output-dir", type=Path, required=True)
-    parser.add_argument("--title", default="arc2-m5-lora-scale")
-    parser.add_argument("--slug", default="dmitriigluzdov/arc2-m5-lora-scale")
+    parser.add_argument("--title", default="arc2-m6-lora-scale")
+    parser.add_argument("--slug", default="dmitriigluzdov/arc2-m6-lora-scale")
     parser.add_argument("--adapter-dataset", default="dmitriigluzdov/arc2-m3-sft-adapter-v1")
-    parser.add_argument("--adapter-scale", default="0.5")
+    parser.add_argument("--adapter-scale", default="0.6")
     parser.add_argument("--private", action="store_true", default=True)
     parser.add_argument("--public", action="store_true")
     args = parser.parse_args()

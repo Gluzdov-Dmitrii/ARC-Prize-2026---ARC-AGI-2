@@ -295,5 +295,15 @@ CORRECTION: 2026-09-08T02:59:42Z verification of revision 3. `remaining_stage_co
 - Do not retry `56176686`, `56159237` (M4 27.22), `56138632` (M3 30.14), `56119847` (M2 30.14), `56095203` (M1 30.56), or `56068142` (S3 27.22).
 - Receipt: `ops/runs/arc2-week-2026-09-05-v1-M5-20260912T0158Z/submit_receipt.json`.
 
+### M5 — 2026-09-13T09:32:00Z — COMPLETE, new champion
+- Submission `56176686` scored public **31.39** (COMPLETE). Delta vs previous champion 30.56: **+0.83**.
+- Kernel: `dmitriigluzdov/arc2-m5-lora-scale` v1. Adapter **did load** 506/506, `scale=0.5`, `lora=504`. Milder A/B scale beat both full M3 SFT (30.14) and the no-adapter NVARC init (30.56).
+- Decision: **new champion**. Do not retry `56176686`. Notebook stays private.
+- Diverse runner-up: previous champion `56004028` at 30.56 (Mikelou/NVARC family).
+
+### M6 — 2026-09-13T09:32:00Z — PREPARING
+- Hypothesis: slightly stronger `ARC2_ADAPTER_SCALE=0.6` (product 0.36) stays near the 31.39 peak or beats it.
+- Only changed factor: `ARC2_ADAPTER_SCALE=0.6` on the same frozen M3 adapter. No new SFT. Embed/lm_head unscaled. TTT kept.
+
 
 
