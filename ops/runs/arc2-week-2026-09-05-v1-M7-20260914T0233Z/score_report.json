@@ -1,0 +1,23 @@
+{
+  "selector": "score_kgmon",
+  "schema": {
+    "ok": true,
+    "n_errors": 0,
+    "errors": [],
+    "n_extra": 0
+  },
+  "metrics": {
+    "micro_pass_at_2": 0.01744186046511628,
+    "correct_test_outputs": 3,
+    "all_test_outputs": 172,
+    "legacy_task_macro": 0.020833333333333332,
+    "n_tasks": 120,
+    "hit_keys": [
+      "36a08778_0",
+      "981571dc_0",
+      "aa4ec2a5_0"
+    ]
+  },
+  "n_real_attempts": 9,
+  "n_placeholder_attempts": 335
+}

@@ -1,0 +1,13 @@
+{
+  "kernel_slug": "dmitriigluzdov/arc2-m7-m2-scale",
+  "kernel_version": 1,
+  "status": "COMPLETE",
+  "pushed_at_utc": "2026-09-14T02:37:00Z",
+  "adapter_dataset": "dmitriigluzdov/arc2-m2-sft-adapter-v1",
+  "adapter_sha256": "3225701eacd6aafeee257a54fc9c1b33676e0e1625d88d7ba5a7ee50e38fe9e1",
+  "adapter_scale": 0.5,
+  "internet": false,
+  "is_private": true,
+  "competition_submit": false,
+  "notes": "Kernel push is not a competition submit. M2 adapter at champion scale 0.5. Wait COMPLETE, then preflight, then one authorized submit."
+}

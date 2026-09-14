@@ -327,5 +327,18 @@ CORRECTION: 2026-09-08T02:59:42Z verification of revision 3. `remaining_stage_co
 - New strategy: stop sweeping M3 scale. Transfer the winning inference (`ARC2_ADAPTER_SCALE=0.5`) onto the frozen **M2 2-epoch unaugmented** adapter.
 - Only changed factor: adapter dataset `dmitriigluzdov/arc2-m2-sft-adapter-v1` instead of M3. Scale 0.5, embed/lm_head unscaled, TTT kept. No new SFT.
 
+### M7 — 2026-09-14T02:37:00Z — KERNEL_RUNNING
+- Kernel push created `dmitriigluzdov/arc2-m7-m2-scale` v1. Internet OFF, 4×L4, private.
+- Competition submit: **not sent**. Wait COMPLETE then preflight. Do not retry M6 `56204558`.
+
+### M7 — 2026-09-14T03:09:53Z — one authorized competition submit
+- Kernel `dmitriigluzdov/arc2-m7-m2-scale` v1 COMPLETE. Internet OFF, 4×L4, private.
+- Adapter **loaded** on all 4 ranks: M2 `adapter_ttt.safetensors` aligned 506/506, `scale=0.5`, `lora=504`. Receipt `kernel_output/adapter_load.json`.
+- Preflight: format OK, 120 tasks, 0 errors. Debug-4 hits: `36a08778_0`, `981571dc_0`, `aa4ec2a5_0`.
+- Quota before send: `numAllowedNow=1`. One CLI call: `kaggle competitions submit ... -k dmitriigluzdov/arc2-m7-m2-scale -v 1 -f submission.json -m "[M7][20260914][d1bf5e8] m2-scale-0.5"`.
+- Result: `submission_id=56220024` PENDING. CLI: `0 submissions remaining today.` No retry.
+- Do not retry `56220024`, `56204558` (M6 30.56), `56176686` (M5 champion 31.39), `56159237` (27.22), `56138632` / `56119847` (30.14), `56095203` (30.56), or `56068142` (27.22).
+- Receipt: `ops/runs/arc2-week-2026-09-05-v1-M7-20260914T0233Z/submit_receipt.json`.
+
 
 
