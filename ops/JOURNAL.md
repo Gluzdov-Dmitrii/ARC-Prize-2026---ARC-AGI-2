@@ -318,5 +318,14 @@ CORRECTION: 2026-09-08T02:59:42Z verification of revision 3. `remaining_stage_co
 - Do not retry `56204558`, `56176686` (M5 champion 31.39), `56159237` (M4 27.22), `56138632` / `56119847` (30.14), `56095203` (30.56), or `56068142` (27.22).
 - Receipt: `ops/runs/arc2-week-2026-09-05-v1-M6-20260913T0932Z/submit_receipt.json`.
 
+### M6 — 2026-09-14T02:33:00Z — COMPLETE
+- Submission `56204558` scored public **30.56** (COMPLETE). Delta vs champion 31.39: **-0.83**. Tie with old NVARC 30.56.
+- Kernel: `dmitriigluzdov/arc2-m6-lora-scale` v1. Adapter **did load** 506/506, `scale=0.6`, `lora=504`. Stronger M3 scale left the 0.5 peak.
+- Decision: rejected as champion. Scale sweep on M3 is closed: 0.25→27.22, 0.5→**31.39**, 0.6→30.56, 1.0→30.14. Do not retry `56204558`. Notebook stays private.
+
+### M7 — 2026-09-14T02:33:00Z — PREPARING
+- New strategy: stop sweeping M3 scale. Transfer the winning inference (`ARC2_ADAPTER_SCALE=0.5`) onto the frozen **M2 2-epoch unaugmented** adapter.
+- Only changed factor: adapter dataset `dmitriigluzdov/arc2-m2-sft-adapter-v1` instead of M3. Scale 0.5, embed/lm_head unscaled, TTT kept. No new SFT.
+
 
 

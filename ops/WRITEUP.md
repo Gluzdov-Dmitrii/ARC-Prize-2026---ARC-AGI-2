@@ -70,4 +70,10 @@ Packed corpus `sft-public-train-v1`: 5308 examples, examples SHA-256 `e9f43ed0e0
 - Same frozen adapter `dmitriigluzdov/arc2-m3-sft-adapter-v1` (SHA-256 `c5972c8fffab19261b561197909bbd989a017dbf5fd76d219f183995c171a287`).
 - Inference-only change: `ARC2_ADAPTER_SCALE=0.6` on LoRA A/B (product 0.36). Embed and lm_head stay at the trained values. Per-task TTT unchanged.
 - Notebook `kernels/arc2-m6-lora-scale/` (title/slug `arc2-m6-lora-scale`), private, Internet off.
-- Commit-run COMPLETE; adapter loaded 506/506, scale=0.6, lora=504. Competition submit `56204558` PENDING. Keep the notebook private.
+- Commit-run COMPLETE; adapter loaded 506/506, scale=0.6, lora=504. Competition submit `56204558` scored public **30.56**. Below champion 31.39. Keep the notebook private.
+
+## M7 (M2 adapter at champion scale)
+
+- Frozen adapter `dmitriigluzdov/arc2-m2-sft-adapter-v1` (SHA-256 `3225701eacd6aafeee257a54fc9c1b33676e0e1625d88d7ba5a7ee50e38fe9e1`), 2-epoch unaugmented public-train LoRA. Full-scale M2 scored 30.14.
+- Inference: `ARC2_ADAPTER_SCALE=0.5` on LoRA A/B (same recipe as champion 31.39). Embed and lm_head stay at the trained M2 values. Per-task TTT unchanged.
+- Notebook `kernels/arc2-m7-m2-scale/` (title/slug `arc2-m7-m2-scale`), private, Internet off. Kernel push is not a competition submit.

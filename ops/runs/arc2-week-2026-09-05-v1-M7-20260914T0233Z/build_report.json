@@ -1,0 +1,13 @@
+{
+  "notebook_sha256": "21271cc05a61737a5b674acda110030f555ebf73910b67a08c2f1a4e0ddd6bdb",
+  "metadata_sha256": "0ee89246993346489f4090ec5f2a7f076a27d97f7693631b9e5088347b06b3fb",
+  "replaced_writefiles": [
+    "arc_decoder.py",
+    "arc_loader.py",
+    "arc_solver.py"
+  ],
+  "base_s2_sha256": "3ac4406b4c6eeae088b2b51f194dcbbb9edc4479fb4bfceb3e4d1be4ad8fad95",
+  "internet": false,
+  "competition_submit": false,
+  "notes": "Kernel push is not a competition submit. Markdown is original; adapter dataset is attached after the hashed SFT receipt."
+}

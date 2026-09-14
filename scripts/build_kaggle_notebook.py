@@ -16,21 +16,32 @@ WRITEFILES = {
     "arc_solver.py": SRC / "arc_solver.py",
 }
 
-def make_markdown(adapter_scale: str) -> str:
-    return f"""# ARC-AGI-2 scaled TTT-view LoRA
+def make_markdown(adapter_dataset: str, adapter_scale: str) -> str:
+    slug = adapter_dataset.split("/")[-1] if adapter_dataset else "arc2-m3-sft-adapter-v1"
+    if "m2" in slug:
+        method = (
+            "- Extra LoRA from a 2-epoch public-train SFT on canonical views (not TTT-matched). "
+            "Evaluation and hidden solutions are not used."
+        )
+    else:
+        method = (
+            "- Extra LoRA trained only on official **public-train** tasks, using the same geometric "
+            "and color views as the per-task update. Evaluation and hidden solutions are not used."
+        )
+    return f"""# ARC-AGI-2 scaled public-train LoRA
 
 Internet off, 4×L4. Short original notes, no copied commentary.
 
 **Method**
 - Base model: `sorokin/qwen3_4b_grids15_sft139` (Qwen3-4B, already trained on ARC-style grids).
-- Extra LoRA trained only on official **public-train** tasks, using the same geometric and color views as the per-task update. Evaluation and hidden solutions are not used.
+{method}
 - At load time LoRA A/B tensors are scaled toward the base (embed/lm_head left unchanged). Per-task LoRA update and grid decoder still run.
 
 **Outputs**
 - `submission.json` with two attempts per test grid.
 
 **Attached adapter**
-- Dataset `arc2-m3-sft-adapter-v1` (`adapter_ttt.safetensors` preferred), LoRA scale `{adapter_scale}`. Hashes are in that dataset README.
+- Dataset `{slug}` (`adapter_ttt.safetensors` preferred), LoRA scale `{adapter_scale}`. Hashes are in that dataset README.
 """
 
 
@@ -102,10 +113,10 @@ def rewrite_short_cell(text: str, adapter_dataset: str, adapter_scale: str) -> s
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output-dir", type=Path, required=True)
-    parser.add_argument("--title", default="arc2-m6-lora-scale")
-    parser.add_argument("--slug", default="dmitriigluzdov/arc2-m6-lora-scale")
-    parser.add_argument("--adapter-dataset", default="dmitriigluzdov/arc2-m3-sft-adapter-v1")
-    parser.add_argument("--adapter-scale", default="0.6")
+    parser.add_argument("--title", default="arc2-m7-m2-scale")
+    parser.add_argument("--slug", default="dmitriigluzdov/arc2-m7-m2-scale")
+    parser.add_argument("--adapter-dataset", default="dmitriigluzdov/arc2-m2-sft-adapter-v1")
+    parser.add_argument("--adapter-scale", default="0.5")
     parser.add_argument("--private", action="store_true", default=True)
     parser.add_argument("--public", action="store_true")
     args = parser.parse_args()
@@ -119,7 +130,7 @@ def main() -> None:
         if cell.get("cell_type") == "markdown":
             if markdown_done:
                 continue
-            new_cells.append(make_markdown_cell(make_markdown(args.adapter_scale).strip() + "\n"))
+            new_cells.append(make_markdown_cell(make_markdown(args.adapter_dataset, args.adapter_scale).strip() + "\n"))
             markdown_done = True
             continue
         matched = None
@@ -138,7 +149,7 @@ def main() -> None:
             continue
         new_cells.append(cell)
     if not markdown_done:
-        new_cells.insert(0, make_markdown_cell(make_markdown(args.adapter_scale).strip() + "\n"))
+        new_cells.insert(0, make_markdown_cell(make_markdown(args.adapter_dataset, args.adapter_scale).strip() + "\n"))
     missing = set(WRITEFILES) - replaced
     if missing:
         raise SystemExit(f"S2 notebook missing writefile cells: {sorted(missing)}")
