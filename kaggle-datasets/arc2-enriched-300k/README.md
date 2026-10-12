@@ -1,6 +1,5 @@
-# ARC-2 Enriched: 300K Hard Training Examples
+# Dataset figures
 
-Images for the Kaggle description and public E17 notebook, staged at their hosted relative paths.
-[Kaggle dataset](https://www.kaggle.com/datasets/dmitriigluzdov/arc2-generated-rule-families)
+The cover and faded gallery are preserved. `docs/overview.png` shows three generated rules with zero NVARC solutions. `docs/rules_by_generating_model.png` compares all registered rule candidates, including rejected programs. The script `dataset/code/art/make_reader_figures.py` generates both figures from bundled source records and counts.
 
-Apache-2.0, confirmed by the owner on 2026-10-11. Owned contributions are additionally dedicated under CC0.
+Figure paths match the URLs in the dataset card. These files are staged locally for publication with the same relative paths.
